@@ -3,92 +3,91 @@ package com.nbsaas.boot.user.api.domain.request;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
-import com.nbsaas.boot.rest.enums.State;
-import com.nbsaas.boot.rest.enums.DataScope;
-import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.rest.enums.State;
+            import com.nbsaas.boot.rest.enums.DataScope;
+            import com.nbsaas.boot.rest.enums.StoreState;
+/**
+* 请求对象
+*/
+@Data
+public class UserInfoDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class UserInfoDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private State state;
+        /**
+        * 最新修改时间
+        **/
+        private Date lastDate;
 
-    /**
-     *
-     **/
-    private String structureName;
+        /**
+        * 
+        **/
+        private State state;
 
-    /**
-     *
-     **/
-    private String note;
+        /**
+        * 
+        **/
+        private String structureName;
 
-    /**
-     *
-     **/
-    private String phone;
+        /**
+        * 
+        **/
+        private String note;
 
-    /**
-     *
-     **/
-    private Integer catalog;
+        /**
+        * 
+        **/
+        private String phone;
 
-    /**
-     *
-     **/
-    private DataScope dataScope;
+        /**
+        * 
+        **/
+        private Integer catalog;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 
+        **/
+        private DataScope dataScope;
 
-    /**
-     *
-     **/
-    private String avatar;
+        /**
+        * 添加时间
+        **/
+        private Date addDate;
 
-    /**
-     *
-     **/
-    private Long structure;
+        /**
+        * 
+        **/
+        private String avatar;
 
-    /**
-     *
-     **/
-    private Integer loginSize;
+        /**
+        * 
+        **/
+        private Long structure;
 
-    /**
-     *
-     **/
-    private String name;
+        /**
+        * 
+        **/
+        private Integer loginSize;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 
+        **/
+        private String name;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+        /**
+        * 主键id
+        **/
+        private Long id;
+
+        /**
+        * 
+        **/
+        private StoreState storeState;
 }

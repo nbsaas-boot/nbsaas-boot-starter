@@ -6,23 +6,23 @@ import com.nbsaas.boot.user.api.domain.request.UserPasswordDataRequest;
 import org.springframework.beans.BeanUtils;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.boot.utils.BeanDataUtils;
-import com.nbsaas.boot.user.data.entity.UserInfo;
+            import com.nbsaas.boot.user.data.entity.UserInfo;
 
 /**
- * 请求对象转换成实体对象
- */
+* 请求对象转换成实体对象
+*/
 
-public class UserPasswordEntityConvert implements Converter<UserPassword, UserPasswordDataRequest> {
-    @Override
-    public UserPassword convert(UserPasswordDataRequest source) {
-        UserPassword result = new UserPassword();
-        BeanDataUtils.copyProperties(source, result);
-        if (source.getUser() != null) {
-            UserInfo user = new UserInfo();
+public class UserPasswordEntityConvert  implements Converter<UserPassword, UserPasswordDataRequest> {
+@Override
+public UserPassword convert(UserPasswordDataRequest source) {
+UserPassword result = new UserPassword();
+BeanDataUtils.copyProperties(source, result);
+            if(source.getUser()!=null){
+            UserInfo user =new UserInfo();
             user.setId(source.getUser());
             result.setUser(user);
-        }
-        return result;
-    }
+            }
+return result;
+}
 }
 

@@ -7,21 +7,21 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 import com.nbsaas.boot.rest.api.Converter;
 
 /**
- * 实体对象转化成响应对象
- */
+* 实体对象转化成响应对象
+*/
 
-public class UserOauthTokenResponseConvert implements Converter
-        <UserOauthTokenResponse, UserOauthToken> {
+public class UserOauthTokenResponseConvert  implements Converter
+<UserOauthTokenResponse,UserOauthToken> {
 
-    @Override
-    public UserOauthTokenResponse convert(UserOauthToken source) {
-        UserOauthTokenResponse result = new UserOauthTokenResponse();
-        BeanDataUtils.copyProperties(source, result);
-        if (source.getUser() != null) {
+@Override
+public UserOauthTokenResponse convert(UserOauthToken source) {
+UserOauthTokenResponse  result = new  UserOauthTokenResponse();
+BeanDataUtils.copyProperties(source, result);
+            if(source.getUser()!=null){
             result.setUser(source.getUser().getId());
-        }
-        return result;
-    }
+            }
+return result;
+}
 
 }
 

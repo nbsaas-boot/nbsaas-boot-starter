@@ -3,82 +3,82 @@ package com.nbsaas.boot.user.api.domain.simple;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
-import com.nbsaas.boot.user.api.domain.enums.LoginState;
-import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.user.api.domain.enums.LoginState;
+            import com.nbsaas.boot.rest.enums.StoreState;
 
 /**
- * 列表对象
- */
+* 列表对象
+*/
 @Data
 public class UserLoginLogSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Long user;
 
-    /**
-     *
-     **/
-    private LoginState state;
+            /**
+            * 
+            **/
+            private Long user;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 
+            **/
+            private LoginState state;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 最新修改时间
+            **/
+            private Date lastDate;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+            /**
+            * 主键id
+            **/
+            private Long id;
 
-    /**
-     *
-     **/
-    private String client;
+            /**
+            * 
+            **/
+            private StoreState storeState;
 
-    /**
-     *
-     **/
-    private String note;
+            /**
+            * 
+            **/
+            private String client;
 
-    /**
-     *
-     **/
-    private String account;
+            /**
+            * 
+            **/
+            private String note;
 
-    /**
-     *
-     **/
-    private String ip;
+            /**
+            * 
+            **/
+            private String account;
 
-    /**
-     *
-     **/
-    private String userName;
+            /**
+            * 
+            **/
+            private String ip;
 
-    /**
-     *
-     **/
-    private String password;
+            /**
+            * 
+            **/
+            private String userName;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 
+            **/
+            private String password;
+
+            /**
+            * 添加时间
+            **/
+            private Date addDate;
 
 
-}
+    }

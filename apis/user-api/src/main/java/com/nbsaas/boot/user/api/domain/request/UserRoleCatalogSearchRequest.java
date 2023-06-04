@@ -3,79 +3,77 @@ package com.nbsaas.boot.user.api.domain.request;
 import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.boot.rest.request.PageRequest;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.math.BigDecimal;
 
 /**
- * 搜索bean
- */
+* 搜索bean
+*/
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class UserRoleCatalogSearchRequest extends PageRequest implements Serializable {
+public class UserRoleCatalogSearchRequest   extends PageRequest implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 排序号
-     **/
-    @Search(name = "sortNum", operator = Operator.eq)
-    private Integer sortNum;
+            /**
+            * 排序号
+            **/
+            @Search(name = "sortNum",operator = Operator.eq)
+            private Integer sortNum;
 
-    /**
-     * 主键id
-     **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+            /**
+            * 主键id
+            **/
+            @Search(name = "id",operator = Operator.eq)
+            private Long id;
 
-    /**
-     * 编码
-     **/
-    @Search(name = "code", operator = Operator.like)
-    private String code;
+            /**
+            * 编码
+            **/
+            @Search(name = "code",operator = Operator.like)
+            private String code;
 
-    /**
-     * 左节点
-     **/
-    @Search(name = "lft", operator = Operator.eq)
-    private Integer lft;
+            /**
+            * 左节点
+            **/
+            @Search(name = "lft",operator = Operator.eq)
+            private Integer lft;
 
-    /**
-     * 右节点
-     **/
-    @Search(name = "rgt", operator = Operator.eq)
-    private Integer rgt;
+            /**
+            * 右节点
+            **/
+            @Search(name = "rgt",operator = Operator.eq)
+            private Integer rgt;
 
-    /**
-     * 深度
-     **/
-    @Search(name = "depth", operator = Operator.eq)
-    private Integer depth;
+            /**
+            * 深度
+            **/
+            @Search(name = "depth",operator = Operator.eq)
+            private Integer depth;
 
-    /**
-     * 名称
-     **/
-    @Search(name = "name", operator = Operator.like)
-    private String name;
+            /**
+            * 名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
 
-    /**
-     * ids
-     **/
-    @Search(name = "ids", operator = Operator.like)
-    private String ids;
+            /**
+            * ids
+            **/
+            @Search(name = "ids",operator = Operator.like)
+            private String ids;
 
     private int fetch;
 
-    @Search(name = "levelInfo", operator = Operator.eq)
+    @Search(name = "levelInfo",operator = Operator.eq)
     private Integer level;
 
 }

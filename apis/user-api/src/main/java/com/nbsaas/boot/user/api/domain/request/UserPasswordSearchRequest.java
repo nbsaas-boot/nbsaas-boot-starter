@@ -9,43 +9,43 @@ import java.util.Date;
 import java.math.BigDecimal;
 
 /**
- * 搜索bean
- */
+* 搜索bean
+*/
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class UserPasswordSearchRequest extends PageRequest implements Serializable {
+public class UserPasswordSearchRequest   extends PageRequest implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    @Search(name = "checkSize", operator = Operator.eq)
-    private Integer checkSize;
+            /**
+            * 
+            **/
+            @Search(name = "checkSize",operator = Operator.eq)
+            private Integer checkSize;
 
-    /**
-     * 主键id
-     **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+            /**
+            * 主键id
+            **/
+            @Search(name = "id",operator = Operator.eq)
+            private Long id;
 
-    /**
-     *
-     **/
-    @Search(name = "salt", operator = Operator.like)
-    private String salt;
+            /**
+            * 
+            **/
+            @Search(name = "salt",operator = Operator.like)
+            private String salt;
 
-    /**
-     *
-     **/
-    @Search(name = "password", operator = Operator.like)
-    private String password;
+            /**
+            * 
+            **/
+            @Search(name = "password",operator = Operator.like)
+            private String password;
 
 
 }

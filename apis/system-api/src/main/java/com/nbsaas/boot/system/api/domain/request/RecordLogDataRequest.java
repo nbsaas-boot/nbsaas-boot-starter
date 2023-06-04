@@ -1,70 +1,70 @@
 package com.nbsaas.boot.system.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class RecordLogDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class RecordLogDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Date createDate;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 
+        **/
+        private Date createDate;
 
-    /**
-     *
-     **/
-    private String createName;
+        /**
+        * 最新修改时间
+        **/
+        private Date lastDate;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 
+        **/
+        private String createName;
 
-    /**
-     *
-     **/
-    private String app;
+        /**
+        * 主键id
+        **/
+        private Long id;
 
-    /**
-     *
-     **/
-    private Long createUser;
+        /**
+        * 
+        **/
+        private String app;
 
-    /**
-     *
-     **/
-    private String data;
+        /**
+        * 
+        **/
+        private Long createUser;
 
-    /**
-     *
-     **/
-    private String title;
+        /**
+        * 
+        **/
+        private String data;
 
-    /**
-     *
-     **/
-    private String ip;
+        /**
+        * 
+        **/
+        private String title;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 
+        **/
+        private String ip;
+
+        /**
+        * 添加时间
+        **/
+        private Date addDate;
 }

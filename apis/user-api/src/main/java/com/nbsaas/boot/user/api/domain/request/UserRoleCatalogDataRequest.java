@@ -6,69 +6,70 @@ import java.math.BigDecimal;
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
 /**
- * 请求对象
- */
+* 请求对象
+*/
 @Data
-public class UserRoleCatalogDataRequest implements Serializable, RequestId {
+public class UserRoleCatalogDataRequest implements Serializable,RequestId {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 最新修改时间
+        **/
+        private Date lastDate;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 排序号
+        **/
+        private Integer sortNum;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 主键id
+        **/
+        private Long id;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * 编码
+        **/
+        private String code;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 左节点
+        **/
+        private Integer lft;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 右节点
+        **/
+        private Integer rgt;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 深度
+        **/
+        private Integer depth;
 
-    /**
-     *
-     **/
-    private String parentName;
+        /**
+        * 名称
+        **/
+        private String name;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 
+        **/
+        private String parentName;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * ids
+        **/
+        private String ids;
+
+        /**
+        * 添加时间
+        **/
+        private Date addDate;
 }
