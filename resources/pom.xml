@@ -15,6 +15,7 @@
         <module>user-resource</module>
         <module>all-resource</module>
         <module>system-resource</module>
+        <module>ad-resource</module>
     </modules>
 
     <properties>
