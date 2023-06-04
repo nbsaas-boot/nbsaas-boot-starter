@@ -4,7 +4,6 @@ import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.boot.rest.request.PageRequest;
 import lombok.*;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;

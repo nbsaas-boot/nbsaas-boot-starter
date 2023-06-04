@@ -1,12 +1,11 @@
 package com.nbsaas.boot.user.api.domain.request;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.math.BigDecimal;
-
-import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 请求对象

@@ -3,10 +3,8 @@ package com.nbsaas.boot.user.api.domain.request;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
-
 /**
  * 请求对象
  */

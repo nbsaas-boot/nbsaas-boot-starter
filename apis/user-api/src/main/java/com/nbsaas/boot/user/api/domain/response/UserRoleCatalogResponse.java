@@ -1,11 +1,9 @@
 package com.nbsaas.boot.user.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
 /**
  * 响应对象
  */

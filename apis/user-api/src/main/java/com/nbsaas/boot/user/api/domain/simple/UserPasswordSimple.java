@@ -3,7 +3,6 @@ package com.nbsaas.boot.user.api.domain.simple;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
 

@@ -6,7 +6,7 @@ package com.nbsaas.boot.user.api.domain.enums;
  * Created by ada on 2016/12/15.
  */
 public enum AccountType {
-    Phone, Email, Account;
+    phone, email, account;
 
     @Override
     public String toString() {

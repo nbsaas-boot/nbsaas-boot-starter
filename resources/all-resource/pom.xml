@@ -29,5 +29,10 @@
             <artifactId>user-resource</artifactId>
             <version>1.0.1-2023</version>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>system-resource</artifactId>
+            <version>1.0.1-2023</version>
+        </dependency>
     </dependencies>
 </project>

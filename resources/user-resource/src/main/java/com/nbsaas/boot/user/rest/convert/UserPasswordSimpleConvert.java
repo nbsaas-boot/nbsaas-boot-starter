@@ -4,7 +4,6 @@ import com.nbsaas.boot.user.data.entity.UserPassword;
 import com.nbsaas.boot.user.api.domain.simple.UserPasswordSimple;
 
 import com.nbsaas.boot.rest.api.Converter;
-
 /**
  * 列表对象转换器
  */

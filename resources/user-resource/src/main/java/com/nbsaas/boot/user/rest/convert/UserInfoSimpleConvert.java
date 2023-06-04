@@ -1,10 +1,8 @@
 package com.nbsaas.boot.user.rest.convert;
 
-import com.nbsaas.boot.user.data.entity.UserInfo;
-import com.nbsaas.boot.user.api.domain.simple.UserInfoSimple;
-
 import com.nbsaas.boot.rest.api.Converter;
-
+import com.nbsaas.boot.user.api.domain.simple.UserInfoSimple;
+import com.nbsaas.boot.user.data.entity.UserInfo;
 /**
  * 列表对象转换器
  */

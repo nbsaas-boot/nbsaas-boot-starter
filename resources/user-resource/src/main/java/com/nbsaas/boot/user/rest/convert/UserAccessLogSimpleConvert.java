@@ -1,10 +1,8 @@
 package com.nbsaas.boot.user.rest.convert;
 
-import com.nbsaas.boot.user.data.entity.UserAccessLog;
-import com.nbsaas.boot.user.api.domain.simple.UserAccessLogSimple;
-
 import com.nbsaas.boot.rest.api.Converter;
-
+import com.nbsaas.boot.user.api.domain.simple.UserAccessLogSimple;
+import com.nbsaas.boot.user.data.entity.UserAccessLog;
 /**
  * 列表对象转换器
  */
