@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/userAccount")
@@ -34,7 +35,7 @@ public class UserAccountController {
 
 
     @RequestMapping("/search")
-    public PageResponse <UserAccountSimple> search(UserAccountSearchRequest request) {
+    public PageResponse<UserAccountSimple> search(UserAccountSearchRequest request) {
         return userAccountApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class UserAccountController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <UserAccountResponse> create(@Validated(AddOperator.class) UserAccountDataRequest request) {
+    public ResponseObject<UserAccountResponse> create(@Validated(AddOperator.class) UserAccountDataRequest request) {
         return userAccountApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<UserAccountResponse> update(@Validated(UpdateOperator.class) UserAccountDataRequest request) {
-       return userAccountApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserAccountResponse> update(@Validated(UpdateOperator.class) UserAccountDataRequest request) {
+        return userAccountApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserAccountDataRequest request) {
@@ -67,7 +68,7 @@ public class UserAccountController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <UserAccountResponse> view(@Validated(ViewOperator.class) UserAccountDataRequest  request) {
+    public ResponseObject<UserAccountResponse> view(@Validated(ViewOperator.class) UserAccountDataRequest request) {
         return userAccountApi.view(request);
     }
 }

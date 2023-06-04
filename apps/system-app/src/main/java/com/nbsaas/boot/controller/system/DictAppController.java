@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/dict")
@@ -44,32 +45,32 @@ public class DictAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<DictResponse> create(@Validated(AddOperator.class) DictDataRequest request) {
         return dictApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<DictResponse> update(@Validated(UpdateOperator.class) DictDataRequest
-         request) {
-         return dictApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<DictResponse> update(@Validated(UpdateOperator.class) DictDataRequest
+                                                       request) {
+        return dictApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) DictDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) DictDataRequest request) {
         return dictApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<DictResponse> view(@Validated(ViewOperator.class) DictDataRequest request) {
-         return dictApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<DictResponse> view(@Validated(ViewOperator.class) DictDataRequest request) {
+        return dictApi.view(request);
+    }
 
-  }
+}

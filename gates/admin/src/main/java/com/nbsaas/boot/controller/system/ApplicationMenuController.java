@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/applicationMenu")
@@ -34,7 +35,7 @@ public class ApplicationMenuController {
 
 
     @RequestMapping("/search")
-    public PageResponse <ApplicationMenuSimple> search(ApplicationMenuSearchRequest request) {
+    public PageResponse<ApplicationMenuSimple> search(ApplicationMenuSearchRequest request) {
         return applicationMenuApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class ApplicationMenuController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <ApplicationMenuResponse> create(@Validated(AddOperator.class) ApplicationMenuDataRequest request) {
+    public ResponseObject<ApplicationMenuResponse> create(@Validated(AddOperator.class) ApplicationMenuDataRequest request) {
         return applicationMenuApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<ApplicationMenuResponse> update(@Validated(UpdateOperator.class) ApplicationMenuDataRequest request) {
-       return applicationMenuApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ApplicationMenuResponse> update(@Validated(UpdateOperator.class) ApplicationMenuDataRequest request) {
+        return applicationMenuApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) ApplicationMenuDataRequest request) {
@@ -67,7 +68,7 @@ public class ApplicationMenuController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <ApplicationMenuResponse> view(@Validated(ViewOperator.class) ApplicationMenuDataRequest  request) {
+    public ResponseObject<ApplicationMenuResponse> view(@Validated(ViewOperator.class) ApplicationMenuDataRequest request) {
         return applicationMenuApi.view(request);
     }
 }

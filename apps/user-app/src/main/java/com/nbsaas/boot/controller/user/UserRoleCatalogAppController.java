@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userRoleCatalog")
@@ -44,32 +45,32 @@ public class UserRoleCatalogAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserRoleCatalogResponse> create(@Validated(AddOperator.class) UserRoleCatalogDataRequest request) {
         return userRoleCatalogApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserRoleCatalogResponse> update(@Validated(UpdateOperator.class) UserRoleCatalogDataRequest
-         request) {
-         return userRoleCatalogApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserRoleCatalogResponse> update(@Validated(UpdateOperator.class) UserRoleCatalogDataRequest
+                                                                  request) {
+        return userRoleCatalogApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserRoleCatalogDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserRoleCatalogDataRequest request) {
         return userRoleCatalogApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserRoleCatalogResponse> view(@Validated(ViewOperator.class) UserRoleCatalogDataRequest request) {
-         return userRoleCatalogApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserRoleCatalogResponse> view(@Validated(ViewOperator.class) UserRoleCatalogDataRequest request) {
+        return userRoleCatalogApi.view(request);
+    }
 
-  }
+}

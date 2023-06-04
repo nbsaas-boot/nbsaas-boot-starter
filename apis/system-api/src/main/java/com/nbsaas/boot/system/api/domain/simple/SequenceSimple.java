@@ -1,62 +1,61 @@
 package com.nbsaas.boot.system.api.domain.simple;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.math.BigDecimal;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
-* 列表对象
-*/
+ * 列表对象
+ */
 @Data
 public class SequenceSimple implements Serializable {
 
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
+    /**
+     *
+     **/
+    private Integer increment;
 
-            /**
-            * 
-            **/
-            private Integer increment;
+    /**
+     *
+     **/
+    private Date createDate;
 
-            /**
-            * 
-            **/
-            private Date createDate;
+    /**
+     *
+     **/
+    private Date updateDate;
 
-            /**
-            * 
-            **/
-            private Date updateDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-            /**
-            * 最新修改时间
-            **/
-            private Date lastDate;
+    /**
+     *
+     **/
+    private String name;
 
-            /**
-            * 
-            **/
-            private String name;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-            /**
-            * 主键id
-            **/
-            private Long id;
+    /**
+     *
+     **/
+    private Long currentNum;
 
-            /**
-            * 
-            **/
-            private Long currentNum;
-
-            /**
-            * 添加时间
-            **/
-            private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
-    }
+}

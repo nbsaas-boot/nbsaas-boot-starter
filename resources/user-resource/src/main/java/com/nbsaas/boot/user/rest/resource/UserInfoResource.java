@@ -1,28 +1,21 @@
 package com.nbsaas.boot.user.rest.resource;
 
+import com.nbsaas.boot.jpa.data.core.BaseResource;
 import com.nbsaas.boot.user.api.apis.UserInfoApi;
-import com.nbsaas.boot.user.data.entity.UserInfo;
 import com.nbsaas.boot.user.api.domain.request.UserInfoDataRequest;
 import com.nbsaas.boot.user.api.domain.response.UserInfoResponse;
 import com.nbsaas.boot.user.api.domain.simple.UserInfoSimple;
-import com.nbsaas.boot.user.rest.convert.UserInfoSimpleConvert;
+import com.nbsaas.boot.user.data.entity.UserInfo;
+import com.nbsaas.boot.user.data.repository.UserInfoRepository;
 import com.nbsaas.boot.user.rest.convert.UserInfoEntityConvert;
 import com.nbsaas.boot.user.rest.convert.UserInfoResponseConvert;
-import com.nbsaas.boot.user.data.repository.UserInfoRepository;
-
-import java.io.Serializable;
-
-import com.nbsaas.boot.jpa.data.core.BaseResource;
+import com.nbsaas.boot.user.rest.convert.UserInfoSimpleConvert;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-
-import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
-
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
+import java.io.Serializable;
 import java.util.function.Function;
 
 /**

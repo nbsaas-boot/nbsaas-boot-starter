@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/sequence")
@@ -34,7 +35,7 @@ public class SequenceController {
 
 
     @RequestMapping("/search")
-    public PageResponse <SequenceSimple> search(SequenceSearchRequest request) {
+    public PageResponse<SequenceSimple> search(SequenceSearchRequest request) {
         return sequenceApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class SequenceController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <SequenceResponse> create(@Validated(AddOperator.class) SequenceDataRequest request) {
+    public ResponseObject<SequenceResponse> create(@Validated(AddOperator.class) SequenceDataRequest request) {
         return sequenceApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<SequenceResponse> update(@Validated(UpdateOperator.class) SequenceDataRequest request) {
-       return sequenceApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<SequenceResponse> update(@Validated(UpdateOperator.class) SequenceDataRequest request) {
+        return sequenceApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) SequenceDataRequest request) {
@@ -67,7 +68,7 @@ public class SequenceController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <SequenceResponse> view(@Validated(ViewOperator.class) SequenceDataRequest  request) {
+    public ResponseObject<SequenceResponse> view(@Validated(ViewOperator.class) SequenceDataRequest request) {
         return sequenceApi.view(request);
     }
 }

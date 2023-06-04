@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userAccount")
@@ -44,32 +45,32 @@ public class UserAccountAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserAccountResponse> create(@Validated(AddOperator.class) UserAccountDataRequest request) {
         return userAccountApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserAccountResponse> update(@Validated(UpdateOperator.class) UserAccountDataRequest
-         request) {
-         return userAccountApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserAccountResponse> update(@Validated(UpdateOperator.class) UserAccountDataRequest
+                                                              request) {
+        return userAccountApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserAccountDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserAccountDataRequest request) {
         return userAccountApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserAccountResponse> view(@Validated(ViewOperator.class) UserAccountDataRequest request) {
-         return userAccountApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserAccountResponse> view(@Validated(ViewOperator.class) UserAccountDataRequest request) {
+        return userAccountApi.view(request);
+    }
 
-  }
+}

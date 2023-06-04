@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userLoginLog")
@@ -44,32 +45,32 @@ public class UserLoginLogAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserLoginLogResponse> create(@Validated(AddOperator.class) UserLoginLogDataRequest request) {
         return userLoginLogApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserLoginLogResponse> update(@Validated(UpdateOperator.class) UserLoginLogDataRequest
-         request) {
-         return userLoginLogApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserLoginLogResponse> update(@Validated(UpdateOperator.class) UserLoginLogDataRequest
+                                                               request) {
+        return userLoginLogApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserLoginLogDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserLoginLogDataRequest request) {
         return userLoginLogApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserLoginLogResponse> view(@Validated(ViewOperator.class) UserLoginLogDataRequest request) {
-         return userLoginLogApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserLoginLogResponse> view(@Validated(ViewOperator.class) UserLoginLogDataRequest request) {
+        return userLoginLogApi.view(request);
+    }
 
-  }
+}

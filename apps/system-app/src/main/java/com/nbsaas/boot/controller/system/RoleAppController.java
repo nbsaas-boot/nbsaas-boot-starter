@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/role")
@@ -44,32 +45,32 @@ public class RoleAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<RoleResponse> create(@Validated(AddOperator.class) RoleDataRequest request) {
         return roleApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<RoleResponse> update(@Validated(UpdateOperator.class) RoleDataRequest
-         request) {
-         return roleApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RoleResponse> update(@Validated(UpdateOperator.class) RoleDataRequest
+                                                       request) {
+        return roleApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleDataRequest request) {
         return roleApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<RoleResponse> view(@Validated(ViewOperator.class) RoleDataRequest request) {
-         return roleApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<RoleResponse> view(@Validated(ViewOperator.class) RoleDataRequest request) {
+        return roleApi.view(request);
+    }
 
-  }
+}

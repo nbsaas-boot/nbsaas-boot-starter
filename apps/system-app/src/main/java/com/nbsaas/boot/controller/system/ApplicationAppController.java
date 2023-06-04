@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/application")
@@ -44,32 +45,32 @@ public class ApplicationAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<ApplicationResponse> create(@Validated(AddOperator.class) ApplicationDataRequest request) {
         return applicationApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<ApplicationResponse> update(@Validated(UpdateOperator.class) ApplicationDataRequest
-         request) {
-         return applicationApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ApplicationResponse> update(@Validated(UpdateOperator.class) ApplicationDataRequest
+                                                              request) {
+        return applicationApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) ApplicationDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) ApplicationDataRequest request) {
         return applicationApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<ApplicationResponse> view(@Validated(ViewOperator.class) ApplicationDataRequest request) {
-         return applicationApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<ApplicationResponse> view(@Validated(ViewOperator.class) ApplicationDataRequest request) {
+        return applicationApi.view(request);
+    }
 
-  }
+}

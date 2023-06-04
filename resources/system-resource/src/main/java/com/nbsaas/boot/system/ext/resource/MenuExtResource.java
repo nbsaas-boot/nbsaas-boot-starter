@@ -110,7 +110,7 @@ public class MenuExtResource implements MenuExtApi {
             List<MenuExtSimple> ls = menuList.stream().map(item -> {
                 MenuExtSimple simple = new MenuExtSimple();
                 BeanUtils.copyProperties(item, simple);
-                if (simple.getSortNum()==null){
+                if (simple.getSortNum() == null) {
                     simple.setSortNum(0);
                 }
                 return simple;

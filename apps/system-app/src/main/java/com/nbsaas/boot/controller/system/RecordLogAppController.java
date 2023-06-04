@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/recordLog")
@@ -44,32 +45,32 @@ public class RecordLogAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<RecordLogResponse> create(@Validated(AddOperator.class) RecordLogDataRequest request) {
         return recordLogApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest
-         request) {
-         return recordLogApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest
+                                                            request) {
+        return recordLogApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) RecordLogDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) RecordLogDataRequest request) {
         return recordLogApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest request) {
-         return recordLogApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.view(request);
+    }
 
-  }
+}

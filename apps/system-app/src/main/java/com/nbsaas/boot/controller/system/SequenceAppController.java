@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/sequence")
@@ -44,32 +45,32 @@ public class SequenceAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<SequenceResponse> create(@Validated(AddOperator.class) SequenceDataRequest request) {
         return sequenceApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<SequenceResponse> update(@Validated(UpdateOperator.class) SequenceDataRequest
-         request) {
-         return sequenceApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<SequenceResponse> update(@Validated(UpdateOperator.class) SequenceDataRequest
+                                                           request) {
+        return sequenceApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) SequenceDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) SequenceDataRequest request) {
         return sequenceApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<SequenceResponse> view(@Validated(ViewOperator.class) SequenceDataRequest request) {
-         return sequenceApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<SequenceResponse> view(@Validated(ViewOperator.class) SequenceDataRequest request) {
+        return sequenceApi.view(request);
+    }
 
-  }
+}

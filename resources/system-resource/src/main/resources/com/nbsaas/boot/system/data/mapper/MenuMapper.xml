@@ -4,9 +4,10 @@
 
     <select id="findByUser" resultType="com.nbsaas.boot.system.api.domain.simple.MenuSimple">
 
-        SELECT distinct menu.*,menu.parent_id as parent FROM sys_menu menu
-                               INNER JOIN sys_role_menu role_menu ON menu.id=role_menu.menu_id
-                               INNER JOIN sys_role r ON r.id=role_menu.role_id
-        WHERE r.id IN (SELECT user_role.role_id FROM user_role WHERE user_role.user_info_id=${userId} )
+        SELECT distinct menu.*, menu.parent_id as parent
+        FROM sys_menu menu
+                 INNER JOIN sys_role_menu role_menu ON menu.id = role_menu.menu_id
+                 INNER JOIN sys_role r ON r.id = role_menu.role_id
+        WHERE r.id IN (SELECT user_role.role_id FROM user_role WHERE user_role.user_info_id = ${userId})
     </select>
 </mapper>

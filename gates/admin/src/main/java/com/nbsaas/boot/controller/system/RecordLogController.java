@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/recordLog")
@@ -34,7 +35,7 @@ public class RecordLogController {
 
 
     @RequestMapping("/search")
-    public PageResponse <RecordLogSimple> search(RecordLogSearchRequest request) {
+    public PageResponse<RecordLogSimple> search(RecordLogSearchRequest request) {
         return recordLogApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class RecordLogController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <RecordLogResponse> create(@Validated(AddOperator.class) RecordLogDataRequest request) {
+    public ResponseObject<RecordLogResponse> create(@Validated(AddOperator.class) RecordLogDataRequest request) {
         return recordLogApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest request) {
-       return recordLogApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) RecordLogDataRequest request) {
@@ -67,7 +68,7 @@ public class RecordLogController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest  request) {
+    public ResponseObject<RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest request) {
         return recordLogApi.view(request);
     }
 }

@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/roleMenu")
@@ -34,7 +35,7 @@ public class RoleMenuController {
 
 
     @RequestMapping("/search")
-    public PageResponse <RoleMenuSimple> search(RoleMenuSearchRequest request) {
+    public PageResponse<RoleMenuSimple> search(RoleMenuSearchRequest request) {
         return roleMenuApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class RoleMenuController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <RoleMenuResponse> create(@Validated(AddOperator.class) RoleMenuDataRequest request) {
+    public ResponseObject<RoleMenuResponse> create(@Validated(AddOperator.class) RoleMenuDataRequest request) {
         return roleMenuApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<RoleMenuResponse> update(@Validated(UpdateOperator.class) RoleMenuDataRequest request) {
-       return roleMenuApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RoleMenuResponse> update(@Validated(UpdateOperator.class) RoleMenuDataRequest request) {
+        return roleMenuApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleMenuDataRequest request) {
@@ -67,7 +68,7 @@ public class RoleMenuController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <RoleMenuResponse> view(@Validated(ViewOperator.class) RoleMenuDataRequest  request) {
+    public ResponseObject<RoleMenuResponse> view(@Validated(ViewOperator.class) RoleMenuDataRequest request) {
         return roleMenuApi.view(request);
     }
 }

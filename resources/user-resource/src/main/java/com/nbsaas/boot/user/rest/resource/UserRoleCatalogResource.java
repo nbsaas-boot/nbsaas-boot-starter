@@ -1,28 +1,21 @@
 package com.nbsaas.boot.user.rest.resource;
 
+import com.nbsaas.boot.jpa.data.core.BaseResource;
 import com.nbsaas.boot.user.api.apis.UserRoleCatalogApi;
-import com.nbsaas.boot.user.data.entity.UserRoleCatalog;
 import com.nbsaas.boot.user.api.domain.request.UserRoleCatalogDataRequest;
 import com.nbsaas.boot.user.api.domain.response.UserRoleCatalogResponse;
 import com.nbsaas.boot.user.api.domain.simple.UserRoleCatalogSimple;
-import com.nbsaas.boot.user.rest.convert.UserRoleCatalogSimpleConvert;
+import com.nbsaas.boot.user.data.entity.UserRoleCatalog;
+import com.nbsaas.boot.user.data.repository.UserRoleCatalogRepository;
 import com.nbsaas.boot.user.rest.convert.UserRoleCatalogEntityConvert;
 import com.nbsaas.boot.user.rest.convert.UserRoleCatalogResponseConvert;
-import com.nbsaas.boot.user.data.repository.UserRoleCatalogRepository;
-
-import java.io.Serializable;
-
-import com.nbsaas.boot.jpa.data.core.BaseResource;
+import com.nbsaas.boot.user.rest.convert.UserRoleCatalogSimpleConvert;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-
-import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
-
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
+import java.io.Serializable;
 import java.util.function.Function;
 
 /**

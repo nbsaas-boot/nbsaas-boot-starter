@@ -5,12 +5,9 @@ import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.system.ext.domain.request.UpdateRoleMenuRequest;
 import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
 
-import java.util.List;
-
 public interface MenuExtApi {
 
     ListResponse<MenuExtSimple> tree(Long userId);
-
 
 
     /**
@@ -39,6 +36,7 @@ public interface MenuExtApi {
 
     /**
      * 获取某个用户的权限
+     *
      * @param userId
      * @return
      */

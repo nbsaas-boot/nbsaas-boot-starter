@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/config")
@@ -34,7 +35,7 @@ public class ConfigController {
 
 
     @RequestMapping("/search")
-    public PageResponse <ConfigSimple> search(ConfigSearchRequest request) {
+    public PageResponse<ConfigSimple> search(ConfigSearchRequest request) {
         return configApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class ConfigController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <ConfigResponse> create(@Validated(AddOperator.class) ConfigDataRequest request) {
+    public ResponseObject<ConfigResponse> create(@Validated(AddOperator.class) ConfigDataRequest request) {
         return configApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<ConfigResponse> update(@Validated(UpdateOperator.class) ConfigDataRequest request) {
-       return configApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ConfigResponse> update(@Validated(UpdateOperator.class) ConfigDataRequest request) {
+        return configApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) ConfigDataRequest request) {
@@ -67,7 +68,7 @@ public class ConfigController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <ConfigResponse> view(@Validated(ViewOperator.class) ConfigDataRequest  request) {
+    public ResponseObject<ConfigResponse> view(@Validated(ViewOperator.class) ConfigDataRequest request) {
         return configApi.view(request);
     }
 }

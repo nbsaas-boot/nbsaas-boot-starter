@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/userInfo")
@@ -34,7 +35,7 @@ public class UserInfoController {
 
 
     @RequestMapping("/search")
-    public PageResponse <UserInfoSimple> search(UserInfoSearchRequest request) {
+    public PageResponse<UserInfoSimple> search(UserInfoSearchRequest request) {
         return userInfoApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class UserInfoController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <UserInfoResponse> create(@Validated(AddOperator.class) UserInfoDataRequest request) {
+    public ResponseObject<UserInfoResponse> create(@Validated(AddOperator.class) UserInfoDataRequest request) {
         return userInfoApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest request) {
-       return userInfoApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest request) {
+        return userInfoApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserInfoDataRequest request) {
@@ -67,7 +68,7 @@ public class UserInfoController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <UserInfoResponse> view(@Validated(ViewOperator.class) UserInfoDataRequest  request) {
+    public ResponseObject<UserInfoResponse> view(@Validated(ViewOperator.class) UserInfoDataRequest request) {
         return userInfoApi.view(request);
     }
 }

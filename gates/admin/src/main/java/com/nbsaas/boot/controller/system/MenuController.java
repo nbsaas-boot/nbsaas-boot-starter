@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/menu")
@@ -34,7 +35,7 @@ public class MenuController {
 
 
     @RequestMapping("/search")
-    public PageResponse <MenuSimple> search(MenuSearchRequest request) {
+    public PageResponse<MenuSimple> search(MenuSearchRequest request) {
         return menuApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class MenuController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <MenuResponse> create(@Validated(AddOperator.class) MenuDataRequest request) {
+    public ResponseObject<MenuResponse> create(@Validated(AddOperator.class) MenuDataRequest request) {
         return menuApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<MenuResponse> update(@Validated(UpdateOperator.class) MenuDataRequest request) {
-       return menuApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<MenuResponse> update(@Validated(UpdateOperator.class) MenuDataRequest request) {
+        return menuApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) MenuDataRequest request) {
@@ -67,7 +68,7 @@ public class MenuController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <MenuResponse> view(@Validated(ViewOperator.class) MenuDataRequest  request) {
+    public ResponseObject<MenuResponse> view(@Validated(ViewOperator.class) MenuDataRequest request) {
         return menuApi.view(request);
     }
 }

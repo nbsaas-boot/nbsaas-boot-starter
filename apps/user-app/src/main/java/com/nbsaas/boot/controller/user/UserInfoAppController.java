@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userInfo")
@@ -44,32 +45,32 @@ public class UserInfoAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserInfoResponse> create(@Validated(AddOperator.class) UserInfoDataRequest request) {
         return userInfoApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest
-         request) {
-         return userInfoApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest
+                                                           request) {
+        return userInfoApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserInfoDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserInfoDataRequest request) {
         return userInfoApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserInfoResponse> view(@Validated(ViewOperator.class) UserInfoDataRequest request) {
-         return userInfoApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserInfoResponse> view(@Validated(ViewOperator.class) UserInfoDataRequest request) {
+        return userInfoApi.view(request);
+    }
 
-  }
+}

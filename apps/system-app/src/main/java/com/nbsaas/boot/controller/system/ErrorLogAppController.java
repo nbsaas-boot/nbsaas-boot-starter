@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/errorLog")
@@ -44,32 +45,32 @@ public class ErrorLogAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<ErrorLogResponse> create(@Validated(AddOperator.class) ErrorLogDataRequest request) {
         return errorLogApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<ErrorLogResponse> update(@Validated(UpdateOperator.class) ErrorLogDataRequest
-         request) {
-         return errorLogApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ErrorLogResponse> update(@Validated(UpdateOperator.class) ErrorLogDataRequest
+                                                           request) {
+        return errorLogApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) ErrorLogDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) ErrorLogDataRequest request) {
         return errorLogApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<ErrorLogResponse> view(@Validated(ViewOperator.class) ErrorLogDataRequest request) {
-         return errorLogApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<ErrorLogResponse> view(@Validated(ViewOperator.class) ErrorLogDataRequest request) {
+        return errorLogApi.view(request);
+    }
 
-  }
+}
