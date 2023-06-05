@@ -16,6 +16,7 @@
         <module>all-resource</module>
         <module>system-resource</module>
         <module>ad-resource</module>
+        <module>area-resource</module>
     </modules>
 
     <properties>

@@ -16,6 +16,7 @@
         <module>user-api</module>
         <module>system-api</module>
         <module>ad-api</module>
+        <module>area-api</module>
     </modules>
 
     <properties>
