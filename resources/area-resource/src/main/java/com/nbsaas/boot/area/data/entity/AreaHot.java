@@ -32,7 +32,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "area_hot")
+@Table(name = "sys_common_area_hot")
 public class AreaHot extends SortEntity {
 
 

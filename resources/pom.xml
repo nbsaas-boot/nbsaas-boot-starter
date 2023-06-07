@@ -17,6 +17,7 @@
         <module>system-resource</module>
         <module>ad-resource</module>
         <module>area-resource</module>
+        <module>trade-resource</module>
     </modules>
 
     <properties>
