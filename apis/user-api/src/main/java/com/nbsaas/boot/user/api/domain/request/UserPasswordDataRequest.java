@@ -1,61 +1,61 @@
 package com.nbsaas.boot.user.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import com.nbsaas.boot.user.api.domain.enums.SecurityType;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+            import com.nbsaas.boot.user.api.domain.enums.SecurityType;
+/**
+* 请求对象
+*/
+@Data
+public class UserPasswordDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class UserPasswordDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Long user;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 
+        **/
+            private String password;
 
-    /**
-     *
-     **/
-    private Integer checkSize;
+        /**
+        * 
+        **/
+            private String salt;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 
+        **/
+            private SecurityType securityType;
 
-    /**
-     *
-     **/
-    private String salt;
+        /**
+        * 
+        **/
+            private Integer checkSize;
 
-    /**
-     *
-     **/
-    private SecurityType securityType;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     *
-     **/
-    private String password;
+        /**
+        * 
+        **/
+            private Long user;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

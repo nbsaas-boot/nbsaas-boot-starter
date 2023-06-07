@@ -1,45 +1,70 @@
 package com.nbsaas.boot.user.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserOauthTokenResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserOauthTokenResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private Long expires_in;
 
-    private Long user;
+        /**
+        * 
+        **/
+            private String access_token;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 
+        **/
+            private String refresh_token;
 
-    private String token_type;
+        /**
+        * 
+        **/
+            private String uid;
 
-    private Integer loginSize;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private Long id;
+        /**
+        * 
+        **/
+            private String token_type;
 
-    private String uid;
+        /**
+        * 
+        **/
+            private Long expires_in;
 
-    private String refresh_token;
+        /**
+        * 
+        **/
+            private Long user;
 
-    private String access_token;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 
+        **/
+            private Integer loginSize;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

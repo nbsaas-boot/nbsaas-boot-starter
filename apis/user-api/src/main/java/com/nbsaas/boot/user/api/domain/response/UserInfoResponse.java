@@ -1,56 +1,88 @@
 package com.nbsaas.boot.user.api.domain.response;
 
-import com.nbsaas.boot.rest.enums.DataScope;
-import com.nbsaas.boot.rest.enums.State;
-import com.nbsaas.boot.rest.enums.StoreState;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
+            import com.nbsaas.boot.rest.enums.DataScope;
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.rest.enums.State;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserInfoResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserInfoResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private State state;
+        /**
+        * 
+        **/
+            private String note;
 
-    private String structureName;
+        /**
+        * 
+        **/
+            private Integer catalog;
 
-    private String note;
+        /**
+        * 
+        **/
+            private String avatar;
 
-    private String phone;
+        /**
+        * 
+        **/
+            private DataScope dataScope;
 
-    private Integer catalog;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    private DataScope dataScope;
+        /**
+        * 
+        **/
+            private Long structure;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 
+        **/
+            private Integer loginSize;
 
-    private String avatar;
+        /**
+        * 
+        **/
+            private String phone;
 
-    private Long structure;
+        /**
+        * 
+        **/
+            private String name;
 
-    private Integer loginSize;
+        /**
+        * 
+        **/
+            private StoreState storeState;
 
-    private String name;
+        /**
+        * 
+        **/
+            private State state;
 
-    private Long id;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private StoreState storeState;
-
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

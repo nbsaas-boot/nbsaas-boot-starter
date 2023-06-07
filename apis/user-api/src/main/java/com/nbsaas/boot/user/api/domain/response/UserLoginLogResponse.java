@@ -1,51 +1,77 @@
 package com.nbsaas.boot.user.api.domain.response;
 
-import com.nbsaas.boot.rest.enums.StoreState;
-import com.nbsaas.boot.user.api.domain.enums.LoginState;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.user.api.domain.enums.LoginState;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserLoginLogResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserLoginLogResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private Long user;
 
-    private LoginState state;
+        /**
+        * 
+        **/
+            private String note;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 
+        **/
+            private String password;
 
-    private Long id;
+        /**
+        * 
+        **/
+            private String ip;
 
-    private StoreState storeState;
+        /**
+        * 
+        **/
+            private String client;
 
-    private String client;
+        /**
+        * 
+        **/
+            private StoreState storeState;
 
-    private String note;
+        /**
+        * 
+        **/
+            private LoginState state;
 
-    private String account;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private String ip;
+        /**
+        * 
+        **/
+            private Long user;
 
-    private String userName;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    private String password;
+        /**
+        * 
+        **/
+            private String account;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
-
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

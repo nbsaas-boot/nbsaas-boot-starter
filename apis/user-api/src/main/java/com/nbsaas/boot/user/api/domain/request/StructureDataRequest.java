@@ -1,80 +1,75 @@
 package com.nbsaas.boot.user.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class StructureDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class StructureDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private Long parent;
+        /**
+        * 
+        **/
+            private Long parent;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     *
-     **/
-    private String parentName;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

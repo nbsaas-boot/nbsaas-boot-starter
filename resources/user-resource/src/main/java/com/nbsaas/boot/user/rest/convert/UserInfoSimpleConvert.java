@@ -1,42 +1,41 @@
 package com.nbsaas.boot.user.rest.convert;
 
-import com.nbsaas.boot.rest.api.Converter;
-import com.nbsaas.boot.user.api.domain.simple.UserInfoSimple;
 import com.nbsaas.boot.user.data.entity.UserInfo;
+import com.nbsaas.boot.user.api.domain.simple.UserInfoSimple;
 
+import com.nbsaas.boot.rest.api.Converter;
 /**
- * 列表对象转换器
- */
+* 列表对象转换器
+*/
 
 public class UserInfoSimpleConvert implements Converter
-        <UserInfoSimple, UserInfo> {
+<UserInfoSimple, UserInfo> {
 
 
-    @Override
-    public UserInfoSimple convert(UserInfo source) {
-        UserInfoSimple result = new UserInfoSimple();
-
-        result.setLastDate(source.getLastDate());
-        result.setState(source.getState());
-        if (source.getStructure() != null) {
-            result.setStructureName(source.getStructure().getName());
-        }
-        result.setNote(source.getNote());
-        result.setPhone(source.getPhone());
-        result.setCatalog(source.getCatalog());
-        result.setDataScope(source.getDataScope());
-        result.setAddDate(source.getAddDate());
-        result.setAvatar(source.getAvatar());
-        if (source.getStructure() != null) {
-            result.setStructure(source.getStructure().getId());
-        }
-        result.setLoginSize(source.getLoginSize());
-        result.setName(source.getName());
-        result.setId(source.getId());
-        result.setStoreState(source.getStoreState());
 
 
-        return result;
-    }
+@Override
+public UserInfoSimple convert(UserInfo source) {
+UserInfoSimple result = new UserInfoSimple();
+
+            result.setNote(source.getNote());
+            result.setCatalog(source.getCatalog());
+            result.setAvatar(source.getAvatar());
+            result.setDataScope(source.getDataScope());
+            result.setAddDate(source.getAddDate());
+            if(source.getStructure()!=null){
+                result.setStructure(source.getStructure().getId());
+            }
+            result.setLoginSize(source.getLoginSize());
+            result.setPhone(source.getPhone());
+            result.setName(source.getName());
+            result.setStoreState(source.getStoreState());
+            result.setState(source.getState());
+            result.setId(source.getId());
+            result.setLastDate(source.getLastDate());
+
+
+return result;
+}
 
 }
