@@ -1,66 +1,61 @@
 package com.nbsaas.boot.system.api.domain.request;
 
-import com.nbsaas.boot.rest.enums.StoreState;
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+            import com.nbsaas.boot.rest.enums.StoreState;
+/**
+* 请求对象
+*/
+@Data
+public class DictItemDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class DictItemDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Long dict;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 键值
+        **/
+            private String dataValue;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 
+        **/
+            private Long dict;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+        /**
+        * 排序字段
+        **/
+            private Integer sortNum;
 
-    /**
-     *
-     **/
-    private String title;
+        /**
+        * 
+        **/
+            private StoreState storeState;
 
-    /**
-     * 排序字段
-     **/
-    private Integer sortNum;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 键值
-     **/
-    private String dataValue;
+        /**
+        * 编码
+        **/
+            private String dataCode;
 
-    /**
-     * 编码
-     **/
-    private String dataCode;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

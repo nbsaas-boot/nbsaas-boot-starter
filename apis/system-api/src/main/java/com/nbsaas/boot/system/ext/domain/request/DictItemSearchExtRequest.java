@@ -10,4 +10,7 @@ public class DictItemSearchExtRequest extends DictItemSearchRequest {
 
     @Search(name = "dict.id", operator = Operator.eq)
     private Long dict;
+
+    @Search(name = "dict.dictKey", operator = Operator.eq)
+    private String dictKey;
 }

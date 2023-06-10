@@ -1,110 +1,110 @@
 package com.nbsaas.boot.system.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class MenuDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class MenuDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private String icon;
+        /**
+        * 
+        **/
+            private Long parent;
 
-    /**
-     *
-     **/
-    private Long nums;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     *
-     **/
-    private Long parent;
+        /**
+        * 菜单类型
+        **/
+            private Integer catalog;
 
-    /**
-     *
-     **/
-    private String path;
+        /**
+        * 
+        **/
+            private String icon;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 
+        **/
+            private String permission;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 
+        **/
+            private String path;
 
-    /**
-     *
-     **/
-    private String permission;
+        /**
+        * 
+        **/
+            private String router;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     *
-     **/
-    private String router;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 是否租户使用
+        **/
+            private Integer menuType;
 
-    /**
-     * 菜单类型
-     **/
-    private Integer catalog;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 是否租户使用
-     **/
-    private Integer menuType;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 
+        **/
+            private Long nums;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

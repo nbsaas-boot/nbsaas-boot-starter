@@ -25,11 +25,18 @@ public class DictItemSearchRequest extends PageRequest implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
+    @Search(name = "dict.id", operator = Operator.eq)
+    private Long dict;
+
+    @Search(name = "dict.dictKey", operator = Operator.eq)
+    private String dictKey;
+
+
     /**
-     * 主键id
+     * 键值
      **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+    @Search(name = "dataValue", operator = Operator.like)
+    private String dataValue;
 
     /**
      * 排序字段
@@ -38,10 +45,10 @@ public class DictItemSearchRequest extends PageRequest implements Serializable {
     private Integer sortNum;
 
     /**
-     * 键值
+     * 主键id
      **/
-    @Search(name = "dataValue", operator = Operator.like)
-    private String dataValue;
+    @Search(name = "id", operator = Operator.eq)
+    private Long id;
 
     /**
      * 编码

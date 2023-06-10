@@ -1,65 +1,115 @@
 package com.nbsaas.boot.system.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ApplicationMenuResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class ApplicationMenuResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private Long app;
+        /**
+        * 应用
+        **/
+            private Long app;
 
-    private String code;
+        /**
+        * 创建人id
+        **/
+            private Long creator;
 
-    private Integer lft;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    private Integer depth;
+        /**
+        * 分类
+        **/
+            private Integer catalog;
 
-    private String router;
+        /**
+        * 
+        **/
+            private Long num;
 
-    private Integer catalog;
+        /**
+        * 图标
+        **/
+            private String icon;
 
-    private Long num;
+        /**
+        * 权限
+        **/
+            private String permission;
 
-    private String icon;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 路径
+        **/
+            private String path;
 
-    private Integer sortNum;
+        /**
+        * 路由
+        **/
+            private String router;
 
-    private Long id;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    private Integer menuType;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    private Integer rgt;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    private Long creator;
+        /**
+        * 菜单类型
+        **/
+            private Integer menuType;
 
-    private String name;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    private String permission;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private String path;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    private String appName;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
 
-    private String ids;
-
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }
