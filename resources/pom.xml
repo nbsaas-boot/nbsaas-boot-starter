@@ -18,6 +18,7 @@
         <module>ad-resource</module>
         <module>area-resource</module>
         <module>trade-resource</module>
+        <module>config-resource</module>
     </modules>
 
     <properties>

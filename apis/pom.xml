@@ -18,6 +18,7 @@
         <module>ad-api</module>
         <module>area-api</module>
         <module>trade-api</module>
+        <module>config-api</module>
     </modules>
 
     <properties>
