@@ -7,6 +7,7 @@ import lombok.Data;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -65,5 +66,13 @@ public class Menu extends CatalogEntity {
 
     @Comment("是否租户使用")
     private Integer menuType;
+
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 
 }

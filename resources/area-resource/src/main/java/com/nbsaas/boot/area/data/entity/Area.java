@@ -14,12 +14,14 @@ package com.nbsaas.boot.area.data.entity;
  *
  */
 
+import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @org.hibernate.annotations.Table(appliesTo = "sys_common_area", comment = "地区")
 @Data
@@ -33,4 +35,19 @@ public class Area extends CatalogEntity {
 
     @Comment("纬度")
     private Double lat;
+
+    @FieldConvert
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Area parent;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
+    private List<Area> children;
+
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 }

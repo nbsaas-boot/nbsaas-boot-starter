@@ -44,7 +44,7 @@ public class ConfigExtResource implements ConfigExtApi {
         return new Gson().fromJson(jsonData, classKey);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     @Override
     public <T> ResponseObject<T> info(Class<T> classKey) {
         ResponseObject<T> result = new ResponseObject<T>();

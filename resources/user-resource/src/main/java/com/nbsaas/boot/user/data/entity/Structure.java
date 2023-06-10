@@ -8,6 +8,7 @@ import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -27,4 +28,11 @@ public class Structure extends CatalogEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
     private List<Structure> children;
 
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 }
