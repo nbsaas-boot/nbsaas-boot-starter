@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @CatalogClass
@@ -55,4 +56,11 @@ public class ApplicationMenu extends CatalogEntity {
     @Comment("菜单类型")
     private Integer menuType;
 
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 }
