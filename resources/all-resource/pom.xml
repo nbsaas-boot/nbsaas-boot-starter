@@ -49,5 +49,10 @@
             <artifactId>trade-resource</artifactId>
             <version>1.0.1-2023</version>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>config-resource</artifactId>
+            <version>1.0.1-2023</version>
+        </dependency>
     </dependencies>
 </project>
