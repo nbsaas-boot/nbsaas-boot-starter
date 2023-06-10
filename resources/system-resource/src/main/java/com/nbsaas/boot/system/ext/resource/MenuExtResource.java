@@ -135,6 +135,13 @@ public class MenuExtResource implements MenuExtApi {
 
         }
         tree.sort(Comparator.comparingLong(MenuExtSimple::getSortNum));
+
+        for (MenuExtSimple menuExtSimple : tree) {
+            if (menuExtSimple.getChildren()!=null){
+                menuExtSimple.getChildren().sort(Comparator.comparingLong(MenuSimple::getSortNum));
+            }
+        }
+
         return tree;
     }
 }
