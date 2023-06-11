@@ -6,6 +6,7 @@ import com.nbsaas.boot.user.api.domain.request.UserOauthTokenDataRequest;
 import org.springframework.beans.BeanUtils;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.boot.utils.BeanDataUtils;
+            import com.nbsaas.boot.user.data.entity.UserOauthConfig;
             import com.nbsaas.boot.user.data.entity.UserInfo;
 
 /**
@@ -17,6 +18,11 @@ public class UserOauthTokenEntityConvert  implements Converter<UserOauthToken, U
 public UserOauthToken convert(UserOauthTokenDataRequest source) {
 UserOauthToken result = new UserOauthToken();
 BeanDataUtils.copyProperties(source, result);
+            if(source.getUserOauthConfig()!=null){
+            UserOauthConfig userOauthConfig =new UserOauthConfig();
+            userOauthConfig.setId(source.getUserOauthConfig());
+            result.setUserOauthConfig(userOauthConfig);
+            }
             if(source.getUser()!=null){
             UserInfo user =new UserInfo();
             user.setId(source.getUser());

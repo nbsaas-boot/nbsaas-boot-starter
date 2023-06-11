@@ -5,7 +5,10 @@ import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 用户oauth登陆信息
@@ -21,37 +24,42 @@ public class UserOauthToken extends AbstractEntity {
     /**
      * 访问token
      */
-    private String access_token;
+    private String accessToken;
     /**
      * 刷新token
      */
-    private String refresh_token;
+    private String refreshToken;
 
     /**
      * token类型
      */
-    private String token_type;
+    private String tokenType;
 
     /**
      * 用户id
      */
-    private String uid;
+    private String openId;
+
+
+    private String unionId;
 
 
     /**
      * 过期时间
      */
-    private Long expires_in;
+    private Long expiresTime;
 
     /**
      * 和用户绑定
      */
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
     private UserInfo user;
 
     private Integer loginSize;
 
+    @FieldConvert
+    @ManyToOne(fetch = FetchType.LAZY)
+    private UserOauthConfig userOauthConfig;
 
 }

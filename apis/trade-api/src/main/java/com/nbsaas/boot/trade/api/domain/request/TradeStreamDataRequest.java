@@ -36,6 +36,11 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
+            //private String accountNameName;
+
+        /**
+        * 
+        **/
             private Integer changeType;
 
         /**
@@ -61,12 +66,12 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
-            private Integer serialNo;
+            private Long info;
 
         /**
         * 
         **/
-            private Long info;
+            private Integer serialNo;
 
         /**
         * 最新修改时间

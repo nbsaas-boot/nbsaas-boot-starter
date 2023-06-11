@@ -17,6 +17,9 @@ public class TradeAccountResponseConvert  implements Converter
 public TradeAccountResponse convert(TradeAccount source) {
 TradeAccountResponse  result = new  TradeAccountResponse();
 BeanDataUtils.copyProperties(source, result);
+            if(source.getAccountType()!=null){
+                result.setAccountTypeName(String.valueOf(source.getAccountType()));
+            }
 return result;
 }
 

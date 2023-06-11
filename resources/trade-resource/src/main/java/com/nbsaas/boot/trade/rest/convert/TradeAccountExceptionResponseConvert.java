@@ -18,6 +18,9 @@ public TradeAccountExceptionResponse convert(TradeAccountException source) {
 TradeAccountExceptionResponse  result = new  TradeAccountExceptionResponse();
 BeanDataUtils.copyProperties(source, result);
             if(source.getAccount()!=null){
+                result.setAccountName(source.getAccount().getName());
+            }
+            if(source.getAccount()!=null){
                 result.setAccount(source.getAccount().getId());
             }
 return result;

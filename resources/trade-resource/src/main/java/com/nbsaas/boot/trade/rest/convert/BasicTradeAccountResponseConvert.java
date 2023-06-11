@@ -18,6 +18,9 @@ public BasicTradeAccountResponse convert(BasicTradeAccount source) {
 BasicTradeAccountResponse  result = new  BasicTradeAccountResponse();
 BeanDataUtils.copyProperties(source, result);
             if(source.getAccount()!=null){
+                result.setAccountName(source.getAccount().getName());
+            }
+            if(source.getAccount()!=null){
                 result.setAccount(source.getAccount().getId());
             }
 return result;

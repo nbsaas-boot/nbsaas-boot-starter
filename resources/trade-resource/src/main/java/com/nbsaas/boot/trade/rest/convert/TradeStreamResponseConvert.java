@@ -18,6 +18,9 @@ public TradeStreamResponse convert(TradeStream source) {
 TradeStreamResponse  result = new  TradeStreamResponse();
 BeanDataUtils.copyProperties(source, result);
             if(source.getAccount()!=null){
+                result.setAccountName(source.getAccount().getName());
+            }
+            if(source.getAccount()!=null){
                 result.setAccount(source.getAccount().getId());
             }
             if(source.getInfo()!=null){

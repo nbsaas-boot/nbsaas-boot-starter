@@ -17,6 +17,9 @@ public class UserOauthTokenResponseConvert  implements Converter
 public UserOauthTokenResponse convert(UserOauthToken source) {
 UserOauthTokenResponse  result = new  UserOauthTokenResponse();
 BeanDataUtils.copyProperties(source, result);
+            if(source.getUserOauthConfig()!=null){
+                result.setUserOauthConfig(source.getUserOauthConfig().getId());
+            }
             if(source.getUser()!=null){
                 result.setUser(source.getUser().getId());
             }

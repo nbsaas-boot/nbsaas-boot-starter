@@ -3,28 +3,31 @@ package com.nbsaas.boot.user.ext.resource;
 import com.nbsaas.boot.rest.filter.Filter;
 import com.nbsaas.boot.rest.request.LongId;
 import com.nbsaas.boot.rest.response.ResponseObject;
-import com.nbsaas.boot.user.api.apis.UserAccountApi;
-import com.nbsaas.boot.user.api.apis.UserInfoApi;
-import com.nbsaas.boot.user.api.apis.UserPasswordApi;
+import com.nbsaas.boot.user.api.apis.*;
 import com.nbsaas.boot.user.api.domain.enums.AccountType;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
 import com.nbsaas.boot.user.api.domain.field.UserAccountField;
+import com.nbsaas.boot.user.api.domain.field.UserOauthConfigField;
 import com.nbsaas.boot.user.api.domain.request.UserAccountDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserInfoDataRequest;
+import com.nbsaas.boot.user.api.domain.request.UserOauthTokenDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserPasswordDataRequest;
-import com.nbsaas.boot.user.api.domain.response.UserAccountResponse;
-import com.nbsaas.boot.user.api.domain.response.UserInfoResponse;
-import com.nbsaas.boot.user.api.domain.response.UserPasswordResponse;
+import com.nbsaas.boot.user.api.domain.response.*;
 import com.nbsaas.boot.user.data.entity.UserInfo;
 import com.nbsaas.boot.user.ext.apis.PasswordApi;
 import com.nbsaas.boot.user.ext.apis.UserExtApi;
+import com.nbsaas.boot.user.ext.domain.request.OauthHandler;
+import com.nbsaas.boot.user.ext.domain.request.UserLoginOatuthRequest;
 import com.nbsaas.boot.user.ext.domain.request.UserLoginRequest;
 import com.nbsaas.boot.user.ext.domain.request.UserRegisterRequest;
 import com.nbsaas.boot.user.ext.domain.response.PasswordResponse;
+import com.nbsaas.boot.user.ext.domain.response.TokenResponse;
 import com.nbsaas.boot.user.ext.domain.response.UserInfoExtResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -45,6 +48,12 @@ public class UserExtResource implements UserExtApi {
 
     @Resource
     private PasswordApi passwordApi;
+
+    @Resource
+    private UserOauthConfigApi userOauthConfigApi;
+
+    @Resource
+    private UserOauthTokenApi userOauthTokenApi;
 
 
     @Override
@@ -162,6 +171,103 @@ public class UserExtResource implements UserExtApi {
         BeanUtils.copyProperties(res.getData(), extResponse);
 
         result.setData(extResponse);
+        return result;
+    }
+
+    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Override
+    public ResponseObject<UserInfoExtResponse> loginOauth(UserLoginOatuthRequest request) {
+        ResponseObject<UserInfoExtResponse> result = new ResponseObject<>();
+        UserOauthConfigResponse config = userOauthConfigApi.oneData(Filter.eq(UserOauthConfigField.model, request.getType()));
+        if (config == null) {
+            result.setCode(501);
+            result.setMsg("没有登录配置");
+            return result;
+        }
+        OauthHandler oauthHandler = null;
+        try {
+            Class c = Class.forName(config.getClassName());
+            oauthHandler = (OauthHandler) c.newInstance();
+            oauthHandler.setKey(config.getAppKey());
+            oauthHandler.setSecret(config.getAppSecret());
+        } catch (Exception e) {
+            result.setCode(502);
+            result.setMsg("加载登录配置失败");
+            return result;
+        }
+        String openId = "";
+        TokenResponse response = oauthHandler.getToken(request.getCode());
+        if (response != null) {
+            openId = response.getOpenId();
+        }
+        if (!StringUtils.hasText(openId)) {
+            result.setCode(503);
+            result.setMsg("第三方授权失败");
+            return result;
+        }
+        UserOauthTokenResponse token = userOauthTokenApi.oneData(Filter.eq("userOauthConfig.id", config.getId()),
+                Filter.eq("openId", openId));
+        if (token == null) {
+            UserInfoDataRequest userInfoDataRequest = new UserInfoDataRequest();
+            UserInfoResponse res = userInfoApi.createData(userInfoDataRequest);
+
+            UserOauthTokenDataRequest tokenDataRequest = new UserOauthTokenDataRequest();
+            tokenDataRequest.setUser(res.getId());
+            tokenDataRequest.setUserOauthConfig(config.getId());
+            tokenDataRequest.setOpenId(openId);
+            tokenDataRequest.setAccessToken(response.getAccessToken());
+            tokenDataRequest.setRefreshToken(response.getRefreshToken());
+            tokenDataRequest.setUnionId(response.getUnionid());
+            userOauthTokenApi.createData(tokenDataRequest);
+
+            UserInfoExtResponse ext = new UserInfoExtResponse();
+            BeanUtils.copyProperties(res, ext);
+            ext.setOpenId(openId);
+            result.setData(ext);
+            return result;
+        }
+
+        UserInfoResponse user = userInfoApi.oneData(Filter.eq("id", token.getUser()));
+        UserInfoExtResponse ext = new UserInfoExtResponse();
+        BeanUtils.copyProperties(user, ext);
+        ext.setOpenId(openId);
+        result.setData(ext);
+
+        return result;
+    }
+
+    @Transactional
+    @Override
+    public ResponseObject<String> findOpenId(UserLoginOatuthRequest request) {
+        ResponseObject<String> result = new ResponseObject<>();
+        UserOauthConfigResponse config = userOauthConfigApi.oneData(Filter.eq(UserOauthConfigField.model, request.getType()));
+        if (config == null) {
+            result.setCode(501);
+            result.setMsg("没有登录配置");
+            return result;
+        }
+        OauthHandler oauthHandler = null;
+        try {
+            Class c = Class.forName(config.getClassName());
+            oauthHandler = (OauthHandler) c.newInstance();
+            oauthHandler.setKey(config.getAppKey());
+            oauthHandler.setSecret(config.getAppSecret());
+        } catch (Exception e) {
+            result.setCode(502);
+            result.setMsg("加载登录配置失败");
+            return result;
+        }
+        String openId = "";
+        TokenResponse response = oauthHandler.getToken(request.getCode());
+        if (response != null) {
+            openId = response.getOpenId();
+        }
+        if (!StringUtils.hasText(openId)) {
+            result.setCode(503);
+            result.setMsg("第三方授权失败");
+            return result;
+        }
+        result.setData(openId);
         return result;
     }
 }

@@ -21,17 +21,17 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
-                private String access_token;
+                private String unionId;
 
             /**
             * 
             **/
-                private String refresh_token;
+                private String openId;
 
             /**
             * 
             **/
-                private String uid;
+                private Long userOauthConfig;
 
             /**
             * 主键id
@@ -41,12 +41,12 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
-                private String token_type;
+                private String accessToken;
 
             /**
             * 
             **/
-                private Long expires_in;
+                private String tokenType;
 
             /**
             * 
@@ -57,6 +57,16 @@ private static final long serialVersionUID = 1L;
             * 添加时间
             **/
                 private Date addDate;
+
+            /**
+            * 
+            **/
+                private Long expiresTime;
+
+            /**
+            * 
+            **/
+                private String refreshToken;
 
             /**
             * 

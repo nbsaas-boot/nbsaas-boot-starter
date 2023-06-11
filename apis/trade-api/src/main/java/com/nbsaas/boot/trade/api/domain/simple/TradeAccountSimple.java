@@ -34,6 +34,8 @@ private static final long serialVersionUID = 1L;
             **/
                 private AccountType accountType;
 
+                private String accountTypeName;
+
             /**
             * 
             **/
@@ -65,4 +67,4 @@ private static final long serialVersionUID = 1L;
                 private Date lastDate;
 
 
-    }
+}

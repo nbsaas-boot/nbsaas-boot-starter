@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class TradeAccountEntityConvert  implements Converter<TradeAccount, TradeAccountDataRequest> {
-@Override
-public TradeAccount convert(TradeAccountDataRequest source) {
-TradeAccount result = new TradeAccount();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public TradeAccount convert(TradeAccountDataRequest source) {
+        TradeAccount result = new TradeAccount();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

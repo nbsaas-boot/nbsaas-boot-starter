@@ -8,4 +8,6 @@ import lombok.Data;
 public class UserInfoExtResponse extends UserInfoResponse {
 
     private String sessionId;
+
+    private String openId;
 }

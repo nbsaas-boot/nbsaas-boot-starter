@@ -13,16 +13,17 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class BasicTradeAccountEntityConvert  implements Converter<BasicTradeAccount, BasicTradeAccountDataRequest> {
-@Override
-public BasicTradeAccount convert(BasicTradeAccountDataRequest source) {
-BasicTradeAccount result = new BasicTradeAccount();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getAccount()!=null){
-            TradeAccount account =new TradeAccount();
-            account.setId(source.getAccount());
-            result.setAccount(account);
-            }
-return result;
-}
+
+    @Override
+    public BasicTradeAccount convert(BasicTradeAccountDataRequest source) {
+        BasicTradeAccount result = new BasicTradeAccount();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getAccount()!=null){
+                    TradeAccount account =new TradeAccount();
+                    account.setId(source.getAccount());
+                    result.setAccount(account);
+                    }
+        return result;
+    }
 }
 

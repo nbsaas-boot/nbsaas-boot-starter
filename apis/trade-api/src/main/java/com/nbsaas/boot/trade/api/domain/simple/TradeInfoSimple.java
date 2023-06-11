@@ -26,6 +26,16 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
+                private String toName;
+
+            /**
+            * 
+            **/
+                private String fromName;
+
+            /**
+            * 
+            **/
                 private Long from;
 
             /**
@@ -49,4 +59,4 @@ private static final long serialVersionUID = 1L;
                 private Date lastDate;
 
 
-    }
+}

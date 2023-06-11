@@ -18,16 +18,20 @@ public class UserOauthTokenSimpleConvert implements Converter
 public UserOauthTokenSimple convert(UserOauthToken source) {
 UserOauthTokenSimple result = new UserOauthTokenSimple();
 
-            result.setAccess_token(source.getAccess_token());
-            result.setRefresh_token(source.getRefresh_token());
-            result.setUid(source.getUid());
+            result.setUnionId(source.getUnionId());
+            result.setOpenId(source.getOpenId());
+            if(source.getUserOauthConfig()!=null){
+                result.setUserOauthConfig(source.getUserOauthConfig().getId());
+            }
             result.setId(source.getId());
-            result.setToken_type(source.getToken_type());
-            result.setExpires_in(source.getExpires_in());
+            result.setAccessToken(source.getAccessToken());
+            result.setTokenType(source.getTokenType());
             if(source.getUser()!=null){
                 result.setUser(source.getUser().getId());
             }
             result.setAddDate(source.getAddDate());
+            result.setExpiresTime(source.getExpiresTime());
+            result.setRefreshToken(source.getRefreshToken());
             result.setLoginSize(source.getLoginSize());
             result.setLastDate(source.getLastDate());
 

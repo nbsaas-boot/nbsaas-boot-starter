@@ -27,20 +27,14 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
-            @Search(name = "access_token",operator = Operator.like)
-            private String access_token;
+            @Search(name = "unionId",operator = Operator.like)
+            private String unionId;
 
             /**
             * 
             **/
-            @Search(name = "refresh_token",operator = Operator.like)
-            private String refresh_token;
-
-            /**
-            * 
-            **/
-            @Search(name = "uid",operator = Operator.like)
-            private String uid;
+            @Search(name = "openId",operator = Operator.like)
+            private String openId;
 
             /**
             * 主键id
@@ -51,14 +45,26 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
-            @Search(name = "token_type",operator = Operator.like)
-            private String token_type;
+            @Search(name = "accessToken",operator = Operator.like)
+            private String accessToken;
 
             /**
             * 
             **/
-            @Search(name = "expires_in",operator = Operator.eq)
-            private Long expires_in;
+            @Search(name = "tokenType",operator = Operator.like)
+            private String tokenType;
+
+            /**
+            * 
+            **/
+            @Search(name = "expiresTime",operator = Operator.eq)
+            private Long expiresTime;
+
+            /**
+            * 
+            **/
+            @Search(name = "refreshToken",operator = Operator.like)
+            private String refreshToken;
 
             /**
             * 

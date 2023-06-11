@@ -13,16 +13,17 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class TradeAccountExceptionEntityConvert  implements Converter<TradeAccountException, TradeAccountExceptionDataRequest> {
-@Override
-public TradeAccountException convert(TradeAccountExceptionDataRequest source) {
-TradeAccountException result = new TradeAccountException();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getAccount()!=null){
-            TradeAccount account =new TradeAccount();
-            account.setId(source.getAccount());
-            result.setAccount(account);
-            }
-return result;
-}
+
+    @Override
+    public TradeAccountException convert(TradeAccountExceptionDataRequest source) {
+        TradeAccountException result = new TradeAccountException();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getAccount()!=null){
+                    TradeAccount account =new TradeAccount();
+                    account.setId(source.getAccount());
+                    result.setAccount(account);
+                    }
+        return result;
+    }
 }
 

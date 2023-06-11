@@ -14,21 +14,22 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class TradeInfoEntityConvert  implements Converter<TradeInfo, TradeInfoDataRequest> {
-@Override
-public TradeInfo convert(TradeInfoDataRequest source) {
-TradeInfo result = new TradeInfo();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getFrom()!=null){
-            TradeAccount from =new TradeAccount();
-            from.setId(source.getFrom());
-            result.setFrom(from);
-            }
-            if(source.getTo()!=null){
-            TradeAccount to =new TradeAccount();
-            to.setId(source.getTo());
-            result.setTo(to);
-            }
-return result;
-}
+
+    @Override
+    public TradeInfo convert(TradeInfoDataRequest source) {
+        TradeInfo result = new TradeInfo();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getFrom()!=null){
+                    TradeAccount from =new TradeAccount();
+                    from.setId(source.getFrom());
+                    result.setFrom(from);
+                    }
+                    if(source.getTo()!=null){
+                    TradeAccount to =new TradeAccount();
+                    to.setId(source.getTo());
+                    result.setTo(to);
+                    }
+        return result;
+    }
 }
 

@@ -17,6 +17,12 @@ public class TradeInfoResponseConvert  implements Converter
 public TradeInfoResponse convert(TradeInfo source) {
 TradeInfoResponse  result = new  TradeInfoResponse();
 BeanDataUtils.copyProperties(source, result);
+            if(source.getTo()!=null){
+                result.setToName(source.getTo().getName());
+            }
+            if(source.getFrom()!=null){
+                result.setFromName(source.getFrom().getName());
+            }
             if(source.getFrom()!=null){
                 result.setFrom(source.getFrom().getId());
             }
