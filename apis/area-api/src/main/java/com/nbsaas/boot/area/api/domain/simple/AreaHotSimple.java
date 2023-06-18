@@ -19,34 +19,34 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 最新修改时间
+            * 区域id
             **/
-            private Date lastDate;
+                private Long area;
 
             /**
             * 区域id
             **/
-            private Long area;
+                private String areaName;
 
             /**
             * 排序号
             **/
-            private Integer sortNum;
+                private Integer sortNum;
 
             /**
             * 主键id
             **/
-            private Long id;
-
-            /**
-            * 区域id
-            **/
-            private String areaName;
+                private Long id;
 
             /**
             * 添加时间
             **/
-            private Date addDate;
+                private Date addDate;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
-    }
+}

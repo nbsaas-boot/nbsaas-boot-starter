@@ -8,31 +8,37 @@ import com.nbsaas.boot.rest.api.Converter;
 * 列表对象转换器
 */
 
-public class AreaSimpleConvert implements Converter
-<AreaSimple, Area> {
+public class AreaSimpleConvert implements Converter<AreaSimple, Area> {
 
 
 
 
 @Override
 public AreaSimple convert(Area source) {
-AreaSimple result = new AreaSimple();
+    AreaSimple result = new AreaSimple();
 
-            result.setLastDate(source.getLastDate());
-            result.setSortNum(source.getSortNum());
-            result.setId(source.getId());
-            result.setCode(source.getCode());
-            result.setLft(source.getLft());
-            result.setRgt(source.getRgt());
-            result.setDepth(source.getDepth());
-            result.setName(source.getName());
-            result.setLng(source.getLng());
-            result.setLat(source.getLat());
-            result.setIds(source.getIds());
-            result.setAddDate(source.getAddDate());
+                if(source.getParent()!=null){
+                    result.setParent(source.getParent().getId());
+                }
+                result.setCode(source.getCode());
+                result.setLng(source.getLng());
+                result.setFullName(source.getFullName());
+                result.setAddDate(source.getAddDate());
+                result.setGovCode(source.getGovCode());
+                result.setDepth(source.getDepth());
+                result.setAreaType(source.getAreaType());
+                result.setName(source.getName());
+                result.setIds(source.getIds());
+                result.setSortNum(source.getSortNum());
+                result.setState(source.getState());
+                result.setId(source.getId());
+                result.setLft(source.getLft());
+                result.setLat(source.getLat());
+                result.setRgt(source.getRgt());
+                result.setLastDate(source.getLastDate());
 
 
-return result;
+    return result;
 }
 
 }

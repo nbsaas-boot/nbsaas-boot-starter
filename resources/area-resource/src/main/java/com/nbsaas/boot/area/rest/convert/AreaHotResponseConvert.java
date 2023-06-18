@@ -18,10 +18,10 @@ public AreaHotResponse convert(AreaHot source) {
 AreaHotResponse  result = new  AreaHotResponse();
 BeanDataUtils.copyProperties(source, result);
             if(source.getArea()!=null){
-            result.setArea(source.getArea().getId());
+                result.setArea(source.getArea().getId());
             }
             if(source.getArea()!=null){
-            result.setAreaName(source.getArea().getName());
+                result.setAreaName(source.getArea().getName());
             }
 return result;
 }

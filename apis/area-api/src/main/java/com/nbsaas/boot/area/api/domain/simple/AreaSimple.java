@@ -19,64 +19,89 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 最新修改时间
+            * 
             **/
-            private Date lastDate;
-
-            /**
-            * 排序号
-            **/
-            private Integer sortNum;
-
-            /**
-            * 主键id
-            **/
-            private Long id;
+                private Long parent;
 
             /**
             * 编码
             **/
-            private String code;
-
-            /**
-            * 左节点
-            **/
-            private Integer lft;
-
-            /**
-            * 右节点
-            **/
-            private Integer rgt;
-
-            /**
-            * 深度
-            **/
-            private Integer depth;
-
-            /**
-            * 名称
-            **/
-            private String name;
+                private String code;
 
             /**
             * 经度
             **/
-            private Double lng;
+                private Double lng;
 
             /**
-            * 纬度
+            * 地区全称
             **/
-            private Double lat;
-
-            /**
-            * ids
-            **/
-            private String ids;
+                private String fullName;
 
             /**
             * 添加时间
             **/
-            private Date addDate;
+                private Date addDate;
+
+            /**
+            * 国标编码
+            **/
+                private String govCode;
+
+            /**
+            * 深度
+            **/
+                private Integer depth;
+
+            /**
+            * 地区类型
+            **/
+                private String areaType;
+
+            /**
+            * 名称
+            **/
+                private String name;
+
+            /**
+            * ids
+            **/
+                private String ids;
+
+            /**
+            * 排序号
+            **/
+                private Integer sortNum;
+
+            /**
+            * 状态
+            **/
+                private Integer state;
+
+            /**
+            * 主键id
+            **/
+                private Long id;
+
+            /**
+            * 左节点
+            **/
+                private Integer lft;
+
+            /**
+            * 纬度
+            **/
+                private Double lat;
+
+            /**
+            * 右节点
+            **/
+                private Integer rgt;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
-    }
+}

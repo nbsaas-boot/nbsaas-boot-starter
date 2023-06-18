@@ -23,6 +23,7 @@ public class AreaHotSearchRequest   extends PageRequest implements Serializable 
 private static final long serialVersionUID = 1L;
 
 
+
             /**
             * 排序号
             **/
@@ -34,6 +35,7 @@ private static final long serialVersionUID = 1L;
             **/
             @Search(name = "id",operator = Operator.eq)
             private Long id;
+
 
 
 }

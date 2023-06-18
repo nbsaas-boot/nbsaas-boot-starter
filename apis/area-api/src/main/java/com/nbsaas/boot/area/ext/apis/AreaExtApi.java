@@ -12,6 +12,6 @@ public interface AreaExtApi {
      * @param request
      * @return
      */
-    ResponseObject<PoiResponse> search(PoiSearchRequest request);
+    ResponseObject<PoiResponse> lbs(PoiSearchRequest request);
 
 }

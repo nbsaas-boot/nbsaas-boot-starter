@@ -70,7 +70,7 @@ public class AreaExtResource implements AreaExtApi {
 
     @Transactional(readOnly = true)
     @Override
-    public ResponseObject<PoiResponse> search(PoiSearchRequest request) {
+    public ResponseObject<PoiResponse> lbs(PoiSearchRequest request) {
         ResponseObject<PoiResponse> result=new ResponseObject<>();
         PoiResponse data=new PoiResponse();
         result.setData(data);

@@ -16,31 +16,90 @@ public class AreaResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private Integer sortNum;
+        /**
+        * 
+        **/
+            private Long parent;
 
-        private Long id;
+        /**
+        * 编码
+        **/
+            private String code;
 
-        private String code;
+        /**
+        * 经度
+        **/
+            private Double lng;
 
-        private Integer lft;
+        /**
+        * 地区全称
+        **/
+            private String fullName;
 
-        private Integer rgt;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-        private Integer depth;
+        /**
+        * 国标编码
+        **/
+            private String govCode;
 
-        private String name;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-        private Double lng;
+        /**
+        * 地区类型
+        **/
+            private String areaType;
 
-        private Double lat;
+        /**
+        * 名称
+        **/
+            private String name;
 
-        private String ids;
+        /**
+        * ids
+        **/
+            private String ids;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
+        /**
+        * 状态
+        **/
+            private Integer state;
+
+        /**
+        * 主键id
+        **/
+            private Long id;
+
+        /**
+        * 左节点
+        **/
+            private Integer lft;
+
+        /**
+        * 纬度
+        **/
+            private Double lat;
+
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

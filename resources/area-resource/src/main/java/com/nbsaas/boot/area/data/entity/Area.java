@@ -36,6 +36,18 @@ public class Area extends CatalogEntity {
     @Comment("纬度")
     private Double lat;
 
+    @Comment("国标编码")
+    private String govCode;
+
+    @Comment("地区类型")
+    private String areaType;
+
+    @Comment("地区全称")
+    private String fullName;
+
+    @Comment("状态")
+    private Integer state;
+
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private Area parent;

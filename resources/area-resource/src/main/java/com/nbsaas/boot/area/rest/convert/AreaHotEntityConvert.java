@@ -13,16 +13,17 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class AreaHotEntityConvert  implements Converter<AreaHot, AreaHotDataRequest> {
-@Override
-public AreaHot convert(AreaHotDataRequest source) {
-AreaHot result = new AreaHot();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getArea()!=null){
-            Area area =new Area();
-            area.setId(source.getArea());
-            result.setArea(area);
-            }
-return result;
-}
+
+    @Override
+    public AreaHot convert(AreaHotDataRequest source) {
+        AreaHot result = new AreaHot();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getArea()!=null){
+                    Area area =new Area();
+                    area.setId(source.getArea());
+                    result.setArea(area);
+                    }
+        return result;
+    }
 }
 

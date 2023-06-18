@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.nbsaas.boot</groupId>
         <artifactId>boot-nbsaas</artifactId>
-        <version>1.0.11-2023</version>
+        <version>1.0.12-2023</version>
     </parent>
     <artifactId>nbsaas-boot-starter</artifactId>
     <version>1.0.1-2023</version>
@@ -21,7 +21,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nbsaas.version>1.0.11-2023</nbsaas.version>
+        <nbsaas.version>1.0.12-2023</nbsaas.version>
         <mybatis.version>3.0.2</mybatis.version>
     </properties>
     <dependencyManagement>

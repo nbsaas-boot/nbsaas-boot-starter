@@ -17,6 +17,9 @@ public class AreaResponseConvert  implements Converter
 public AreaResponse convert(Area source) {
 AreaResponse  result = new  AreaResponse();
 BeanDataUtils.copyProperties(source, result);
+            if(source.getParent()!=null){
+                result.setParent(source.getParent().getId());
+            }
 return result;
 }
 

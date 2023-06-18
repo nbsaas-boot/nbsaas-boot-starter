@@ -16,19 +16,35 @@ public class AreaHotResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private Long area;
+        /**
+        * 区域id
+        **/
+            private Long area;
 
-        private Integer sortNum;
+        /**
+        * 区域id
+        **/
+            private String areaName;
 
-        private Long id;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-        private String areaName;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }
