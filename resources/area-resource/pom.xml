@@ -29,5 +29,10 @@
             <artifactId>area-api</artifactId>
             <version>1.0.1-2023</version>
         </dependency>
+        <dependency>
+            <groupId>com.haoxuer</groupId>
+            <artifactId>lbsyun</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 </project>
