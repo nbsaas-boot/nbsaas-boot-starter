@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.boot</groupId>
-        <artifactId>nbsaas-boot-starter</artifactId>
+        <artifactId>gates</artifactId>
         <version>1.0.2-2023</version>
     </parent>
     <artifactId>admins</artifactId>
