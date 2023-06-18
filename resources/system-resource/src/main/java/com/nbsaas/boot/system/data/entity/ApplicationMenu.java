@@ -47,7 +47,7 @@ public class ApplicationMenu extends CatalogEntity {
 
 
     @Comment("应用")
-    @SearchItem(label = "应用", name = "app", key = "app.id", classType = "Long", operator = "eq")
+    @SearchItem(label = "应用", name = "app", key = "app.id",  operator = "eq")
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)

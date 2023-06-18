@@ -15,13 +15,13 @@ import java.math.BigDecimal;
 public class TradeStream extends AbstractEntity {
 
   @FormField(title = "资金账号", grid = true)
-  @SearchItem(label = "资金账号", name = "account", key = "account.id", operator = "eq", classType = "Long")
+  @SearchItem(label = "资金账号", name = "account", key = "account.id", operator = "eq")
   @FieldConvert
   @FieldName
   @ManyToOne(fetch = FetchType.LAZY)
   TradeAccount account;
   @FormField(title = "交易单", grid = true)
-  @SearchItem(label = "交易单", name = "info", key = "info.id", operator = "eq", classType = "Long")
+  @SearchItem(label = "交易单", name = "info", key = "info.id", operator = "eq")
   @FieldConvert
   @ManyToOne(fetch = FetchType.LAZY)
   TradeInfo info;

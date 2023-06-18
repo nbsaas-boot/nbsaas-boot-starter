@@ -32,7 +32,7 @@ public class Ad extends SortEntity {
      * 广告位
      */
     @Comment("广告位")
-    @SearchItem(label = "广告位", name = "adPosition", key = "adPosition.id", sortNum = "-1", type = InputType.select, classType = "Long", operator = "eq")
+    @SearchItem(label = "广告位", name = "adPosition", key = "adPosition.id", sortNum = "-1", type = InputType.select,  operator = "eq")
     @FormField(title = "广告位", sortNum = "10", grid = true, col = 22, type = InputType.select, option = "adPosition", required = true)
     @FieldName
     @FieldConvert

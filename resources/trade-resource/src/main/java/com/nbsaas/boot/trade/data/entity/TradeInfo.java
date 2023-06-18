@@ -19,14 +19,14 @@ public class TradeInfo extends AbstractEntity {
 
 
     @FormField(title = "转出账号", grid = true)
-    @SearchItem(label = "转出账号", name = "from", key = "from.id", classType = "Long")
+    @SearchItem(label = "转出账号", name = "from", key = "from.id")
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private TradeAccount from;
 
     @FormField(title = "转入账号", grid = true)
-    @SearchItem(label = "转入账号", name = "to", key = "to.id", classType = "Long")
+    @SearchItem(label = "转入账号", name = "to", key = "to.id")
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)

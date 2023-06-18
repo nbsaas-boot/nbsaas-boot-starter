@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 public class TradeAccountException extends AbstractEntity {
 
 
-    @SearchItem(label = "资金账号", name = "account", key = "account.id", classType = "Long")
+    @SearchItem(label = "资金账号", name = "account", key = "account.id")
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)

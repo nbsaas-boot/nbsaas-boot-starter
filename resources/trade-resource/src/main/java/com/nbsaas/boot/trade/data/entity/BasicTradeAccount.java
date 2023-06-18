@@ -22,7 +22,7 @@ public class BasicTradeAccount extends AbstractEntity {
 
 
   @FormField(title = "资金账号余额", grid = true)
-  @SearchItem(label = "资金账号", name = "account", key = "account.id", classType = "Long", show = false)
+  @SearchItem(label = "资金账号", name = "account", key = "account.id",  show = false)
   @FieldName
   @FieldConvert
   @ManyToOne(fetch = FetchType.LAZY)
