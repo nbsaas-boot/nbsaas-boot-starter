@@ -10,4 +10,7 @@ import java.util.List;
 public interface MenuMapper {
 
     List<MenuSimple> findByUser(@Param("userId") Long userId);
+
+    List<MenuSimple> findByUser2(@Param("userId") Long userId);
+
 }

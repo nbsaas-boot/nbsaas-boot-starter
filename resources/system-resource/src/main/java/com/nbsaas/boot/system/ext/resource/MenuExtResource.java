@@ -44,10 +44,17 @@ public class MenuExtResource implements MenuExtApi {
 
     @Transactional(readOnly = true)
     @Override
-    public ListResponse<MenuExtSimple> tree(Long userId) {
+    public ListResponse<MenuExtSimple> tree(Long userId,Integer version) {
         ListResponse<MenuExtSimple> result = new ListResponse<>();
-
-        List<MenuSimple> list = menuMapper.findByUser(userId);
+         if (version==null){
+             version=1;
+         }
+        List<MenuSimple> list;
+        if (version==1){
+            list = menuMapper.findByUser(userId);
+         }else{
+            list = menuMapper.findByUser2(userId);
+         }
         if (list != null) {
             result.setData(makeTree(list));
         }

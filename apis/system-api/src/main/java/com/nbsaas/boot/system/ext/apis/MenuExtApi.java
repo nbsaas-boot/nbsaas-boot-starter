@@ -7,8 +7,7 @@ import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
 
 public interface MenuExtApi {
 
-    ListResponse<MenuExtSimple> tree(Long userId);
-
+    ListResponse<MenuExtSimple> tree(Long userId,Integer version);
 
     /**
      * 获取系统的菜单树
