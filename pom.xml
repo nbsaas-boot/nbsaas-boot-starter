@@ -8,7 +8,7 @@
         <version>1.0.12-2023</version>
     </parent>
     <artifactId>nbsaas-boot-starter</artifactId>
-    <version>1.0.2-2023</version>
+    <version>1.0.3-2023</version>
     <packaging>pom</packaging>
 
     <name>nbsaas-boot-starter</name>
