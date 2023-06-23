@@ -75,7 +75,4 @@ private static final long serialVersionUID = 1L;
 
     private int fetch;
 
-    @Search(name = "levelInfo",operator = Operator.eq)
-    private Integer level;
-
 }

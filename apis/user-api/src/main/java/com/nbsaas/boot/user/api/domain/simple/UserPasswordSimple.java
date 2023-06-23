@@ -34,6 +34,8 @@ private static final long serialVersionUID = 1L;
             **/
                 private SecurityType securityType;
 
+                private String securityTypeName;
+
             /**
             * 
             **/
@@ -60,4 +62,4 @@ private static final long serialVersionUID = 1L;
                 private Date lastDate;
 
 
-    }
+}

@@ -42,17 +42,28 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
+            //枚举
             private StoreState storeState;
+
+            private String storeStateName;
 
         /**
         * 
         **/
+            //枚举
             private LoginState state;
+
+            private String stateName;
 
         /**
         * 主键id
         **/
             private Long id;
+
+        /**
+        * 
+        **/
+            private String userName;
 
         /**
         * 

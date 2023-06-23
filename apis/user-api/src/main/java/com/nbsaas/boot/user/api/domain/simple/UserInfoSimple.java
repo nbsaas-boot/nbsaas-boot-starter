@@ -34,12 +34,19 @@ private static final long serialVersionUID = 1L;
             /**
             * 
             **/
+                private String structureName;
+
+            /**
+            * 
+            **/
                 private String avatar;
 
             /**
             * 
             **/
                 private DataScope dataScope;
+
+                private String dataScopeName;
 
             /**
             * 添加时间
@@ -71,10 +78,14 @@ private static final long serialVersionUID = 1L;
             **/
                 private StoreState storeState;
 
+                private String storeStateName;
+
             /**
             * 
             **/
                 private State state;
+
+                private String stateName;
 
             /**
             * 主键id
@@ -87,4 +98,4 @@ private static final long serialVersionUID = 1L;
                 private Date lastDate;
 
 
-    }
+}

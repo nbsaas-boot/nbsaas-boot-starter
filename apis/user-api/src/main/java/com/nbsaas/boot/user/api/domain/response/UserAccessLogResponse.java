@@ -36,7 +36,15 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
+            private String creatorName;
+
+        /**
+        * 
+        **/
+            //枚举
             private StoreState storeState;
+
+            private String storeStateName;
 
         /**
         * 主键id

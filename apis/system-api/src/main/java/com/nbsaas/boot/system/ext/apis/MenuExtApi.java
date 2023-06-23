@@ -5,6 +5,8 @@ import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.system.ext.domain.request.UpdateRoleMenuRequest;
 import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
 
+import java.util.List;
+
 public interface MenuExtApi {
 
     ListResponse<MenuExtSimple> tree(Long userId,Integer version);
@@ -32,6 +34,15 @@ public interface MenuExtApi {
      * @return
      */
     ListResponse<Long> selectForPermission(Long role);
+
+
+    /**
+     * 获取这个角色的权限集合
+     *
+     * @param role
+     * @return
+     */
+    List<String> permissions(Long role);
 
     /**
      * 获取某个用户的权限

@@ -58,6 +58,11 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
+            //private String userNameName;
+
+        /**
+        * 
+        **/
             private Long user;
 
         /**

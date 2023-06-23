@@ -7,6 +7,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
+import com.nbsaas.boot.user.api.domain.enums.LoginState;
 
 /**
 * 搜索bean
@@ -25,6 +26,9 @@ private static final long serialVersionUID = 1L;
 
     @Search(name = "user.id",operator = Operator.eq)
     private Long userId;
+
+    @Search(name = "state",operator = Operator.eq)
+    private LoginState state;
 
     @Search(name = "user.name",operator = Operator.like)
     private String userName;

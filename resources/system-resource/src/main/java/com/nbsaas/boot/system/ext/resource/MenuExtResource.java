@@ -11,8 +11,10 @@ import com.nbsaas.boot.system.api.domain.response.RoleResponse;
 import com.nbsaas.boot.system.api.domain.simple.MenuSimple;
 import com.nbsaas.boot.system.api.domain.simple.RoleMenuSimple;
 import com.nbsaas.boot.system.data.entity.Menu;
+import com.nbsaas.boot.system.data.entity.RoleMenu;
 import com.nbsaas.boot.system.data.mapper.MenuMapper;
 import com.nbsaas.boot.system.data.repository.MenuRepository;
+import com.nbsaas.boot.system.data.repository.RoleMenuRepository;
 import com.nbsaas.boot.system.ext.apis.MenuExtApi;
 import com.nbsaas.boot.system.ext.domain.request.UpdateRoleMenuRequest;
 import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
@@ -34,6 +36,9 @@ public class MenuExtResource implements MenuExtApi {
 
     @Resource
     private MenuRepository menuRepository;
+
+    @Resource
+    private RoleMenuRepository roleMenuRepository;
 
     @Resource
     private RoleMenuApi roleMenuApi;
@@ -78,9 +83,20 @@ public class MenuExtResource implements MenuExtApi {
     @Override
     public ListResponse<Long> selectForPermission(Long role) {
         ListResponse<Long> result = new ListResponse<Long>();
-        List<RoleMenuSimple> roles = roleMenuApi.listData(Filter.eq(RoleMenuField.role, role));
+        List<RoleMenuSimple> roles = roleMenuApi.listData(Filter.eq("role.id", role));
         if (roles != null) {
             result.setData(roles.stream().map(RoleMenuSimple::getMenu).collect(Collectors.toList()));
+        }
+        return result;
+    }
+
+    @Override
+    public List<String> permissions(Long role) {
+        List<String> result = new ArrayList<>();
+        List<RoleMenu> roles = roleMenuRepository.findByRoleId(role);
+        if (roles != null) {
+            List<String> menus = roles.stream().map(RoleMenu::getMenu).map(Menu::getPermission).collect(Collectors.toList());
+            result.addAll(menus);
         }
         return result;
     }

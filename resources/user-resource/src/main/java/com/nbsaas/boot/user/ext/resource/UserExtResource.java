@@ -2,12 +2,14 @@ package com.nbsaas.boot.user.ext.resource;
 
 import com.nbsaas.boot.rest.filter.Filter;
 import com.nbsaas.boot.rest.request.LongId;
+import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.user.api.apis.*;
 import com.nbsaas.boot.user.api.domain.enums.AccountType;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
 import com.nbsaas.boot.user.api.domain.field.UserAccountField;
 import com.nbsaas.boot.user.api.domain.field.UserOauthConfigField;
+import com.nbsaas.boot.user.api.domain.field.UserRoleField;
 import com.nbsaas.boot.user.api.domain.request.UserAccountDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserInfoDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserOauthTokenDataRequest;
@@ -54,6 +56,9 @@ public class UserExtResource implements UserExtApi {
 
     @Resource
     private UserOauthTokenApi userOauthTokenApi;
+
+    @Resource
+    private UserRoleApi userRoleApi;
 
 
     @Override
@@ -269,5 +274,13 @@ public class UserExtResource implements UserExtApi {
         }
         result.setData(openId);
         return result;
+    }
+
+    @Override
+    public ListResponse<String> selectPermissionByUser(Long userId) {
+        ListResponse<String> result=new ListResponse<>();
+        userRoleApi.listData(Filter.eq("",userId));
+
+        return null;
     }
 }

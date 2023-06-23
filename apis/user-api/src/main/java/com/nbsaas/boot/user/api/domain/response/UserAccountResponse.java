@@ -21,7 +21,10 @@ private static final long serialVersionUID = 1L;
         /**
         * 
         **/
+            //枚举
             private AccountType accountType;
+
+            private String accountTypeName;
 
         /**
         * 主键id

@@ -1,6 +1,7 @@
 package com.nbsaas.boot.user.ext.apis;
 
 
+import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.user.api.domain.response.UserInfoResponse;
 import com.nbsaas.boot.user.ext.domain.request.UserLoginOatuthRequest;
@@ -29,5 +30,15 @@ public interface UserExtApi {
     ResponseObject<UserInfoExtResponse> loginOauth(UserLoginOatuthRequest request);
 
     ResponseObject<String> findOpenId(UserLoginOatuthRequest request);
+
+
+    /**
+     * 获取用户所有的权限
+     *
+     * @param userId
+     * @return
+     */
+    ListResponse<String> selectPermissionByUser(Long userId);
+
 
 }

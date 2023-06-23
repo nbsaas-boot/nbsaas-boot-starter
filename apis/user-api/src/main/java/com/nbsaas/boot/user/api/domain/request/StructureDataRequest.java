@@ -24,6 +24,11 @@ private static final long serialVersionUID = 1L;
             private Long parent;
 
         /**
+        * 
+        **/
+            //private String parentNameName;
+
+        /**
         * 编码
         **/
             private String code;

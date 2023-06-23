@@ -29,6 +29,11 @@ private static final long serialVersionUID = 1L;
                 private Long parent;
 
             /**
+            * 
+            **/
+                private String parentName;
+
+            /**
             * 编码
             **/
                 private String code;
@@ -79,4 +84,4 @@ private static final long serialVersionUID = 1L;
                 private Date lastDate;
 
 
-    }
+}
