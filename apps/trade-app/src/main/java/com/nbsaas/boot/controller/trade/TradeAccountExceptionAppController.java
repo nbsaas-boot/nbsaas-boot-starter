@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/tradeAccountException")
@@ -44,32 +45,32 @@ public class TradeAccountExceptionAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<TradeAccountExceptionResponse> create(@Validated(AddOperator.class) TradeAccountExceptionDataRequest request) {
         return tradeAccountExceptionApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<TradeAccountExceptionResponse> update(@Validated(UpdateOperator.class) TradeAccountExceptionDataRequest
-         request) {
-         return tradeAccountExceptionApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<TradeAccountExceptionResponse> update(@Validated(UpdateOperator.class) TradeAccountExceptionDataRequest
+                                                                        request) {
+        return tradeAccountExceptionApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeAccountExceptionDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeAccountExceptionDataRequest request) {
         return tradeAccountExceptionApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<TradeAccountExceptionResponse> view(@Validated(ViewOperator.class) TradeAccountExceptionDataRequest request) {
-         return tradeAccountExceptionApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<TradeAccountExceptionResponse> view(@Validated(ViewOperator.class) TradeAccountExceptionDataRequest request) {
+        return tradeAccountExceptionApi.view(request);
+    }
 
-  }
+}

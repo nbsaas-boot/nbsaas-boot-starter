@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/roleMenu")
 public class RoleMenuController {
 
 
-      @Resource
-      private RoleMenuApi roleMenuApi;
+    @Resource
+    private RoleMenuApi roleMenuApi;
 
 
     @RequestMapping("/search")
     public PageResponse<RoleMenuSimple> search(RoleMenuSearchRequest request) {
-         return roleMenuApi.search(request);
+        return roleMenuApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class RoleMenuController {
         return roleMenuApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <RoleMenuResponse> create(@Validated(AddOperator.class) RoleMenuDataRequest request) {
-            return roleMenuApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <RoleMenuResponse> create(@Validated(AddOperator.class) RoleMenuDataRequest request) {
+        return roleMenuApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<RoleMenuResponse> update(@Validated(UpdateOperator.class) RoleMenuDataRequest request) {
-          return roleMenuApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RoleMenuResponse> update(@Validated(UpdateOperator.class) RoleMenuDataRequest request) {
+        return roleMenuApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleMenuDataRequest request) {
-         return roleMenuApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleMenuDataRequest request) {
+        return roleMenuApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <RoleMenuResponse> view(@Validated(ViewOperator.class) RoleMenuDataRequest request) {
-          return roleMenuApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<RoleMenuResponse> view(@Validated(ViewOperator.class) RoleMenuDataRequest request) {
+        return roleMenuApi.view(request);
+    }
 }

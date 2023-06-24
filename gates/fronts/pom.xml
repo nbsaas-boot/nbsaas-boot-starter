@@ -15,7 +15,7 @@
     <modules>
         <module>user-front</module>
         <module>system-front</module>
-        <module> ad-front</module>
+        <module>ad-front</module>
     </modules>
 
     <properties>

@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/areaHot")
@@ -34,7 +35,7 @@ public class AreaHotController {
 
 
     @RequestMapping("/search")
-    public PageResponse <AreaHotSimple> search(AreaHotSearchRequest request) {
+    public PageResponse<AreaHotSimple> search(AreaHotSearchRequest request) {
         return areaHotApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class AreaHotController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <AreaHotResponse> create(@Validated(AddOperator.class) AreaHotDataRequest request) {
+    public ResponseObject<AreaHotResponse> create(@Validated(AddOperator.class) AreaHotDataRequest request) {
         return areaHotApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<AreaHotResponse> update(@Validated(UpdateOperator.class) AreaHotDataRequest request) {
-       return areaHotApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<AreaHotResponse> update(@Validated(UpdateOperator.class) AreaHotDataRequest request) {
+        return areaHotApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AreaHotDataRequest request) {
@@ -67,7 +68,7 @@ public class AreaHotController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <AreaHotResponse> view(@Validated(ViewOperator.class) AreaHotDataRequest  request) {
+    public ResponseObject<AreaHotResponse> view(@Validated(ViewOperator.class) AreaHotDataRequest request) {
         return areaHotApi.view(request);
     }
 }

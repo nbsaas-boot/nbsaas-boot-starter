@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/errorLog")
 public class ErrorLogController {
 
 
-      @Resource
-      private ErrorLogApi errorLogApi;
+    @Resource
+    private ErrorLogApi errorLogApi;
 
 
     @RequestMapping("/search")
     public PageResponse<ErrorLogSimple> search(ErrorLogSearchRequest request) {
-         return errorLogApi.search(request);
+        return errorLogApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class ErrorLogController {
         return errorLogApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <ErrorLogResponse> create(@Validated(AddOperator.class) ErrorLogDataRequest request) {
-            return errorLogApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <ErrorLogResponse> create(@Validated(AddOperator.class) ErrorLogDataRequest request) {
+        return errorLogApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<ErrorLogResponse> update(@Validated(UpdateOperator.class) ErrorLogDataRequest request) {
-          return errorLogApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ErrorLogResponse> update(@Validated(UpdateOperator.class) ErrorLogDataRequest request) {
+        return errorLogApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) ErrorLogDataRequest request) {
-         return errorLogApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) ErrorLogDataRequest request) {
+        return errorLogApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <ErrorLogResponse> view(@Validated(ViewOperator.class) ErrorLogDataRequest request) {
-          return errorLogApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<ErrorLogResponse> view(@Validated(ViewOperator.class) ErrorLogDataRequest request) {
+        return errorLogApi.view(request);
+    }
 }

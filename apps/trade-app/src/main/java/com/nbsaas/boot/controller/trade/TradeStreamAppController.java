@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/tradeStream")
@@ -44,32 +45,32 @@ public class TradeStreamAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<TradeStreamResponse> create(@Validated(AddOperator.class) TradeStreamDataRequest request) {
         return tradeStreamApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<TradeStreamResponse> update(@Validated(UpdateOperator.class) TradeStreamDataRequest
-         request) {
-         return tradeStreamApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<TradeStreamResponse> update(@Validated(UpdateOperator.class) TradeStreamDataRequest
+                                                              request) {
+        return tradeStreamApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeStreamDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeStreamDataRequest request) {
         return tradeStreamApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<TradeStreamResponse> view(@Validated(ViewOperator.class) TradeStreamDataRequest request) {
-         return tradeStreamApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<TradeStreamResponse> view(@Validated(ViewOperator.class) TradeStreamDataRequest request) {
+        return tradeStreamApi.view(request);
+    }
 
-  }
+}

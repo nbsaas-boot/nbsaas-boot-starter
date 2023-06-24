@@ -1,61 +1,64 @@
 package com.nbsaas.boot.system.api.domain.response;
 
-import lombok.*;
+import com.nbsaas.boot.rest.enums.StoreState;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
-            import com.nbsaas.boot.rest.enums.StoreState;
+
 /**
-* 响应对象
-*/
+ * 响应对象
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class DictItemResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class DictItemResponse implements Serializable {
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-        * 键值
-        **/
-            private String dataValue;
+    /**
+     * 键值
+     **/
+    private String dataValue;
 
-        /**
-        * 
-        **/
-            private Long dict;
+    /**
+     *
+     **/
+    private Long dict;
 
-        /**
-        * 排序字段
-        **/
-            private Integer sortNum;
+    /**
+     * 排序字段
+     **/
+    private Integer sortNum;
 
-        /**
-        * 
-        **/
-            private StoreState storeState;
+    /**
+     *
+     **/
+    private StoreState storeState;
 
-        /**
-        * 主键id
-        **/
-            private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-        * 编码
-        **/
-            private String dataCode;
+    /**
+     * 编码
+     **/
+    private String dataCode;
 
-        /**
-        * 添加时间
-        **/
-            private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
-        /**
-        * 最新修改时间
-        **/
-            private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
 }

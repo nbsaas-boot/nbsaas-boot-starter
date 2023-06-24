@@ -14,13 +14,13 @@ import javax.persistence.*;
 @Table(name = "sys_trade_user_account")
 public class UserTradeAccount extends AbstractEntity {
 
-  @Column(name = "trade_key", length = 50)
-  private String key;
+    @Column(name = "trade_key", length = 50)
+    private String key;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  private TradeAccount account;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TradeAccount account;
 
 }

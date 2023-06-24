@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/tradeAccountException")
@@ -34,7 +35,7 @@ public class TradeAccountExceptionController {
 
 
     @RequestMapping("/search")
-    public PageResponse <TradeAccountExceptionSimple> search(TradeAccountExceptionSearchRequest request) {
+    public PageResponse<TradeAccountExceptionSimple> search(TradeAccountExceptionSearchRequest request) {
         return tradeAccountExceptionApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class TradeAccountExceptionController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <TradeAccountExceptionResponse> create(@Validated(AddOperator.class) TradeAccountExceptionDataRequest request) {
+    public ResponseObject<TradeAccountExceptionResponse> create(@Validated(AddOperator.class) TradeAccountExceptionDataRequest request) {
         return tradeAccountExceptionApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<TradeAccountExceptionResponse> update(@Validated(UpdateOperator.class) TradeAccountExceptionDataRequest request) {
-       return tradeAccountExceptionApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<TradeAccountExceptionResponse> update(@Validated(UpdateOperator.class) TradeAccountExceptionDataRequest request) {
+        return tradeAccountExceptionApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeAccountExceptionDataRequest request) {
@@ -67,7 +68,7 @@ public class TradeAccountExceptionController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <TradeAccountExceptionResponse> view(@Validated(ViewOperator.class) TradeAccountExceptionDataRequest  request) {
+    public ResponseObject<TradeAccountExceptionResponse> view(@Validated(ViewOperator.class) TradeAccountExceptionDataRequest request) {
         return tradeAccountExceptionApi.view(request);
     }
 }

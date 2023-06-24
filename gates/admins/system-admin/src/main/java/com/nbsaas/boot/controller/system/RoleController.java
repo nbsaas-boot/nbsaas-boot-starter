@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/role")
 public class RoleController {
 
 
-      @Resource
-      private RoleApi roleApi;
+    @Resource
+    private RoleApi roleApi;
 
 
     @RequestMapping("/search")
     public PageResponse<RoleSimple> search(RoleSearchRequest request) {
-         return roleApi.search(request);
+        return roleApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class RoleController {
         return roleApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <RoleResponse> create(@Validated(AddOperator.class) RoleDataRequest request) {
-            return roleApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <RoleResponse> create(@Validated(AddOperator.class) RoleDataRequest request) {
+        return roleApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<RoleResponse> update(@Validated(UpdateOperator.class) RoleDataRequest request) {
-          return roleApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RoleResponse> update(@Validated(UpdateOperator.class) RoleDataRequest request) {
+        return roleApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleDataRequest request) {
-         return roleApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) RoleDataRequest request) {
+        return roleApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <RoleResponse> view(@Validated(ViewOperator.class) RoleDataRequest request) {
-          return roleApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<RoleResponse> view(@Validated(ViewOperator.class) RoleDataRequest request) {
+        return roleApi.view(request);
+    }
 }

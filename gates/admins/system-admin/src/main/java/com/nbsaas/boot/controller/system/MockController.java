@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/mock")
 public class MockController {
 
 
-      @Resource
-      private MockApi mockApi;
+    @Resource
+    private MockApi mockApi;
 
 
     @RequestMapping("/search")
     public PageResponse<MockSimple> search(MockSearchRequest request) {
-         return mockApi.search(request);
+        return mockApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class MockController {
         return mockApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <MockResponse> create(@Validated(AddOperator.class) MockDataRequest request) {
-            return mockApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <MockResponse> create(@Validated(AddOperator.class) MockDataRequest request) {
+        return mockApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<MockResponse> update(@Validated(UpdateOperator.class) MockDataRequest request) {
-          return mockApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<MockResponse> update(@Validated(UpdateOperator.class) MockDataRequest request) {
+        return mockApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) MockDataRequest request) {
-         return mockApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) MockDataRequest request) {
+        return mockApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <MockResponse> view(@Validated(ViewOperator.class) MockDataRequest request) {
-          return mockApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<MockResponse> view(@Validated(ViewOperator.class) MockDataRequest request) {
+        return mockApi.view(request);
+    }
 }

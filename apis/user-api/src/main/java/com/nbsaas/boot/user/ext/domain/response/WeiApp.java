@@ -5,51 +5,50 @@ package com.nbsaas.boot.user.ext.domain.response;
  */
 public class WeiApp implements OauthResponse {
 
-  private String openid;
+    private String openid;
 
-  private String session_key;
-
-
-  private String unionid;
-
-  public void setOpenid(String openid) {
-    this.openid = openid;
-  }
-
-  public String getSession_key() {
-    return session_key;
-  }
-
-  public void setSession_key(String session_key) {
-    this.session_key = session_key;
-  }
+    private String session_key;
 
 
-  @Override
-  public String getOpenid() {
-    return openid;
-  }
+    private String unionid;
 
-  @Override
-  public String getName() {
-    return "";
-  }
+    public String getSession_key() {
+        return session_key;
+    }
 
-  @Override
-  public String getAvatar() {
-    return "";
-  }
+    public void setSession_key(String session_key) {
+        this.session_key = session_key;
+    }
 
-  @Override
-  public String type() {
-    return "weiapp";
-  }
+    @Override
+    public String getOpenid() {
+        return openid;
+    }
 
-  public String getUnionid() {
-    return unionid;
-  }
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
 
-  public void setUnionid(String unionid) {
-    this.unionid = unionid;
-  }
+    @Override
+    public String getName() {
+        return "";
+    }
+
+    @Override
+    public String getAvatar() {
+        return "";
+    }
+
+    @Override
+    public String type() {
+        return "weiapp";
+    }
+
+    public String getUnionid() {
+        return unionid;
+    }
+
+    public void setUnionid(String unionid) {
+        this.unionid = unionid;
+    }
 }

@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/recordLog")
 public class RecordLogController {
 
 
-      @Resource
-      private RecordLogApi recordLogApi;
+    @Resource
+    private RecordLogApi recordLogApi;
 
 
     @RequestMapping("/search")
     public PageResponse<RecordLogSimple> search(RecordLogSearchRequest request) {
-         return recordLogApi.search(request);
+        return recordLogApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class RecordLogController {
         return recordLogApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <RecordLogResponse> create(@Validated(AddOperator.class) RecordLogDataRequest request) {
-            return recordLogApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <RecordLogResponse> create(@Validated(AddOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest request) {
-          return recordLogApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<RecordLogResponse> update(@Validated(UpdateOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) RecordLogDataRequest request) {
-         return recordLogApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest request) {
-          return recordLogApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<RecordLogResponse> view(@Validated(ViewOperator.class) RecordLogDataRequest request) {
+        return recordLogApi.view(request);
+    }
 }

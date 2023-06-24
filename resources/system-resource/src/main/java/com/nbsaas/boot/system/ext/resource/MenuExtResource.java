@@ -49,17 +49,17 @@ public class MenuExtResource implements MenuExtApi {
 
     @Transactional(readOnly = true)
     @Override
-    public ListResponse<MenuExtSimple> tree(Long userId,Integer version) {
+    public ListResponse<MenuExtSimple> tree(Long userId, Integer version) {
         ListResponse<MenuExtSimple> result = new ListResponse<>();
-         if (version==null){
-             version=1;
-         }
+        if (version == null) {
+            version = 1;
+        }
         List<MenuSimple> list;
-        if (version==1){
+        if (version == 1) {
             list = menuMapper.findByUser(userId);
-         }else{
+        } else {
             list = menuMapper.findByUser2(userId);
-         }
+        }
         if (list != null) {
             result.setData(makeTree(list));
         }
@@ -160,7 +160,7 @@ public class MenuExtResource implements MenuExtApi {
         tree.sort(Comparator.comparingLong(MenuExtSimple::getSortNum));
 
         for (MenuExtSimple menuExtSimple : tree) {
-            if (menuExtSimple.getChildren()!=null){
+            if (menuExtSimple.getChildren() != null) {
                 menuExtSimple.getChildren().sort(Comparator.comparingLong(MenuSimple::getSortNum));
             }
         }

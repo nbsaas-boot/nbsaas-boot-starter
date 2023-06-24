@@ -9,14 +9,14 @@ import java.math.BigDecimal;
 @Data
 public class TradeRequest implements Serializable {
 
-  private Long from;
+    private Long from;
 
-  private Long to;
+    private Long to;
 
-  private Integer changeType;
+    private Integer changeType;
 
-  private BigDecimal amount;
+    private BigDecimal amount;
 
-  private String note;
+    private String note;
 
 }

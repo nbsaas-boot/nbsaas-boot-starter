@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/userTradeAccount")
@@ -34,7 +35,7 @@ public class UserTradeAccountController {
 
 
     @RequestMapping("/search")
-    public PageResponse <UserTradeAccountSimple> search(UserTradeAccountSearchRequest request) {
+    public PageResponse<UserTradeAccountSimple> search(UserTradeAccountSearchRequest request) {
         return userTradeAccountApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class UserTradeAccountController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <UserTradeAccountResponse> create(@Validated(AddOperator.class) UserTradeAccountDataRequest request) {
+    public ResponseObject<UserTradeAccountResponse> create(@Validated(AddOperator.class) UserTradeAccountDataRequest request) {
         return userTradeAccountApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<UserTradeAccountResponse> update(@Validated(UpdateOperator.class) UserTradeAccountDataRequest request) {
-       return userTradeAccountApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserTradeAccountResponse> update(@Validated(UpdateOperator.class) UserTradeAccountDataRequest request) {
+        return userTradeAccountApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserTradeAccountDataRequest request) {
@@ -67,7 +68,7 @@ public class UserTradeAccountController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <UserTradeAccountResponse> view(@Validated(ViewOperator.class) UserTradeAccountDataRequest  request) {
+    public ResponseObject<UserTradeAccountResponse> view(@Validated(ViewOperator.class) UserTradeAccountDataRequest request) {
         return userTradeAccountApi.view(request);
     }
 }

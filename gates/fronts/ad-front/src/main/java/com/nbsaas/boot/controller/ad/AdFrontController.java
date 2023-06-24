@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RestController
 @RequestMapping("/ad")
 public class AdFrontController {
@@ -23,12 +23,12 @@ public class AdFrontController {
 
 
     @RequestMapping("/search")
-   public PageResponse<AdSimple> search(AdSearchRequest request) {
+    public PageResponse<AdSimple> search(AdSearchRequest request) {
         return adApi.search(request);
     }
 
     @RequestMapping("/list")
-    public ListResponse <AdSimple> list(AdSearchRequest request) {
+    public ListResponse<AdSimple> list(AdSearchRequest request) {
         return adApi.list(request);
     }
 

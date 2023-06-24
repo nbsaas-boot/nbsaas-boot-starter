@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userAccessLog")
@@ -44,32 +45,32 @@ public class UserAccessLogAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserAccessLogResponse> create(@Validated(AddOperator.class) UserAccessLogDataRequest request) {
         return userAccessLogApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserAccessLogResponse> update(@Validated(UpdateOperator.class) UserAccessLogDataRequest
-         request) {
-         return userAccessLogApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserAccessLogResponse> update(@Validated(UpdateOperator.class) UserAccessLogDataRequest
+                                                                request) {
+        return userAccessLogApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserAccessLogDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserAccessLogDataRequest request) {
         return userAccessLogApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserAccessLogResponse> view(@Validated(ViewOperator.class) UserAccessLogDataRequest request) {
-         return userAccessLogApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserAccessLogResponse> view(@Validated(ViewOperator.class) UserAccessLogDataRequest request) {
+        return userAccessLogApi.view(request);
+    }
 
-  }
+}

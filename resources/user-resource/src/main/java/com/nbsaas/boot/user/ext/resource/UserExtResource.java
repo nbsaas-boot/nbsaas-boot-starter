@@ -9,7 +9,6 @@ import com.nbsaas.boot.user.api.domain.enums.AccountType;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
 import com.nbsaas.boot.user.api.domain.field.UserAccountField;
 import com.nbsaas.boot.user.api.domain.field.UserOauthConfigField;
-import com.nbsaas.boot.user.api.domain.field.UserRoleField;
 import com.nbsaas.boot.user.api.domain.request.UserAccountDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserInfoDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserOauthTokenDataRequest;
@@ -278,8 +277,8 @@ public class UserExtResource implements UserExtApi {
 
     @Override
     public ListResponse<String> selectPermissionByUser(Long userId) {
-        ListResponse<String> result=new ListResponse<>();
-        userRoleApi.listData(Filter.eq("",userId));
+        ListResponse<String> result = new ListResponse<>();
+        userRoleApi.listData(Filter.eq("", userId));
 
         return null;
     }

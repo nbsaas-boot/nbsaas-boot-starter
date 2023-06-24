@@ -15,17 +15,17 @@ import javax.persistence.*;
 @Table(name = "sys_trade_basic_account")
 public class BasicTradeAccount extends AbstractEntity {
 
-  @SearchItem(label = "系统key", name = "key")
-  @FormField(title = "系统key", grid = true, required = true)
-  @Column(name = "trade_key", unique = true, length = 50)
-  private String key;
+    @SearchItem(label = "系统key", name = "key")
+    @FormField(title = "系统key", grid = true, required = true)
+    @Column(name = "trade_key", unique = true, length = 50)
+    private String key;
 
 
-  @FormField(title = "资金账号余额", grid = true)
-  @SearchItem(label = "资金账号", name = "account", key = "account.id",  show = false)
-  @FieldName
-  @FieldConvert
-  @ManyToOne(fetch = FetchType.LAZY)
-  private TradeAccount account;
+    @FormField(title = "资金账号余额", grid = true)
+    @SearchItem(label = "资金账号", name = "account", key = "account.id", show = false)
+    @FieldName
+    @FieldConvert
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TradeAccount account;
 
 }

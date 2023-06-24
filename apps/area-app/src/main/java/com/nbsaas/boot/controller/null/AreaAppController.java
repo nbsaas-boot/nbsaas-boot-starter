@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/area")
@@ -44,32 +45,32 @@ public class AreaAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<AreaResponse> create(@Validated(AddOperator.class) AreaDataRequest request) {
         return areaApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<AreaResponse> update(@Validated(UpdateOperator.class) AreaDataRequest
-         request) {
-         return areaApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<AreaResponse> update(@Validated(UpdateOperator.class) AreaDataRequest
+                                                       request) {
+        return areaApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AreaDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) AreaDataRequest request) {
         return areaApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<AreaResponse> view(@Validated(ViewOperator.class) AreaDataRequest request) {
-         return areaApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<AreaResponse> view(@Validated(ViewOperator.class) AreaDataRequest request) {
+        return areaApi.view(request);
+    }
 
-  }
+}

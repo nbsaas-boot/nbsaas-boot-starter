@@ -1,27 +1,26 @@
 package com.nbsaas.boot.area.rest.convert;
 
-import com.nbsaas.boot.area.data.entity.Area;
 import com.nbsaas.boot.area.api.domain.response.AreaResponse;
-
-import com.nbsaas.boot.utils.BeanDataUtils;
+import com.nbsaas.boot.area.data.entity.Area;
 import com.nbsaas.boot.rest.api.Converter;
+import com.nbsaas.boot.utils.BeanDataUtils;
 
 /**
-* 实体对象转化成响应对象
-*/
+ * 实体对象转化成响应对象
+ */
 
-public class AreaResponseConvert  implements Converter
-<AreaResponse,Area> {
+public class AreaResponseConvert implements Converter
+        <AreaResponse, Area> {
 
-@Override
-public AreaResponse convert(Area source) {
-AreaResponse  result = new  AreaResponse();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getParent()!=null){
-                result.setParent(source.getParent().getId());
-            }
-return result;
-}
+    @Override
+    public AreaResponse convert(Area source) {
+        AreaResponse result = new AreaResponse();
+        BeanDataUtils.copyProperties(source, result);
+        if (source.getParent() != null) {
+            result.setParent(source.getParent().getId());
+        }
+        return result;
+    }
 
 }
 

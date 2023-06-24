@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/tradeInfo")
@@ -44,32 +45,32 @@ public class TradeInfoAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<TradeInfoResponse> create(@Validated(AddOperator.class) TradeInfoDataRequest request) {
         return tradeInfoApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<TradeInfoResponse> update(@Validated(UpdateOperator.class) TradeInfoDataRequest
-         request) {
-         return tradeInfoApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<TradeInfoResponse> update(@Validated(UpdateOperator.class) TradeInfoDataRequest
+                                                            request) {
+        return tradeInfoApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeInfoDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) TradeInfoDataRequest request) {
         return tradeInfoApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<TradeInfoResponse> view(@Validated(ViewOperator.class) TradeInfoDataRequest request) {
-         return tradeInfoApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<TradeInfoResponse> view(@Validated(ViewOperator.class) TradeInfoDataRequest request) {
+        return tradeInfoApi.view(request);
+    }
 
-  }
+}

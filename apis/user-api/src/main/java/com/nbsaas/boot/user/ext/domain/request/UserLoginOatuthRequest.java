@@ -3,7 +3,7 @@ package com.nbsaas.boot.user.ext.domain.request;
 import lombok.Data;
 
 @Data
-public class UserLoginOatuthRequest  {
+public class UserLoginOatuthRequest {
 
     /**
      * 第三方登陆类型

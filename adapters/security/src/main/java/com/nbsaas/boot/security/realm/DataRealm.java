@@ -23,7 +23,7 @@ public class DataRealm<T> extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
 
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        if (authorizationApi!=null){
+        if (authorizationApi != null) {
             info.addRoles(authorizationApi.loadRoles());
             info.addStringPermissions(authorizationApi.loadPermissions());
         }

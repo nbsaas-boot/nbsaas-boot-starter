@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/area")
@@ -34,7 +35,7 @@ public class AreaController {
 
 
     @RequestMapping("/search")
-    public PageResponse <AreaSimple> search(AreaSearchRequest request) {
+    public PageResponse<AreaSimple> search(AreaSearchRequest request) {
         return areaApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class AreaController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <AreaResponse> create(@Validated(AddOperator.class) AreaDataRequest request) {
+    public ResponseObject<AreaResponse> create(@Validated(AddOperator.class) AreaDataRequest request) {
         return areaApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<AreaResponse> update(@Validated(UpdateOperator.class) AreaDataRequest request) {
-       return areaApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<AreaResponse> update(@Validated(UpdateOperator.class) AreaDataRequest request) {
+        return areaApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AreaDataRequest request) {
@@ -67,7 +68,7 @@ public class AreaController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <AreaResponse> view(@Validated(ViewOperator.class) AreaDataRequest  request) {
+    public ResponseObject<AreaResponse> view(@Validated(ViewOperator.class) AreaDataRequest request) {
         return areaApi.view(request);
     }
 }

@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/structure")
@@ -44,32 +45,32 @@ public class StructureAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<StructureResponse> create(@Validated(AddOperator.class) StructureDataRequest request) {
         return structureApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<StructureResponse> update(@Validated(UpdateOperator.class) StructureDataRequest
-         request) {
-         return structureApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<StructureResponse> update(@Validated(UpdateOperator.class) StructureDataRequest
+                                                            request) {
+        return structureApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) StructureDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) StructureDataRequest request) {
         return structureApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<StructureResponse> view(@Validated(ViewOperator.class) StructureDataRequest request) {
-         return structureApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<StructureResponse> view(@Validated(ViewOperator.class) StructureDataRequest request) {
+        return structureApi.view(request);
+    }
 
-  }
+}

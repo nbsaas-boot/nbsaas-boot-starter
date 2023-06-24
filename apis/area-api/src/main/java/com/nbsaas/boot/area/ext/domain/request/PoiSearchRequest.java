@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 public class PoiSearchRequest {
 
 
-  @NotEmpty(message = "地址不能为空")
-  private String address;
+    @NotEmpty(message = "地址不能为空")
+    private String address;
 
 }

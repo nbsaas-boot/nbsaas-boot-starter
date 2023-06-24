@@ -1,70 +1,74 @@
 package com.nbsaas.boot.trade.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
 /**
-* 响应对象
-*/
+ * 响应对象
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class TradeAccountExceptionResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class TradeAccountExceptionResponse implements Serializable {
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-        * 
-        **/
-            private BigDecimal amount;
+    /**
+     *
+     **/
+    private BigDecimal amount;
 
-        /**
-        * 
-        **/
-            private String accountName;
+    /**
+     *
+     **/
+    private String accountName;
 
-        /**
-        * 
-        **/
-            private BigDecimal oldAmount;
+    /**
+     *
+     **/
+    private BigDecimal oldAmount;
 
-        /**
-        * 
-        **/
-            private String checkValue;
+    /**
+     *
+     **/
+    private String checkValue;
 
-        /**
-        * 
-        **/
-            private String oldSalt;
+    /**
+     *
+     **/
+    private String oldSalt;
 
-        /**
-        * 主键id
-        **/
-            private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-        * 
-        **/
-            private String oldCheckValue;
+    /**
+     *
+     **/
+    private String oldCheckValue;
 
-        /**
-        * 添加时间
-        **/
-            private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
-        /**
-        * 
-        **/
-            private Long account;
+    /**
+     *
+     **/
+    private Long account;
 
-        /**
-        * 最新修改时间
-        **/
-            private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
 }

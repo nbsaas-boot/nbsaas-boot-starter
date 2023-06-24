@@ -18,7 +18,7 @@ import java.util.Set;
  * Entity - 广告位
  */
 
-@org.hibernate.annotations.Table(appliesTo = "nbsaas_boot_ad_position",comment = "广告位表")
+@org.hibernate.annotations.Table(appliesTo = "nbsaas_boot_ad_position", comment = "广告位表")
 @ComposeView
 @FormAnnotation(title = "广告位管理", model = "广告位", menu = "1,51,52")
 @Data
@@ -36,7 +36,7 @@ public class AdPosition extends SortEntity {
     private String key;
 
     @Comment("广告位名称")
-    @SearchItem(label = "广告位",name = "name")
+    @SearchItem(label = "广告位", name = "name")
     @FormField(title = "广告位", sortNum = "10", grid = true, required = true, col = 22)
     @Column(nullable = false)
     private String name;

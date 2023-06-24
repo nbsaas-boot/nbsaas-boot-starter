@@ -17,21 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/applicationMenu")
 public class ApplicationMenuController {
 
 
-      @Resource
-      private ApplicationMenuApi applicationMenuApi;
+    @Resource
+    private ApplicationMenuApi applicationMenuApi;
 
 
     @RequestMapping("/search")
     public PageResponse<ApplicationMenuSimple> search(ApplicationMenuSearchRequest request) {
-         return applicationMenuApi.search(request);
+        return applicationMenuApi.search(request);
     }
 
     @RequestMapping("/list")
@@ -39,32 +39,32 @@ public class ApplicationMenuController {
         return applicationMenuApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-        @CreateData
-        @RequestMapping("/create")
-        public ResponseObject
-        <ApplicationMenuResponse> create(@Validated(AddOperator.class) ApplicationMenuDataRequest request) {
-            return applicationMenuApi.create(request);
-        }
+    /**
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
+    @CreateData
+    @RequestMapping("/create")
+    public ResponseObject
+            <ApplicationMenuResponse> create(@Validated(AddOperator.class) ApplicationMenuDataRequest request) {
+        return applicationMenuApi.create(request);
+    }
 
-        @UpdateData
-       @RequestMapping("/update")
-       public ResponseObject<ApplicationMenuResponse> update(@Validated(UpdateOperator.class) ApplicationMenuDataRequest request) {
-          return applicationMenuApi.update(request);
-       }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<ApplicationMenuResponse> update(@Validated(UpdateOperator.class) ApplicationMenuDataRequest request) {
+        return applicationMenuApi.update(request);
+    }
 
-      @RequestMapping("/delete")
-      public ResponseObject<?> delete(@Validated(DeleteOperator.class) ApplicationMenuDataRequest request) {
-         return applicationMenuApi.delete(request);
-      }
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) ApplicationMenuDataRequest request) {
+        return applicationMenuApi.delete(request);
+    }
 
-       @RequestMapping("/view")
-       public ResponseObject <ApplicationMenuResponse> view(@Validated(ViewOperator.class) ApplicationMenuDataRequest request) {
-          return applicationMenuApi.view(request);
-       }
+    @RequestMapping("/view")
+    public ResponseObject<ApplicationMenuResponse> view(@Validated(ViewOperator.class) ApplicationMenuDataRequest request) {
+        return applicationMenuApi.view(request);
+    }
 }

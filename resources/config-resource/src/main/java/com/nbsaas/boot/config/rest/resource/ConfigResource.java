@@ -6,7 +6,6 @@ import com.nbsaas.boot.config.api.domain.response.ConfigResponse;
 import com.nbsaas.boot.config.api.domain.simple.ConfigSimple;
 import com.nbsaas.boot.config.data.entity.Config;
 import com.nbsaas.boot.config.data.repository.ConfigRepository;
-import com.nbsaas.boot.config.rest.convert.ConfigEntityConvert;
 import com.nbsaas.boot.config.rest.convert.ConfigResponseConvert;
 import com.nbsaas.boot.config.rest.convert.ConfigSimpleConvert;
 import com.nbsaas.boot.jpa.data.core.BaseResource;

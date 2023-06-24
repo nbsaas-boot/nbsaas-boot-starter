@@ -71,8 +71,8 @@ public class AreaExtResource implements AreaExtApi {
     @Transactional(readOnly = true)
     @Override
     public ResponseObject<PoiResponse> lbs(PoiSearchRequest request) {
-        ResponseObject<PoiResponse> result=new ResponseObject<>();
-        PoiResponse data=new PoiResponse();
+        ResponseObject<PoiResponse> result = new ResponseObject<>();
+        PoiResponse data = new PoiResponse();
         result.setData(data);
         try {
             GeoCoderService service = ServicesBuilder.newBuilder().key("H4DBZ-WLVCU-YLEVF-4MIDF-MGB5H-TOFDR").build().geoGeoCoderService();
@@ -106,7 +106,7 @@ public class AreaExtResource implements AreaExtApi {
                     data.setCountyId(county.getId());
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             result.setCode(500);
             result.setMsg(e.getMessage());
         }

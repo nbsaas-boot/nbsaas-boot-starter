@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/ad")
@@ -44,32 +45,32 @@ public class AdAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<AdResponse> create(@Validated(AddOperator.class) AdDataRequest request) {
         return adApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<AdResponse> update(@Validated(UpdateOperator.class) AdDataRequest
-         request) {
-         return adApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<AdResponse> update(@Validated(UpdateOperator.class) AdDataRequest
+                                                     request) {
+        return adApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdDataRequest request) {
         return adApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<AdResponse> view(@Validated(ViewOperator.class) AdDataRequest request) {
-         return adApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<AdResponse> view(@Validated(ViewOperator.class) AdDataRequest request) {
+        return adApi.view(request);
+    }
 
-  }
+}

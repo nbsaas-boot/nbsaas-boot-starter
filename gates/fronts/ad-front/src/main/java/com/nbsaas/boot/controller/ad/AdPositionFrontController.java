@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RestController
 @RequestMapping("/adPosition")
 public class AdPositionFrontController {
@@ -23,12 +23,12 @@ public class AdPositionFrontController {
 
 
     @RequestMapping("/search")
-   public PageResponse<AdPositionSimple> search(AdPositionSearchRequest request) {
+    public PageResponse<AdPositionSimple> search(AdPositionSearchRequest request) {
         return adPositionApi.search(request);
     }
 
     @RequestMapping("/list")
-    public ListResponse <AdPositionSimple> list(AdPositionSearchRequest request) {
+    public ListResponse<AdPositionSimple> list(AdPositionSearchRequest request) {
         return adPositionApi.list(request);
     }
 

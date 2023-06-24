@@ -1,7 +1,6 @@
 package com.nbsaas.boot.config.data.entity;
 
 
-import com.nbsaas.boot.code.annotation.CatalogClass;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import lombok.Data;

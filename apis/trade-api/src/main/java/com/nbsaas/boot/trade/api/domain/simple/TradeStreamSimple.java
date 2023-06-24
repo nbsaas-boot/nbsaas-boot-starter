@@ -1,82 +1,82 @@
 package com.nbsaas.boot.trade.api.domain.simple;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.math.BigDecimal;
 import lombok.Data;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
-* 列表对象
-*/
+ * 列表对象
+ */
 @Data
 public class TradeStreamSimple implements Serializable {
 
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
+    /**
+     *
+     **/
+    private BigDecimal preAmount;
 
-            /**
-            * 
-            **/
-                private BigDecimal preAmount;
+    /**
+     *
+     **/
+    private String note;
 
-            /**
-            * 
-            **/
-                private String note;
+    /**
+     *
+     **/
+    private BigDecimal amount;
 
-            /**
-            * 
-            **/
-                private BigDecimal amount;
+    /**
+     *
+     **/
+    private String accountName;
 
-            /**
-            * 
-            **/
-                private String accountName;
+    /**
+     *
+     **/
+    private Integer changeType;
 
-            /**
-            * 
-            **/
-                private Integer changeType;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-            /**
-            * 主键id
-            **/
-                private Long id;
+    /**
+     *
+     **/
+    private BigDecimal afterAmount;
 
-            /**
-            * 
-            **/
-                private BigDecimal afterAmount;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
-            /**
-            * 添加时间
-            **/
-                private Date addDate;
+    /**
+     *
+     **/
+    private Long account;
 
-            /**
-            * 
-            **/
-                private Long account;
+    /**
+     *
+     **/
+    private Long info;
 
-            /**
-            * 
-            **/
-                private Long info;
+    /**
+     *
+     **/
+    private Integer serialNo;
 
-            /**
-            * 
-            **/
-                private Integer serialNo;
-
-            /**
-            * 最新修改时间
-            **/
-                private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
 
 }

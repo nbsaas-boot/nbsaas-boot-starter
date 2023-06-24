@@ -23,9 +23,8 @@ package com.nbsaas.boot.user.data.entity;
 import com.nbsaas.boot.rest.enums.StoreState;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * 用户

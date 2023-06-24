@@ -82,8 +82,8 @@ public class TradeExtResource implements TradeExtApi {
         trade.setFrom(fromAccount);
         tradeInfoRepository.save(trade);
 
-       handFrom(request, fromAccount, trade);
-       handTo(request, toAccount, trade);
+        handFrom(request, fromAccount, trade);
+        handTo(request, toAccount, trade);
         request.setTo(request.getTo());
         request.setFrom(request.getFrom());
         request.setAmount(request.getAmount());

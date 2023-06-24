@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/userLoginLog")
@@ -34,7 +35,7 @@ public class UserLoginLogController {
 
 
     @RequestMapping("/search")
-    public PageResponse <UserLoginLogSimple> search(UserLoginLogSearchRequest request) {
+    public PageResponse<UserLoginLogSimple> search(UserLoginLogSearchRequest request) {
         return userLoginLogApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class UserLoginLogController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <UserLoginLogResponse> create(@Validated(AddOperator.class) UserLoginLogDataRequest request) {
+    public ResponseObject<UserLoginLogResponse> create(@Validated(AddOperator.class) UserLoginLogDataRequest request) {
         return userLoginLogApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<UserLoginLogResponse> update(@Validated(UpdateOperator.class) UserLoginLogDataRequest request) {
-       return userLoginLogApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserLoginLogResponse> update(@Validated(UpdateOperator.class) UserLoginLogDataRequest request) {
+        return userLoginLogApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserLoginLogDataRequest request) {
@@ -67,7 +68,7 @@ public class UserLoginLogController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <UserLoginLogResponse> view(@Validated(ViewOperator.class) UserLoginLogDataRequest  request) {
+    public ResponseObject<UserLoginLogResponse> view(@Validated(ViewOperator.class) UserLoginLogDataRequest request) {
         return userLoginLogApi.view(request);
     }
 }

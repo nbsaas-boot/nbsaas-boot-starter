@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  对外控制器
-*/
+ * 对外控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/structure")
@@ -34,7 +35,7 @@ public class StructureController {
 
 
     @RequestMapping("/search")
-    public PageResponse <StructureSimple> search(StructureSearchRequest request) {
+    public PageResponse<StructureSimple> search(StructureSearchRequest request) {
         return structureApi.search(request);
     }
 
@@ -44,22 +45,22 @@ public class StructureController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <StructureResponse> create(@Validated(AddOperator.class) StructureDataRequest request) {
+    public ResponseObject<StructureResponse> create(@Validated(AddOperator.class) StructureDataRequest request) {
         return structureApi.create(request);
     }
 
-   @UpdateData
-   @RequestMapping("/update")
-   public ResponseObject<StructureResponse> update(@Validated(UpdateOperator.class) StructureDataRequest request) {
-       return structureApi.update(request);
-   }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<StructureResponse> update(@Validated(UpdateOperator.class) StructureDataRequest request) {
+        return structureApi.update(request);
+    }
 
     @RequestMapping("/delete")
     public ResponseObject<?> delete(@Validated(DeleteOperator.class) StructureDataRequest request) {
@@ -67,7 +68,7 @@ public class StructureController {
     }
 
     @RequestMapping("/view")
-    public ResponseObject <StructureResponse> view(@Validated(ViewOperator.class) StructureDataRequest  request) {
+    public ResponseObject<StructureResponse> view(@Validated(ViewOperator.class) StructureDataRequest request) {
         return structureApi.view(request);
     }
 }

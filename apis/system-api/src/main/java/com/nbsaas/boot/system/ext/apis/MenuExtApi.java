@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MenuExtApi {
 
-    ListResponse<MenuExtSimple> tree(Long userId,Integer version);
+    ListResponse<MenuExtSimple> tree(Long userId, Integer version);
 
     /**
      * 获取系统的菜单树

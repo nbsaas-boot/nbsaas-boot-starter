@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/userOauthToken")
@@ -44,32 +45,32 @@ public class UserOauthTokenAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<UserOauthTokenResponse> create(@Validated(AddOperator.class) UserOauthTokenDataRequest request) {
         return userOauthTokenApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<UserOauthTokenResponse> update(@Validated(UpdateOperator.class) UserOauthTokenDataRequest
-         request) {
-         return userOauthTokenApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<UserOauthTokenResponse> update(@Validated(UpdateOperator.class) UserOauthTokenDataRequest
+                                                                 request) {
+        return userOauthTokenApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserOauthTokenDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) UserOauthTokenDataRequest request) {
         return userOauthTokenApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<UserOauthTokenResponse> view(@Validated(ViewOperator.class) UserOauthTokenDataRequest request) {
-         return userOauthTokenApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<UserOauthTokenResponse> view(@Validated(ViewOperator.class) UserOauthTokenDataRequest request) {
+        return userOauthTokenApi.view(request);
+    }
 
-  }
+}

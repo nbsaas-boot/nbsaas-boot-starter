@@ -18,11 +18,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 
 /**
-*  前端控制器
-*/
+ * 前端控制器
+ */
 @RequiresAuthentication
 @RestController
 @RequestMapping("/app/adPosition")
@@ -44,32 +45,32 @@ public class AdPositionAppController {
     }
 
     /**
-    * 添加数据
-    *
-    * @param request
-    * @return
-    */
+     * 添加数据
+     *
+     * @param request
+     * @return
+     */
     @CreateData
     @RequestMapping("/create")
     public ResponseObject<AdPositionResponse> create(@Validated(AddOperator.class) AdPositionDataRequest request) {
         return adPositionApi.create(request);
     }
 
-     @UpdateData
-     @RequestMapping("/update")
-     public ResponseObject<AdPositionResponse> update(@Validated(UpdateOperator.class) AdPositionDataRequest
-         request) {
-         return adPositionApi.update(request);
-     }
+    @UpdateData
+    @RequestMapping("/update")
+    public ResponseObject<AdPositionResponse> update(@Validated(UpdateOperator.class) AdPositionDataRequest
+                                                             request) {
+        return adPositionApi.update(request);
+    }
 
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdPositionDataRequest request) {
+    @RequestMapping("/delete")
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdPositionDataRequest request) {
         return adPositionApi.delete(request);
-     }
+    }
 
-     @RequestMapping("/view")
-     public ResponseObject<AdPositionResponse> view(@Validated(ViewOperator.class) AdPositionDataRequest request) {
-         return adPositionApi.view(request);
-     }
+    @RequestMapping("/view")
+    public ResponseObject<AdPositionResponse> view(@Validated(ViewOperator.class) AdPositionDataRequest request) {
+        return adPositionApi.view(request);
+    }
 
-  }
+}
