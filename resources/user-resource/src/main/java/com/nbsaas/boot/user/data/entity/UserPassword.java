@@ -20,7 +20,8 @@ import javax.persistence.*;
 @org.hibernate.annotations.Table(appliesTo = "user_password", comment = "用户密码")
 public class UserPassword extends AbstractEntity {
 
-    @Comment("用户")
+    @Comment("用户id")
+    @JoinColumn(name = "user_id")
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private UserInfo user;
