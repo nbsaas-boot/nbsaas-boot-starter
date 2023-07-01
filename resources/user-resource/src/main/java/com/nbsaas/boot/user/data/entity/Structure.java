@@ -12,6 +12,8 @@ import java.io.Serializable;
 import java.util.List;
 
 
+
+@org.hibernate.annotations.Table(appliesTo = "sys_structure",comment = "组织架构")
 @CatalogClass
 @FormAnnotation(title = "组织架构管理", model = "组织架构", menu = "1,27,88")
 @Data

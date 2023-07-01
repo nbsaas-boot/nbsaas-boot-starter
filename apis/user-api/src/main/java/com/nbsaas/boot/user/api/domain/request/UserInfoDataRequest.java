@@ -1,93 +1,93 @@
 package com.nbsaas.boot.user.api.domain.request;
 
-import com.nbsaas.boot.rest.enums.DataScope;
-import com.nbsaas.boot.rest.enums.State;
-import com.nbsaas.boot.rest.enums.StoreState;
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+            import com.nbsaas.boot.rest.enums.DataScope;
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.rest.enums.State;
+/**
+* 请求对象
+*/
+@Data
+public class UserInfoDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class UserInfoDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private String note;
 
-    /**
-     *
-     **/
-    private Integer catalog;
+        /**
+        * 
+        **/
+            private String note;
 
-    /**
-     *
-     **/
-    //private String structureNameName;
+        /**
+        * 
+        **/
+            private Integer catalog;
 
-    /**
-     *
-     **/
-    private String avatar;
+        /**
+        * 
+        **/
+            //private String structureNameName;
 
-    /**
-     *
-     **/
-    private DataScope dataScope;
+        /**
+        * 
+        **/
+            private String avatar;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 
+        **/
+            private DataScope dataScope;
 
-    /**
-     *
-     **/
-    private Long structure;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     *
-     **/
-    private Integer loginSize;
+        /**
+        * 
+        **/
+            private Long structure;
 
-    /**
-     *
-     **/
-    private String phone;
+        /**
+        * 
+        **/
+            private Integer loginSize;
 
-    /**
-     *
-     **/
-    private String name;
+        /**
+        * 
+        **/
+            private String phone;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+        /**
+        * 
+        **/
+            private String name;
 
-    /**
-     *
-     **/
-    private State state;
+        /**
+        * 
+        **/
+            private StoreState storeState;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 
+        **/
+            private State state;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 主键id
+        **/
+            private Long id;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

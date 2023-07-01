@@ -1,87 +1,87 @@
 package com.nbsaas.boot.user.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
+import lombok.Data;
+    import java.util.List;
 
 /**
- * 列表对象
- */
+* 列表对象
+*/
 @Data
 public class StructureSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
     private String value;
     private String label;
     private List
-            <StructureSimple> children;
+    <StructureSimple> children;
 
 
-    /**
-     *
-     **/
-    private Long parent;
+            /**
+            * 
+            **/
+                private Long parent;
 
-    /**
-     *
-     **/
-    private String parentName;
+            /**
+            * 
+            **/
+                private String parentName;
 
-    /**
-     * 编码
-     **/
-    private String code;
+            /**
+            * 编码
+            **/
+                private String code;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+            /**
+            * 深度
+            **/
+                private Integer depth;
 
-    /**
-     * 名称
-     **/
-    private String name;
+            /**
+            * 名称
+            **/
+                private String name;
 
-    /**
-     * ids
-     **/
-    private String ids;
+            /**
+            * ids
+            **/
+                private String ids;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+            /**
+            * 排序号
+            **/
+                private Integer sortNum;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+            /**
+            * 左节点
+            **/
+                private Integer lft;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+            /**
+            * 右节点
+            **/
+                private Integer rgt;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

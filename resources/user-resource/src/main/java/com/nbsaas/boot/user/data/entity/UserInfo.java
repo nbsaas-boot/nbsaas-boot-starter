@@ -32,7 +32,7 @@ import javax.persistence.Table;
  * @author ada
  */
 
-
+@org.hibernate.annotations.Table(appliesTo = "user_info",comment = "用户")
 @Data
 @Entity
 @Table(name = "user_info")

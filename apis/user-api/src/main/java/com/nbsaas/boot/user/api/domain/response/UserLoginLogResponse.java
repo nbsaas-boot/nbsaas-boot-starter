@@ -1,91 +1,88 @@
 package com.nbsaas.boot.user.api.domain.response;
 
-import com.nbsaas.boot.rest.enums.StoreState;
-import com.nbsaas.boot.user.api.domain.enums.LoginState;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.boot.user.api.domain.enums.LoginState;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserLoginLogResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserLoginLogResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private String note;
+        /**
+        * 
+        **/
+            private String note;
 
-    /**
-     *
-     **/
-    private String password;
+        /**
+        * 
+        **/
+            private String password;
 
-    /**
-     *
-     **/
-    private String ip;
+        /**
+        * 
+        **/
+            private String ip;
 
-    /**
-     *
-     **/
-    private String client;
+        /**
+        * 
+        **/
+            private String client;
 
-    /**
-     *
-     **/
-    //枚举
-    private StoreState storeState;
+        /**
+        * 
+        **/
+            //枚举
+            private StoreState storeState;
 
-    private String storeStateName;
+            private String storeStateName;
 
-    /**
-     *
-     **/
-    //枚举
-    private LoginState state;
+        /**
+        * 
+        **/
+            //枚举
+            private LoginState state;
 
-    private String stateName;
+            private String stateName;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     *
-     **/
-    private String userName;
+        /**
+        * 
+        **/
+            private String userName;
 
-    /**
-     *
-     **/
-    private Long user;
+        /**
+        * 
+        **/
+            private Long user;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     *
-     **/
-    private String account;
+        /**
+        * 
+        **/
+            private String account;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

@@ -1,66 +1,67 @@
 package com.nbsaas.boot.user.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
 
 /**
- * 列表对象
- */
+* 列表对象
+*/
 @Data
 public class UserOauthConfigSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private String name;
 
-    /**
-     *
-     **/
-    private String model;
+            /**
+            * 
+            **/
+                private String name;
 
-    /**
-     *
-     **/
-    private String appKey;
+            /**
+            * 
+            **/
+                private String model;
 
-    /**
-     *
-     **/
-    private String appSecret;
+            /**
+            * 
+            **/
+                private String appKey;
 
-    /**
-     *
-     **/
-    private String className;
+            /**
+            * 
+            **/
+                private String appSecret;
 
-    /**
-     *
-     **/
-    private Integer state;
+            /**
+            * 
+            **/
+                private String className;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 
+            **/
+                private Integer state;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

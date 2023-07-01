@@ -10,10 +10,10 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@org.hibernate.annotations.Table(appliesTo = "user_role", comment = "用户角色表")
 @Data
 @Entity
 @Table(name = "user_role")
+@org.hibernate.annotations.Table(appliesTo = "user_role", comment = "用户角色表")
 public class UserRole extends AbstractEntity {
 
     @FieldConvert
