@@ -1,23 +1,17 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.boot</groupId>
-        <artifactId>gates</artifactId>
+        <artifactId>admins</artifactId>
         <version>1.0.3-2023</version>
     </parent>
 
-    <artifactId>fronts</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>area-admin</artifactId>
+    <packaging>jar</packaging>
 
-    <name>fronts</name>
-    <url>http://www.nbsaas.com</url>
-    <modules>
-        <module>user-front</module>
-        <module>system-front</module>
-        <module>ad-front</module>
-        <module>area-front</module>
-    </modules>
+    <name>area-admin</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,6 +23,11 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>area-resource</artifactId>
+            <version>1.0.3-2023</version>
         </dependency>
     </dependencies>
 </project>

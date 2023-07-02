@@ -15,6 +15,7 @@
         <module>user-admin</module>
         <module>system-admin</module>
         <module>ad-admin</module>
+        <module>area-admin</module>
     </modules>
 
     <properties>
