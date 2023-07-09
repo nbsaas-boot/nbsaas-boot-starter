@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.nbsaas.boot</groupId>
         <artifactId>resources</artifactId>
-        <version>1.0.3-2023</version>
+        <version>1.0.4-2023</version>
     </parent>
 
     <artifactId>all-resource</artifactId>
@@ -27,32 +27,32 @@
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>user-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>system-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>ad-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>area-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>trade-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>config-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <version>1.0.4-2023</version>
         </dependency>
     </dependencies>
 </project>
