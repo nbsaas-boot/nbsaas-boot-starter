@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.boot</groupId>
-        <artifactId>fronts</artifactId>
+        <artifactId>apis</artifactId>
         <version>1.0.3-2023</version>
     </parent>
 
-    <artifactId>area-front</artifactId>
+    <artifactId>pay-api</artifactId>
     <packaging>jar</packaging>
 
-    <name>area-front</name>
+    <name>pay-api</name>
     <url>http://www.nbsaas.com</url>
 
     <properties>
@@ -25,9 +25,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.nbsaas.boot</groupId>
-            <artifactId>area-resource</artifactId>
-            <version>1.0.3-2023</version>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-miniapp</artifactId>
+            <version>${binarywang.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>weixin-java-pay</artifactId>
+            <version>${binarywang.version}</version>
         </dependency>
     </dependencies>
 </project>

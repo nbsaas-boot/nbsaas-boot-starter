@@ -24,6 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nbsaas.version>1.0.13-2023</nbsaas.version>
         <mybatis.version>3.0.2</mybatis.version>
+        <binarywang.version>4.5.0</binarywang.version>
     </properties>
     <dependencyManagement>
         <dependencies>

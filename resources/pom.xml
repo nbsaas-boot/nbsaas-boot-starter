@@ -19,6 +19,7 @@
         <module>area-resource</module>
         <module>trade-resource</module>
         <module>config-resource</module>
+        <module>pay-resource</module>
     </modules>
 
     <properties>

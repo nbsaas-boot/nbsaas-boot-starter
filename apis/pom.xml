@@ -19,6 +19,7 @@
         <module>area-api</module>
         <module>trade-api</module>
         <module>config-api</module>
+        <module>pay-api</module>
     </modules>
 
     <properties>
