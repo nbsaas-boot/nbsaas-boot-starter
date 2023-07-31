@@ -22,7 +22,9 @@ package com.nbsaas.boot.user.data.entity;
 
 import com.nbsaas.boot.rest.enums.StoreState;
 import lombok.Data;
+import org.hibernate.annotations.Comment;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -38,8 +40,12 @@ import javax.persistence.Table;
 @Table(name = "user_info")
 public class UserInfo extends AbstractUser {
 
-
+    @Comment("用户状态")
     private StoreState storeState;
+
+    @Comment("账号")
+    @Column(length = 50)
+    private String accountNo;
 
     public static UserInfo fromId(Long id) {
         UserInfo result = new UserInfo();

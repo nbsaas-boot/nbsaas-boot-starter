@@ -22,6 +22,7 @@ import java.util.List;
 public class Structure extends CatalogEntity {
 
 
+    //@JoinColumn(foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
