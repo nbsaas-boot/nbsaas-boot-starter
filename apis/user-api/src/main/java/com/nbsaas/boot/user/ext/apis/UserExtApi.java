@@ -7,6 +7,7 @@ import com.nbsaas.boot.user.api.domain.response.UserInfoResponse;
 import com.nbsaas.boot.user.ext.domain.request.UserLoginOatuthRequest;
 import com.nbsaas.boot.user.ext.domain.request.UserLoginRequest;
 import com.nbsaas.boot.user.ext.domain.request.UserRegisterRequest;
+import com.nbsaas.boot.user.ext.domain.request.UserUpdatePasswordRequest;
 import com.nbsaas.boot.user.ext.domain.response.UserInfoExtResponse;
 
 public interface UserExtApi {
@@ -22,6 +23,15 @@ public interface UserExtApi {
      * @return
      */
     ResponseObject<UserInfoResponse> register(UserRegisterRequest request);
+
+    /**
+     * 修改密码
+     *
+     * @param request
+     * @return
+     */
+    ResponseObject<?> updatePassword(UserUpdatePasswordRequest request);
+
 
 
     ResponseObject<UserInfoExtResponse> login(UserLoginRequest request);

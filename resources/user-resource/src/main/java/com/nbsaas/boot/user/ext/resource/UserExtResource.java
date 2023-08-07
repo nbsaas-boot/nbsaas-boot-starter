@@ -9,6 +9,7 @@ import com.nbsaas.boot.user.api.domain.enums.AccountType;
 import com.nbsaas.boot.user.api.domain.enums.SecurityType;
 import com.nbsaas.boot.user.api.domain.field.UserAccountField;
 import com.nbsaas.boot.user.api.domain.field.UserOauthConfigField;
+import com.nbsaas.boot.user.api.domain.field.UserPasswordField;
 import com.nbsaas.boot.user.api.domain.request.UserAccountDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserInfoDataRequest;
 import com.nbsaas.boot.user.api.domain.request.UserOauthTokenDataRequest;
@@ -17,10 +18,7 @@ import com.nbsaas.boot.user.api.domain.response.*;
 import com.nbsaas.boot.user.data.entity.UserInfo;
 import com.nbsaas.boot.user.ext.apis.PasswordApi;
 import com.nbsaas.boot.user.ext.apis.UserExtApi;
-import com.nbsaas.boot.user.ext.domain.request.OauthHandler;
-import com.nbsaas.boot.user.ext.domain.request.UserLoginOatuthRequest;
-import com.nbsaas.boot.user.ext.domain.request.UserLoginRequest;
-import com.nbsaas.boot.user.ext.domain.request.UserRegisterRequest;
+import com.nbsaas.boot.user.ext.domain.request.*;
 import com.nbsaas.boot.user.ext.domain.response.PasswordResponse;
 import com.nbsaas.boot.user.ext.domain.response.TokenResponse;
 import com.nbsaas.boot.user.ext.domain.response.UserInfoExtResponse;
@@ -127,6 +125,49 @@ public class UserExtResource implements UserExtApi {
         userPassword.setLastDate(new Date());
         userPassword.setCheckSize(0);
         userPasswordApi.createData(userPassword);
+
+        return result;
+    }
+
+    @Transactional
+    @Override
+    public ResponseObject<?> updatePassword(UserUpdatePasswordRequest request) {
+        ResponseObject<?> result = new ResponseObject<>();
+
+        UserInfoResponse user = userInfoApi.oneData(Filter.eq("id", request.getId()));
+        if (user == null) {
+            result.setCode(501);
+            result.setMsg("无效用户");
+            return result;
+        }
+        UserPasswordResponse password = userPasswordApi.oneData(Filter.eq(UserPasswordField.user, request.getId()));
+        if (password == null) {
+            result.setCode(502);
+            result.setMsg("没有设置密码");
+            return result;
+        }
+
+        //检查老密码
+        UserRegisterRequest req = new UserRegisterRequest();
+        req.setSalt(password.getSalt());
+        req.setPassword(request.getOldPassword());
+        PasswordResponse ps = passwordApi.passwordBySalt(req);
+        if (!ps.getPassword().equals(password.getPassword())) {
+            result.setCode(503);
+            result.setMsg("老密码不正确");
+            return result;
+        }
+
+        UserRegisterRequest pasReq = new UserRegisterRequest();
+        pasReq.setPassword(request.getPassword());
+        PasswordResponse newPassword = passwordApi.password(pasReq);
+
+        //修改密码
+        UserPasswordDataRequest passwordDataRequest = new UserPasswordDataRequest();
+        passwordDataRequest.setPassword(newPassword.getPassword());
+        passwordDataRequest.setSalt(newPassword.getSalt());
+        passwordDataRequest.setId(password.getId());
+        userPasswordApi.update(passwordDataRequest);
 
         return result;
     }

@@ -20,6 +20,7 @@
         <module>trade-resource</module>
         <module>config-resource</module>
         <module>pay-resource</module>
+        <module>tenant-resource</module>
     </modules>
 
     <properties>
