@@ -173,6 +173,7 @@ public class UserExtResource implements UserExtApi {
         return result;
     }
 
+    @Transactional
     @Override
     public ResponseObject<?> resetPassword(UserResetPasswordRequest request) {
         ResponseObject<?> result = new ResponseObject<>();
