@@ -66,6 +66,7 @@ public class MenuExtResource implements MenuExtApi {
         return result;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public ListResponse<MenuExtSimple> root() {
         ListResponse<MenuExtSimple> result = new ListResponse<>();
@@ -80,6 +81,7 @@ public class MenuExtResource implements MenuExtApi {
         return null;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public ListResponse<Long> selectForPermission(Long role) {
         ListResponse<Long> result = new ListResponse<Long>();
@@ -90,6 +92,7 @@ public class MenuExtResource implements MenuExtApi {
         return result;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<String> permissions(Long role) {
         List<String> result = new ArrayList<>();
@@ -106,6 +109,7 @@ public class MenuExtResource implements MenuExtApi {
         return null;
     }
 
+    @Transactional
     @Override
     public ResponseObject<?> updateRoleMenus(UpdateRoleMenuRequest request) {
         ResponseObject<?> result = new ResponseObject<>();

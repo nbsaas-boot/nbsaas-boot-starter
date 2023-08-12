@@ -9,13 +9,10 @@ import javax.validation.constraints.NotEmpty;
  * 修改密码请求
  */
 @Data
-public class UserUpdatePasswordRequest extends RequestObject {
+public class UserResetPasswordRequest extends RequestObject {
 
     private Long id;
 
-    @NotEmpty(message = "老密码不能为空")
-    private String oldPassword;
-
-    @NotEmpty(message = "新密码不能为空")
+    @NotEmpty(message = "密码不能为空")
     private String password;
 }

@@ -4,10 +4,7 @@ package com.nbsaas.boot.user.ext.apis;
 import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.user.api.domain.response.UserInfoResponse;
-import com.nbsaas.boot.user.ext.domain.request.UserLoginOatuthRequest;
-import com.nbsaas.boot.user.ext.domain.request.UserLoginRequest;
-import com.nbsaas.boot.user.ext.domain.request.UserRegisterRequest;
-import com.nbsaas.boot.user.ext.domain.request.UserUpdatePasswordRequest;
+import com.nbsaas.boot.user.ext.domain.request.*;
 import com.nbsaas.boot.user.ext.domain.response.UserInfoExtResponse;
 
 public interface UserExtApi {
@@ -31,6 +28,15 @@ public interface UserExtApi {
      * @return
      */
     ResponseObject<?> updatePassword(UserUpdatePasswordRequest request);
+
+
+    /**
+     * 重置密码
+     *
+     * @param request
+     * @return
+     */
+    ResponseObject<?> resetPassword(UserResetPasswordRequest request);
 
 
 

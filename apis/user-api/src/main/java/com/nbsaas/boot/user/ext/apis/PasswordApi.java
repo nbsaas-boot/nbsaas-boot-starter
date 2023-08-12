@@ -1,6 +1,7 @@
 package com.nbsaas.boot.user.ext.apis;
 
 
+import com.nbsaas.boot.user.ext.domain.request.PasswordRequest;
 import com.nbsaas.boot.user.ext.domain.request.UserRegisterRequest;
 import com.nbsaas.boot.user.ext.domain.response.PasswordResponse;
 
@@ -13,9 +14,9 @@ public interface PasswordApi {
      * @param request
      * @return
      */
-    PasswordResponse password(UserRegisterRequest request);
+    PasswordResponse password(PasswordRequest request);
 
 
-    PasswordResponse passwordBySalt(UserRegisterRequest request);
+    PasswordResponse passwordBySalt(PasswordRequest request);
 
 }

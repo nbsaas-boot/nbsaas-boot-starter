@@ -113,8 +113,9 @@ public class UserExtResource implements UserExtApi {
         userAccount.setUser(response.getId());
         userAccountApi.createData(userAccount);
 
-
-        PasswordResponse password = passwordApi.password(request);
+        PasswordRequest passwordRequest=new  PasswordRequest();
+        passwordRequest.setPassword(request.getPassword());
+        PasswordResponse password = passwordApi.password(passwordRequest);
 
         UserPasswordDataRequest userPassword = new UserPasswordDataRequest();
         userPassword.setSalt(password.getSalt());
@@ -148,7 +149,7 @@ public class UserExtResource implements UserExtApi {
         }
 
         //检查老密码
-        UserRegisterRequest req = new UserRegisterRequest();
+        PasswordRequest req = new PasswordRequest();
         req.setSalt(password.getSalt());
         req.setPassword(request.getOldPassword());
         PasswordResponse ps = passwordApi.passwordBySalt(req);
@@ -158,7 +159,44 @@ public class UserExtResource implements UserExtApi {
             return result;
         }
 
-        UserRegisterRequest pasReq = new UserRegisterRequest();
+        PasswordRequest pasReq = new PasswordRequest();
+        pasReq.setPassword(request.getPassword());
+        PasswordResponse newPassword = passwordApi.password(pasReq);
+
+        //修改密码
+        UserPasswordDataRequest passwordDataRequest = new UserPasswordDataRequest();
+        passwordDataRequest.setPassword(newPassword.getPassword());
+        passwordDataRequest.setSalt(newPassword.getSalt());
+        passwordDataRequest.setId(password.getId());
+        userPasswordApi.update(passwordDataRequest);
+
+        return result;
+    }
+
+    @Override
+    public ResponseObject<?> resetPassword(UserResetPasswordRequest request) {
+        ResponseObject<?> result = new ResponseObject<>();
+
+        UserInfoResponse user = userInfoApi.oneData(Filter.eq("id", request.getId()));
+        if (user == null) {
+            result.setCode(501);
+            result.setMsg("无效用户");
+            return result;
+        }
+        UserPasswordResponse password = userPasswordApi.oneData(Filter.eq(UserPasswordField.user, request.getId()));
+        if (password == null) {
+            result.setCode(502);
+            result.setMsg("没有设置密码");
+            return result;
+        }else{
+            UserPasswordDataRequest req=new UserPasswordDataRequest();
+            req.setUser(request.getId());
+            req.setSecurityType(SecurityType.account);
+            password=userPasswordApi.createData(req);
+        }
+
+
+        PasswordRequest pasReq = new PasswordRequest();
         pasReq.setPassword(request.getPassword());
         PasswordResponse newPassword = passwordApi.password(pasReq);
 
@@ -196,7 +234,7 @@ public class UserExtResource implements UserExtApi {
             result.setMsg("密码不存在");
             return result;
         }
-        UserRegisterRequest req = new UserRegisterRequest();
+        PasswordRequest req = new PasswordRequest();
         req.setPassword(request.getPassword());
         req.setSalt(password.getSalt());
         PasswordResponse pwd = passwordApi.passwordBySalt(req);
