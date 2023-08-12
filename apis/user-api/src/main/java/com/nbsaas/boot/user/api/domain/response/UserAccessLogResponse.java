@@ -19,22 +19,22 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 消耗时间
         **/
             private Long consumeTime;
 
         /**
-        * 
+        * 用户
         **/
             private Long creator;
 
         /**
-        * 
+        * ip地址
         **/
             private String ip;
 
         /**
-        * 
+        * 用户
         **/
             private String creatorName;
 
@@ -57,7 +57,7 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * url地址
         **/
             private String url;
 

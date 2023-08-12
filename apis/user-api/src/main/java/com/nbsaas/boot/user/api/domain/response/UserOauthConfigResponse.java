@@ -18,32 +18,32 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 第三方登陆名称
         **/
             private String name;
 
         /**
-        * 
+        * 第三方登陆标识
         **/
             private String model;
 
         /**
-        * 
+        * 程序key
         **/
             private String appKey;
 
         /**
-        * 
+        * 程序密钥
         **/
             private String appSecret;
 
         /**
-        * 
+        * java实现类
         **/
             private String className;
 
         /**
-        * 
+        * 启用状态  1启用 2未启用
         **/
             private Integer state;
 

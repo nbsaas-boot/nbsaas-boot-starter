@@ -22,22 +22,22 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 用户介绍
             **/
                 private String note;
 
             /**
-            * 
+            * 用户类型
             **/
                 private Integer catalog;
 
             /**
-            * 
+            * 所在组织
             **/
                 private String structureName;
 
             /**
-            * 
+            * 用户头像
             **/
                 private String avatar;
 
@@ -54,22 +54,27 @@ private static final long serialVersionUID = 1L;
                 private Date addDate;
 
             /**
-            * 
+            * 所在组织
             **/
                 private Long structure;
 
             /**
-            * 
+            * 用户登录次数
             **/
                 private Integer loginSize;
 
             /**
-            * 
+            * 手机号码
             **/
                 private String phone;
 
             /**
-            * 
+            * 账号
+            **/
+                private String accountNo;
+
+            /**
+            * 用户真实姓名
             **/
                 private String name;
 

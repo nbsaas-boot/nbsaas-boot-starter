@@ -25,13 +25,13 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 用户unionId
             **/
             @Search(name = "unionId",operator = Operator.like)
             private String unionId;
 
             /**
-            * 
+            * 用户openId
             **/
             @Search(name = "openId",operator = Operator.like)
             private String openId;
@@ -43,31 +43,31 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 访问token
             **/
             @Search(name = "accessToken",operator = Operator.like)
             private String accessToken;
 
             /**
-            * 
+            * token类型
             **/
             @Search(name = "tokenType",operator = Operator.like)
             private String tokenType;
 
             /**
-            * 
+            * 过期时间
             **/
             @Search(name = "expiresTime",operator = Operator.eq)
             private Long expiresTime;
 
             /**
-            * 
+            * 刷新token
             **/
             @Search(name = "refreshToken",operator = Operator.like)
             private String refreshToken;
 
             /**
-            * 
+            * 登录次数
             **/
             @Search(name = "loginSize",operator = Operator.eq)
             private Integer loginSize;

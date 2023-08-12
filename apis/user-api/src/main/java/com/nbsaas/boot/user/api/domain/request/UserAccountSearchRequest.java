@@ -31,13 +31,13 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 用户名
             **/
             @Search(name = "username",operator = Operator.like)
             private String username;
 
             /**
-            * 
+            * 登陆次数
             **/
             @Search(name = "loginSize",operator = Operator.eq)
             private Integer loginSize;

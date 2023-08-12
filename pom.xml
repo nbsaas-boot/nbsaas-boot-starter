@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.nbsaas.boot</groupId>
         <artifactId>nbsaas-boot</artifactId>
-        <version>1.0.14-2023</version>
+        <version>1.0.15-2023</version>
     </parent>
     <artifactId>nbsaas-boot-starter</artifactId>
     <version>1.0.4-2023</version>
@@ -18,11 +18,13 @@
         <module>resources</module>
         <module>gates</module>
         <module>adapters</module>
+        <module>code-generator</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nbsaas.version>1.0.14-2023</nbsaas.version>
+        <nbsaas.version>1.0.15-2023</nbsaas.version>
+        <boot.version>1.0.4-2023</boot.version>
         <mybatis.version>3.0.2</mybatis.version>
         <binarywang.version>4.5.0</binarywang.version>
     </properties>

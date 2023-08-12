@@ -25,19 +25,19 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 密码
             **/
             @Search(name = "password",operator = Operator.like)
             private String password;
 
             /**
-            * 
+            * 加密盐
             **/
             @Search(name = "salt",operator = Operator.like)
             private String salt;
 
             /**
-            * 
+            * 校验次数
             **/
             @Search(name = "checkSize",operator = Operator.eq)
             private Integer checkSize;

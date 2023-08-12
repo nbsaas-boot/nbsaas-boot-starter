@@ -30,7 +30,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 用户id
         **/
             private Long user;
 
@@ -40,12 +40,12 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 用户名
         **/
             private String username;
 
         /**
-        * 
+        * 登陆次数
         **/
             private Integer loginSize;
 

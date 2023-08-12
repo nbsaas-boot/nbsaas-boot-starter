@@ -35,25 +35,25 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 备注
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 登录密码
             **/
             @Search(name = "password",operator = Operator.like)
             private String password;
 
             /**
-            * 
+            * 登录IP
             **/
             @Search(name = "ip",operator = Operator.like)
             private String ip;
 
             /**
-            * 
+            * 登陆客户端
             **/
             @Search(name = "client",operator = Operator.like)
             private String client;
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 登陆账号
             **/
             @Search(name = "account",operator = Operator.like)
             private String account;

@@ -33,6 +33,7 @@ public UserInfoSimple convert(UserInfo source) {
                 }
                 result.setLoginSize(source.getLoginSize());
                 result.setPhone(source.getPhone());
+                result.setAccountNo(source.getAccountNo());
                 result.setName(source.getName());
                 if(source.getStoreState()!=null){
                     result.setStoreStateName(String.valueOf(source.getStoreState()));

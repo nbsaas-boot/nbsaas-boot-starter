@@ -10,21 +10,20 @@ import com.nbsaas.boot.rest.api.Converter;
 * 实体对象转化成响应对象
 */
 
-public class UserOauthTokenResponseConvert  implements Converter
-<UserOauthTokenResponse,UserOauthToken> {
+public class UserOauthTokenResponseConvert  implements Converter<UserOauthTokenResponse,UserOauthToken> {
 
-@Override
-public UserOauthTokenResponse convert(UserOauthToken source) {
-UserOauthTokenResponse  result = new  UserOauthTokenResponse();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getUserOauthConfig()!=null){
-                result.setUserOauthConfig(source.getUserOauthConfig().getId());
-            }
-            if(source.getUser()!=null){
-                result.setUser(source.getUser().getId());
-            }
-return result;
-}
+    @Override
+    public UserOauthTokenResponse convert(UserOauthToken source) {
+        UserOauthTokenResponse  result = new  UserOauthTokenResponse();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getUserOauthConfig()!=null){
+                        result.setUserOauthConfig(source.getUserOauthConfig().getId());
+                    }
+                    if(source.getUser()!=null){
+                        result.setUser(source.getUser().getId());
+                    }
+        return result;
+    }
 
 }
 

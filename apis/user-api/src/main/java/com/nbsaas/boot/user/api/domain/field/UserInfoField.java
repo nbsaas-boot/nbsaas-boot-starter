@@ -35,6 +35,9 @@ public class UserInfoField  {
     public static final String  phone = "phone";
 
 
+    public static final String  accountNo = "accountNo";
+
+
     public static final String  name = "name";
 
 

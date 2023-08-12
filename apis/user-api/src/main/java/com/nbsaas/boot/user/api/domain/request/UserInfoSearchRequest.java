@@ -25,37 +25,43 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 用户介绍
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 用户类型
             **/
             @Search(name = "catalog",operator = Operator.eq)
             private Integer catalog;
 
             /**
-            * 
+            * 用户头像
             **/
             @Search(name = "avatar",operator = Operator.like)
             private String avatar;
 
             /**
-            * 
+            * 用户登录次数
             **/
             @Search(name = "loginSize",operator = Operator.eq)
             private Integer loginSize;
 
             /**
-            * 
+            * 手机号码
             **/
             @Search(name = "phone",operator = Operator.like)
             private String phone;
 
             /**
-            * 
+            * 账号
+            **/
+            @Search(name = "accountNo",operator = Operator.like)
+            private String accountNo;
+
+            /**
+            * 用户真实姓名
             **/
             @Search(name = "name",operator = Operator.like)
             private String name;

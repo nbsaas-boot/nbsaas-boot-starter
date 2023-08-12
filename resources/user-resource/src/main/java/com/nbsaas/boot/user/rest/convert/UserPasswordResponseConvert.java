@@ -10,21 +10,20 @@ import com.nbsaas.boot.rest.api.Converter;
 * 实体对象转化成响应对象
 */
 
-public class UserPasswordResponseConvert  implements Converter
-<UserPasswordResponse,UserPassword> {
+public class UserPasswordResponseConvert  implements Converter<UserPasswordResponse,UserPassword> {
 
-@Override
-public UserPasswordResponse convert(UserPassword source) {
-UserPasswordResponse  result = new  UserPasswordResponse();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getSecurityType()!=null){
-                result.setSecurityTypeName(String.valueOf(source.getSecurityType()));
-            }
-            if(source.getUser()!=null){
-                result.setUser(source.getUser().getId());
-            }
-return result;
-}
+    @Override
+    public UserPasswordResponse convert(UserPassword source) {
+        UserPasswordResponse  result = new  UserPasswordResponse();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getSecurityType()!=null){
+                        result.setSecurityTypeName(String.valueOf(source.getSecurityType()));
+                    }
+                    if(source.getUser()!=null){
+                        result.setUser(source.getUser().getId());
+                    }
+        return result;
+    }
 
 }
 

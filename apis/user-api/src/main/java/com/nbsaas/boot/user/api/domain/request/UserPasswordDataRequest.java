@@ -20,12 +20,12 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 密码
         **/
             private String password;
 
         /**
-        * 
+        * 加密盐
         **/
             private String salt;
 
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 1L;
             private SecurityType securityType;
 
         /**
-        * 
+        * 校验次数
         **/
             private Integer checkSize;
 
@@ -45,7 +45,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 用户id
         **/
             private Long user;
 

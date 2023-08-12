@@ -18,17 +18,17 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 用户unionId
         **/
             private String unionId;
 
         /**
-        * 
+        * 用户openId
         **/
             private String openId;
 
         /**
-        * 
+        * 第三方登录配置
         **/
             private Long userOauthConfig;
 
@@ -38,17 +38,17 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 访问token
         **/
             private String accessToken;
 
         /**
-        * 
+        * token类型
         **/
             private String tokenType;
 
         /**
-        * 
+        * 绑定用户
         **/
             private Long user;
 
@@ -58,17 +58,17 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 过期时间
         **/
             private Long expiresTime;
 
         /**
-        * 
+        * 刷新token
         **/
             private String refreshToken;
 
         /**
-        * 
+        * 登录次数
         **/
             private Integer loginSize;
 

@@ -101,6 +101,7 @@ public class UserExtResource implements UserExtApi {
         UserInfoDataRequest userForm = new UserInfoDataRequest();
         userForm.setName(request.getUsername());
         userForm.setPhone(request.getUsername());
+        userForm.setAccountNo(request.getUsername());
         UserInfoResponse response = userInfoApi.createData(userForm);
 
         /**
@@ -186,16 +187,11 @@ public class UserExtResource implements UserExtApi {
         }
         UserPasswordResponse password = userPasswordApi.oneData(Filter.eq(UserPasswordField.user, request.getId()));
         if (password == null) {
-            result.setCode(502);
-            result.setMsg("没有设置密码");
-            return result;
-        }else{
             UserPasswordDataRequest req=new UserPasswordDataRequest();
             req.setUser(request.getId());
             req.setSecurityType(SecurityType.account);
             password=userPasswordApi.createData(req);
         }
-
 
         PasswordRequest pasReq = new PasswordRequest();
         pasReq.setPassword(request.getPassword());

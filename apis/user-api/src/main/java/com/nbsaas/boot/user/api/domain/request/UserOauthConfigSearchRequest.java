@@ -25,37 +25,37 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 第三方登陆名称
             **/
             @Search(name = "name",operator = Operator.like)
             private String name;
 
             /**
-            * 
+            * 第三方登陆标识
             **/
             @Search(name = "model",operator = Operator.like)
             private String model;
 
             /**
-            * 
+            * 程序key
             **/
             @Search(name = "appKey",operator = Operator.like)
             private String appKey;
 
             /**
-            * 
+            * 程序密钥
             **/
             @Search(name = "appSecret",operator = Operator.like)
             private String appSecret;
 
             /**
-            * 
+            * java实现类
             **/
             @Search(name = "className",operator = Operator.like)
             private String className;
 
             /**
-            * 
+            * 启用状态  1启用 2未启用
             **/
             @Search(name = "state",operator = Operator.eq)
             private Integer state;

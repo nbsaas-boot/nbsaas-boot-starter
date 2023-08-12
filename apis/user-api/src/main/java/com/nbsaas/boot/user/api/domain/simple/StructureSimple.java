@@ -19,8 +19,9 @@ private static final long serialVersionUID = 1L;
 
     private String value;
     private String label;
-    private List
-    <StructureSimple> children;
+    private List<StructureSimple> children;
+    private Boolean hasChildren;
+
 
 
             /**

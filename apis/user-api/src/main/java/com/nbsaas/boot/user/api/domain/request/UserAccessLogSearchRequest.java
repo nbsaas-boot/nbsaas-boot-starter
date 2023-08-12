@@ -28,13 +28,13 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 消耗时间
             **/
             @Search(name = "consumeTime",operator = Operator.eq)
             private Long consumeTime;
 
             /**
-            * 
+            * ip地址
             **/
             @Search(name = "ip",operator = Operator.like)
             private String ip;
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * url地址
             **/
             @Search(name = "url",operator = Operator.like)
             private String url;

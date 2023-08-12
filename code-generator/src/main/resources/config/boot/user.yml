@@ -1,0 +1,16 @@
+projectName: user #多项目的时候模块名
+multiple: true #是否多模块项目
+templateDir: /template/jpa #代码模块文件夹
+entityPackage: com.nbsaas.boot.user.data.entity
+entities:
+  - Structure
+  - UserAccessLog
+  - UserAccount
+  - UserInfo
+  - UserLoginLog
+  - UserOauthConfig
+  - UserOauthToken
+  - UserPassword
+  - UserRole
+outputPath: E:\codes\nbsaas\nbsaas-boot-starter #项目根目录
+basePackage: com.nbsaas.boot #基础包名

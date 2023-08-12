@@ -21,22 +21,22 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 备注
             **/
                 private String note;
 
             /**
-            * 
+            * 登录密码
             **/
                 private String password;
 
             /**
-            * 
+            * 登录IP
             **/
                 private String ip;
 
             /**
-            * 
+            * 登陆客户端
             **/
                 private String client;
 
@@ -60,12 +60,12 @@ private static final long serialVersionUID = 1L;
                 private Long id;
 
             /**
-            * 
+            * 用户id
             **/
                 private String userName;
 
             /**
-            * 
+            * 用户id
             **/
                 private Long user;
 
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 1L;
                 private Date addDate;
 
             /**
-            * 
+            * 登陆账号
             **/
                 private String account;
 
