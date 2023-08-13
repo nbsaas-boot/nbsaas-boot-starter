@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.nbsaas.boot</groupId>
         <artifactId>admins</artifactId>
-        <version>1.0.4-2023</version>
+        <version>1.0.5-2023</version>
     </parent>
 
     <groupId>com.nbsaas.boot</groupId>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>user-resource</artifactId>
-            <version>1.0.4-2023</version>
+            <version>1.0.5-2023</version>
         </dependency>
     </dependencies>
 </project>
