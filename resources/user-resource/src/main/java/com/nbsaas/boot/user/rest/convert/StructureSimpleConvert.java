@@ -44,9 +44,7 @@ public StructureSimple convert(Structure source) {
             if (fetch!=0){
                 result.setChildren(source.getChildren().stream().map(this).collect(Collectors.toList()));
             }
-            result.setHasChildren(true);
         }else{
-            result.setHasChildren(false);
         }
 
     return result;
