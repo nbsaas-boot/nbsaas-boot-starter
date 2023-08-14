@@ -3,6 +3,7 @@ package com.nbsaas.boot.pay.data.entity;
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.pay.api.domain.enums.SendState;
+import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.trade.data.entity.TradeAccount;
 import lombok.Data;
 
@@ -16,7 +17,7 @@ import java.math.BigDecimal;
 public class CashPayment extends AbstractEntity {
 
 
-    @SearchItem(label = "提现应用",name = "cashConfig",key = "cashConfig.id",operator = "eq")
+    @SearchItem(label = "提现应用",name = "cashConfig",key = "cashConfig.id",operator = Operator.eq)
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
@@ -68,7 +69,7 @@ public class CashPayment extends AbstractEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private TradeAccount tradeAccount;
 
-    @SearchItem(label = "用户", name = "user", key = "user.id", show = false, operator = "eq")
+    @SearchItem(label = "用户", name = "user", key = "user.id", show = false, operator = Operator.eq)
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private PayUser user;

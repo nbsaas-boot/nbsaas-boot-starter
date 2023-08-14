@@ -2,6 +2,7 @@ package com.nbsaas.boot.trade.data.entity;
 
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,13 +16,13 @@ import java.math.BigDecimal;
 public class TradeStream extends AbstractEntity {
 
     @FormField(title = "资金账号", grid = true)
-    @SearchItem(label = "资金账号", name = "account", key = "account.id", operator = "eq")
+    @SearchItem(label = "资金账号", name = "account", key = "account.id", operator = Operator.eq)
     @FieldConvert
     @FieldName
     @ManyToOne(fetch = FetchType.LAZY)
     TradeAccount account;
     @FormField(title = "交易单", grid = true)
-    @SearchItem(label = "交易单", name = "info", key = "info.id", operator = "eq")
+    @SearchItem(label = "交易单", name = "info", key = "info.id", operator = Operator.eq)
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     TradeInfo info;

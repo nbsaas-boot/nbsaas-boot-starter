@@ -4,6 +4,7 @@ import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.code.annotation.SearchBean;
 import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 
 
 @SearchBean(items = {
-        @SearchItem(label = "用户id", name = "user", key = "userInfo.id", classType = Long.class, operator = "eq")
+        @SearchItem(label = "用户id", name = "user", key = "userInfo.id", classType = Long.class, operator = Operator.eq)
 })
 @Data
 @Entity

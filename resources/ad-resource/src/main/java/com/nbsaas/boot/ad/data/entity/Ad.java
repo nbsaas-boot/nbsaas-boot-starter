@@ -2,6 +2,7 @@ package com.nbsaas.boot.ad.data.entity;
 
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.SortEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -32,7 +33,7 @@ public class Ad extends SortEntity {
      * 广告位
      */
     @Comment("广告位")
-    @SearchItem(label = "广告位", name = "adPosition", key = "adPosition.id", sortNum = "-1", type = InputType.select, operator = "eq")
+    @SearchItem(label = "广告位", name = "adPosition", key = "adPosition.id", sortNum = "-1", type = InputType.select, operator = Operator.eq)
     @FormField(title = "广告位", sortNum = "10", grid = true, col = 22, type = InputType.select, option = "adPosition", required = true)
     @FieldName
     @FieldConvert

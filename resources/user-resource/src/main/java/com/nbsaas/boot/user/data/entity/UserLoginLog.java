@@ -3,6 +3,7 @@ package com.nbsaas.boot.user.data.entity;
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.rest.enums.StoreState;
+import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.user.api.domain.enums.LoginState;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
@@ -28,7 +29,7 @@ public class UserLoginLog extends AbstractEntity {
 
     @Comment("用户id")
     @FormField(title = "用户姓名", sortNum = "1", grid = true)
-    @SearchItem(label = "用户", name = "userId", key = "user.id", operator = "eq", classType = Long.class, show = false)
+    @SearchItem(label = "用户", name = "userId", key = "user.id", operator = Operator.eq, classType = Long.class, show = false)
     @FieldConvert
     @FieldName
     @ManyToOne(fetch = FetchType.LAZY)
@@ -52,7 +53,7 @@ public class UserLoginLog extends AbstractEntity {
     private String client;
 
     @Comment("登录状态，0为失败1为成功")
-    @SearchItem(label = "状态", name = "state", key = "state", operator = "eq", classType = LoginState.class, show = false)
+    @SearchItem(label = "状态", name = "state", key = "state", operator =Operator.eq, classType = LoginState.class, show = false)
     @FormField(title = "状态", sortNum = "1", grid = true)
     private LoginState state;
 
