@@ -26,6 +26,7 @@ public class App {
         //config/bootadmin/system.yml
         //config/bootadmin/user.yml tenant trade
         makeCodes("config/boot/user.yml");
+        makeCodes("config/boot/message.yml");
 
 
     }

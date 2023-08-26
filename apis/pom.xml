@@ -20,6 +20,7 @@
         <module>trade-api</module>
         <module>config-api</module>
         <module>pay-api</module>
+        <module>message-api</module>
     </modules>
 
     <properties>
