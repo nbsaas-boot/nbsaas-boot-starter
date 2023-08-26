@@ -1,55 +1,90 @@
 package com.nbsaas.boot.ad.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class AdResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class AdResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private String adPositionName;
+        /**
+        * 内容
+        **/
+            private String note;
 
-    private String path;
+        /**
+        * 广告结束时间
+        **/
+            private Date endDate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date beginDate;
+        /**
+        * 分类
+        **/
+            private Integer catalog;
 
-    private Long bussId;
+        /**
+        * 广告名称
+        **/
+            private String title;
 
-    private String note;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    private Integer catalog;
+        /**
+        * 链接地址
+        **/
+            private String url;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 数据id
+        **/
+            private Long bussId;
 
-    private Integer sortNum;
+        /**
+        * 广告位
+        **/
+            private Long adPosition;
 
-    private Long adPosition;
+        /**
+        * 广告图片
+        **/
+            private String path;
 
-    private Long id;
+        /**
+        * 广告开始时间
+        **/
+            private Date beginDate;
 
-    private String url;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    private String title;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date endDate;
+        /**
+        * 广告位
+        **/
+            private String adPositionName;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

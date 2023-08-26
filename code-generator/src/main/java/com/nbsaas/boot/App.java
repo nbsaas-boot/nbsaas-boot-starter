@@ -27,6 +27,7 @@ public class App {
         //config/bootadmin/user.yml tenant trade
         makeCodes("config/boot/user.yml");
         makeCodes("config/boot/message.yml");
+        makeCodes("config/boot/ad.yml");
 
 
     }
@@ -53,7 +54,7 @@ public class App {
             chainBase.addCommand(new FieldCommand());
             chainBase.addCommand(new ApiCommand());
             chainBase.addCommand(new ConvertCommand());
-            //chainBase.addCommand(new ControllerAdminCommand());
+            chainBase.addCommand(new ControllerAdminCommand());
             //chainBase.addCommand(new ControllerAppCommand());
             chainBase.addCommand(new RepositoryCommand());
             chainBase.addCommand(new RestCommand());

@@ -41,7 +41,6 @@ public class InboxMessageExtResource implements InboxMessageExtApi {
     @Resource
     private InboxTemplateNotifyApi inboxTemplateNotifyApi;
 
-    @Resource
 
     @Transactional
     @Override

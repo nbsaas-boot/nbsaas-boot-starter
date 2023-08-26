@@ -1,90 +1,90 @@
 package com.nbsaas.boot.ad.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class AdDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class AdDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private String adPositionName;
+        /**
+        * 内容
+        **/
+            private String note;
 
-    /**
-     *
-     **/
-    private String path;
+        /**
+        * 广告结束时间
+        **/
+            private Date endDate;
 
-    /**
-     *
-     **/
-    private Date beginDate;
+        /**
+        * 分类
+        **/
+            private Integer catalog;
 
-    /**
-     *
-     **/
-    private Long bussId;
+        /**
+        * 广告名称
+        **/
+            private String title;
 
-    /**
-     *
-     **/
-    private String note;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     *
-     **/
-    private Integer catalog;
+        /**
+        * 链接地址
+        **/
+            private String url;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 数据id
+        **/
+            private Long bussId;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 广告位
+        **/
+            private Long adPosition;
 
-    /**
-     *
-     **/
-    private Long adPosition;
+        /**
+        * 广告图片
+        **/
+            private String path;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 广告开始时间
+        **/
+            private Date beginDate;
 
-    /**
-     *
-     **/
-    private String url;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     *
-     **/
-    private String title;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     *
-     **/
-    private Date endDate;
+        /**
+        * 广告位
+        **/
+            //private String adPositionNameName;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }
