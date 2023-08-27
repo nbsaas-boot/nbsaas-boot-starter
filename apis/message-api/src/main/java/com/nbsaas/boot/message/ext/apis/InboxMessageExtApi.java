@@ -11,8 +11,8 @@ public interface InboxMessageExtApi {
     /**
      * 发送消息
      *
-     * @param request
-     * @return
+     * @param request 消息发送对象
+     * @return 消息集合
      */
     ResponseObject<InboxMessageResponse> sendMessage(InboxMessageSendRequest request);
 
@@ -20,8 +20,8 @@ public interface InboxMessageExtApi {
     /**
      * 阅读某个消息
      *
-     * @param request
-     * @return
+     * @param request 消息信息
+     * @return 阅读状态
      */
     ResponseObject<?> read(InboxMessageDataRequest request);
 

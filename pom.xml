@@ -8,7 +8,7 @@
         <version>1.0.17-2023</version>
     </parent>
     <artifactId>nbsaas-boot-starter</artifactId>
-    <version>1.0.6-2023</version>
+    <version>1.0.7-2023</version>
     <packaging>pom</packaging>
 
     <name>nbsaas-boot-starter</name>
@@ -24,7 +24,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nbsaas.version>1.0.17-2023</nbsaas.version>
-        <boot.version>1.0.6-2023</boot.version>
+        <boot.version>1.0.7-2023</boot.version>
         <mybatis.version>3.0.2</mybatis.version>
         <binarywang.version>4.5.0</binarywang.version>
     </properties>
@@ -100,6 +100,24 @@
 
         </profile>
     </profiles>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://raw.githubusercontent.com/nbsaas/nbsaas-boot/master/LICENSE</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>ada.young</name>
+            <email>2601035599@qq.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/nbsaas-boot/nbsaas-boot-starter</url>
+        <connection>git@github.com:nbsaas-boot/nbsaas-boot-starter.git</connection>
+        <developerConnection>git@github.com:nbsaas-boot/nbsaas-boot-starter.git</developerConnection>
+    </scm>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
