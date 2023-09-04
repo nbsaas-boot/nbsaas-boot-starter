@@ -23,6 +23,9 @@ public class StructureSearchRequest   extends PageRequest implements Serializabl
 private static final long serialVersionUID = 1L;
 
 
+    @Search(name = "parent.id",operator = Operator.eq)
+    private Long parent;
+
 
             /**
             * 编码

@@ -19,6 +19,9 @@ public class UserInfoResponseConvert  implements Converter<UserInfoResponse,User
                     if(source.getStructure()!=null){
                         result.setStructureName(source.getStructure().getName());
                     }
+                    if(source.getStructure()!=null){
+                    result.setStructureIds(source.getStructure().getIds());
+                    }
                     if(source.getDataScope()!=null){
                         result.setDataScopeName(String.valueOf(source.getDataScope()));
                     }

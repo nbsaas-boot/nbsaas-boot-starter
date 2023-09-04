@@ -1,10 +1,8 @@
 package com.nbsaas.boot.user.data.entity;
 
-import com.nbsaas.boot.code.annotation.CatalogClass;
-import com.nbsaas.boot.code.annotation.FieldConvert;
-import com.nbsaas.boot.code.annotation.FieldName;
-import com.nbsaas.boot.code.annotation.FormAnnotation;
+import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,6 +21,8 @@ public class Structure extends CatalogEntity {
 
 
     //@JoinColumn(foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+
+    @SearchItem(label = "父分类", name = "parent", key = "parent.id", operator = Operator.eq, classType = Long.class)
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)

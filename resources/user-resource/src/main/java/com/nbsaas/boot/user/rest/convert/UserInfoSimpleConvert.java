@@ -22,6 +22,9 @@ public UserInfoSimple convert(UserInfo source) {
                 if(source.getStructure()!=null){
                     result.setStructureName(source.getStructure().getName());
                 }
+                if(source.getStructure()!=null){
+                    result.setStructureIds(source.getStructure().getIds());
+                }
                 result.setAvatar(source.getAvatar());
                 if(source.getDataScope()!=null){
                     result.setDataScopeName(String.valueOf(source.getDataScope()));

@@ -38,6 +38,11 @@ private static final long serialVersionUID = 1L;
                 private String structureName;
 
             /**
+            * 
+            **/
+                private String structureIds;
+
+            /**
             * 用户头像
             **/
                 private String avatar;
