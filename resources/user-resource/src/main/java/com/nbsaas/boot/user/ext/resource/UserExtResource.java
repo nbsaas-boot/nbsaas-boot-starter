@@ -128,6 +128,7 @@ public class UserExtResource implements UserExtApi {
         userPassword.setCheckSize(0);
         userPasswordApi.createData(userPassword);
 
+        result.setData(response);
         return result;
     }
 
