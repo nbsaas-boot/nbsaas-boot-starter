@@ -23,6 +23,12 @@ public class UserInfoSearchRequest   extends PageRequest implements Serializable
 private static final long serialVersionUID = 1L;
 
 
+    @Search(name = "structure.id",operator = Operator.eq)
+    private Long structure;
+
+    @Search(name = "structure.ids",operator = Operator.likePrefix)
+    private String structureIds;
+
 
             /**
             * 用户介绍

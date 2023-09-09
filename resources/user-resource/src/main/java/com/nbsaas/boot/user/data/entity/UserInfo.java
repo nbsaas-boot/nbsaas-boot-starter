@@ -22,7 +22,10 @@ package com.nbsaas.boot.user.data.entity;
 
 import com.nbsaas.boot.code.annotation.BeanExt;
 import com.nbsaas.boot.code.annotation.FormExtField;
+import com.nbsaas.boot.code.annotation.SearchBean;
+import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.rest.enums.StoreState;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -36,6 +39,11 @@ import javax.persistence.Table;
  * @author ada
  */
 
+@SearchBean(
+        items = {
+                @SearchItem(label = "部门ids", name = "structureIds", key = "structure.ids",  operator = Operator.likePrefix, show = false)
+        }
+)
 @BeanExt(items={@FormExtField(fieldName = "structureIds", parentField = "ids", parent = "structure", fieldClass = String.class)})
 @org.hibernate.annotations.Table(appliesTo = "user_info",comment = "用户")
 @Data

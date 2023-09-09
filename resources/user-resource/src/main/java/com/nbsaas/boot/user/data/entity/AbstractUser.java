@@ -1,12 +1,10 @@
 package com.nbsaas.boot.user.data.entity;
 
-import com.nbsaas.boot.code.annotation.FieldConvert;
-import com.nbsaas.boot.code.annotation.FieldName;
-import com.nbsaas.boot.code.annotation.FormField;
-import com.nbsaas.boot.code.annotation.InputType;
+import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.rest.enums.DataScope;
 import com.nbsaas.boot.rest.enums.State;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -47,6 +45,7 @@ public abstract class AbstractUser extends AbstractEntity {
     @Column(length = 20)
     private String name;
 
+    @SearchItem(label = "所在组织", name = "structure", key = "structure.id", classType = Long.class, operator = Operator.eq)
     @Comment("所在组织")
     @FieldName
     @FieldConvert
