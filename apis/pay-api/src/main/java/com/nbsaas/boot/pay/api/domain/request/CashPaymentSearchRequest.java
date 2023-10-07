@@ -24,7 +24,7 @@ private static final long serialVersionUID = 1L;
 
 
     @Search(name = "cashConfig.id",operator = Operator.eq)
-    private Long cashConfig;
+    private String cashConfig;
 
     @Search(name = "name",operator = Operator.like)
     private String name;
@@ -33,7 +33,7 @@ private static final long serialVersionUID = 1L;
     private String cashNo;
 
     @Search(name = "user.id",operator = Operator.eq)
-    private Long user;
+    private String user;
 
 
             /**
@@ -43,37 +43,37 @@ private static final long serialVersionUID = 1L;
             private String note;
 
             /**
-            * 
+            * 微信openId
             **/
             @Search(name = "openId",operator = Operator.like)
             private String openId;
 
             /**
-            * 
+            * 身份证号码
             **/
             @Search(name = "idNo",operator = Operator.like)
             private String idNo;
 
             /**
-            * 
+            * 备注
             **/
             @Search(name = "demo",operator = Operator.like)
             private String demo;
 
             /**
-            * 
+            * 手机号
             **/
             @Search(name = "phone",operator = Operator.like)
             private String phone;
 
             /**
-            * 
+            * 业务单号
             **/
             @Search(name = "bussNo",operator = Operator.like)
             private String bussNo;
 
             /**
-            * 
+            * 应用id
             **/
             @Search(name = "appId",operator = Operator.like)
             private String appId;

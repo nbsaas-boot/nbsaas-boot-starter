@@ -19,27 +19,27 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 备注
         **/
             private String note;
 
         /**
-        * 
+        * 商户号
         **/
             private String mchId;
 
         /**
-        * 
+        * 最小金额
         **/
             private BigDecimal miniMoney;
 
         /**
-        * 
+        * 证书路径
         **/
             private String keyPath;
 
         /**
-        * 
+        * 手续费
         **/
             private BigDecimal fee;
 
@@ -57,22 +57,22 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 商户Key
         **/
             private String mchKey;
 
         /**
-        * 
+        * 费率
         **/
             private BigDecimal rate;
 
         /**
-        * 
+        * appId
         **/
             private String appId;
 
         /**
-        * 
+        * 配置名称
         **/
             private String name;
 
@@ -82,7 +82,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 提现标识
         **/
             private String key;
 

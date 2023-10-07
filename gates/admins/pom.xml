@@ -16,6 +16,7 @@
         <module>system-admin</module>
         <module>ad-admin</module>
         <module>area-admin</module>
+        <module>pay-admin</module>
     </modules>
 
     <properties>

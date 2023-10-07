@@ -8,10 +8,10 @@ public class CashPaymentField  {
 
 
 
-    public static final String  no = "no";
-
-
     public static final String  note = "note";
+
+
+    public static final String  tradeAccount = "tradeAccount";
 
 
     public static final String  openId = "openId";
@@ -21,6 +21,9 @@ public class CashPaymentField  {
 
 
     public static final String  sendState = "sendState";
+
+
+    public static final String  cashNo = "cashNo";
 
 
     public static final String  idNo = "idNo";
@@ -54,6 +57,12 @@ public class CashPaymentField  {
 
 
     public static final String  cash = "cash";
+
+
+    public static final String  user = "user";
+
+
+    public static final String  cashConfigName = "cashConfigName";
 
 
     public static final String  lastDate = "lastDate";

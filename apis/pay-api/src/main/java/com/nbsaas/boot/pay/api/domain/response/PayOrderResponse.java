@@ -21,17 +21,17 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 调整金额
         **/
             private BigDecimal offsetAmount;
 
         /**
-        * 
+        * 支付手续费
         **/
             private BigDecimal fee;
 
         /**
-        * 
+        * 运费
         **/
             private BigDecimal freight;
 
@@ -44,7 +44,7 @@ private static final long serialVersionUID = 1L;
             private String orderStatusName;
 
         /**
-        * 
+        * 税金
         **/
             private BigDecimal tax;
 
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 赠送积分
         **/
             private Long point;
 
@@ -67,27 +67,27 @@ private static final long serialVersionUID = 1L;
             private String shippingStatusName;
 
         /**
-        * 
+        * 优惠券折扣
         **/
             private BigDecimal couponDiscount;
 
         /**
-        * 
+        * 促销折扣
         **/
             private BigDecimal promotionDiscount;
 
         /**
-        * 
+        * 已付金额
         **/
             private BigDecimal amountPaid;
 
         /**
-        * 
+        * 订单价格
         **/
             private BigDecimal money;
 
         /**
-        * 
+        * 订单编号
         **/
             private String sn;
 

@@ -28,25 +28,25 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 服务商户号
             **/
             @Search(name = "platformMch",operator = Operator.like)
             private String platformMch;
 
             /**
-            * 
+            * 备注
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 证书路径
             **/
             @Search(name = "keyPath",operator = Operator.like)
             private String keyPath;
 
             /**
-            * 
+            * 服务商Id
             **/
             @Search(name = "platformId",operator = Operator.like)
             private String platformId;
@@ -58,7 +58,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 服务商Key
             **/
             @Search(name = "key",operator = Operator.like)
             private String key;

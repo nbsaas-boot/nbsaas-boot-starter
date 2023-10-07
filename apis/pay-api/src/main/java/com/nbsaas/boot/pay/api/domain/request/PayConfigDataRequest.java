@@ -25,7 +25,7 @@ private static final long serialVersionUID = 1L;
             private Long payProvider;
 
         /**
-        * 
+        * 备注
         **/
             private String note;
 
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 1L;
             private Long creator;
 
         /**
-        * 
+        * 商户号
         **/
             private String mchId;
 
@@ -45,12 +45,12 @@ private static final long serialVersionUID = 1L;
             //private String payProviderNameName;
 
         /**
-        * 
+        * 证书路径
         **/
             private String keyPath;
 
         /**
-        * 
+        * 服务商Id
         **/
             private String platformId;
 
@@ -60,7 +60,7 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 商户Key
         **/
             private String mchKey;
 
@@ -70,27 +70,27 @@ private static final long serialVersionUID = 1L;
             private PayType payType;
 
         /**
-        * 
+        * 费率
         **/
             private BigDecimal rate;
 
         /**
-        * 
+        * 服务商户号
         **/
             private String platformMchId;
 
         /**
-        * 
+        * appId
         **/
             private String appId;
 
         /**
-        * 
+        * 支付名称
         **/
             private String name;
 
         /**
-        * 
+        * 通知Url
         **/
             private String notifyUrl;
 
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 支付标识
         **/
             private String key;
 

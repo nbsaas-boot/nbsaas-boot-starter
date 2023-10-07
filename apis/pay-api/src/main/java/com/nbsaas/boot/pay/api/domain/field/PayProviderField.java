@@ -23,6 +23,9 @@ public class PayProviderField  {
     public static final String  name = "name";
 
 
+    public static final String  creatorName = "creatorName";
+
+
     public static final String  platformId = "platformId";
 
 

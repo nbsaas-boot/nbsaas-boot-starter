@@ -37,25 +37,25 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 备注
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 商户号
             **/
             @Search(name = "mchId",operator = Operator.like)
             private String mchId;
 
             /**
-            * 
+            * 证书路径
             **/
             @Search(name = "keyPath",operator = Operator.like)
             private String keyPath;
 
             /**
-            * 
+            * 商户Key
             **/
             @Search(name = "mchKey",operator = Operator.like)
             private String mchKey;

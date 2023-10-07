@@ -27,7 +27,7 @@ private static final long serialVersionUID = 1L;
     private String key;
 
     @Search(name = "account.id",operator = Operator.like)
-    private Long account;
+    private String account;
 
 
             /**

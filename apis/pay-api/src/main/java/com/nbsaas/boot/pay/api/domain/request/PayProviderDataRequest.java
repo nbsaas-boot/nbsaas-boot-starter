@@ -19,12 +19,12 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 服务商户号
         **/
             private String platformMch;
 
         /**
-        * 
+        * 备注
         **/
             private String note;
 
@@ -34,12 +34,12 @@ private static final long serialVersionUID = 1L;
             private Long creator;
 
         /**
-        * 
+        * 证书路径
         **/
             private String keyPath;
 
         /**
-        * 
+        * 服务商名称
         **/
             private String name;
 
@@ -49,7 +49,7 @@ private static final long serialVersionUID = 1L;
             //private String creatorNameName;
 
         /**
-        * 
+        * 服务商Id
         **/
             private String platformId;
 
@@ -64,7 +64,7 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 服务商Key
         **/
             private String key;
 

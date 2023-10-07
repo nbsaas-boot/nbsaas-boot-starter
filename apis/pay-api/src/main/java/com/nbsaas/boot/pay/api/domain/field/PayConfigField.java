@@ -20,6 +20,9 @@ public class PayConfigField  {
     public static final String  mchId = "mchId";
 
 
+    public static final String  payProviderName = "payProviderName";
+
+
     public static final String  keyPath = "keyPath";
 
 

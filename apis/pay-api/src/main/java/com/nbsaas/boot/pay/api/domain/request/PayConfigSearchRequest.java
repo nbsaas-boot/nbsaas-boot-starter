@@ -34,49 +34,49 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 备注
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 商户号
             **/
             @Search(name = "mchId",operator = Operator.like)
             private String mchId;
 
             /**
-            * 
+            * 证书路径
             **/
             @Search(name = "keyPath",operator = Operator.like)
             private String keyPath;
 
             /**
-            * 
+            * 服务商Id
             **/
             @Search(name = "platformId",operator = Operator.like)
             private String platformId;
 
             /**
-            * 
+            * 商户Key
             **/
             @Search(name = "mchKey",operator = Operator.like)
             private String mchKey;
 
             /**
-            * 
+            * 服务商户号
             **/
             @Search(name = "platformMchId",operator = Operator.like)
             private String platformMchId;
 
             /**
-            * 
+            * appId
             **/
             @Search(name = "appId",operator = Operator.like)
             private String appId;
 
             /**
-            * 
+            * 通知Url
             **/
             @Search(name = "notifyUrl",operator = Operator.like)
             private String notifyUrl;

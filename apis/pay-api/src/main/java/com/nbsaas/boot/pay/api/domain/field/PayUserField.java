@@ -8,13 +8,19 @@ public class PayUserField  {
 
 
 
+    public static final String  tradeAccount = "tradeAccount";
+
+
+    public static final String  tradeAccountAmount = "tradeAccountAmount";
+
+
+    public static final String  name = "name";
+
+
     public static final String  id = "id";
 
 
     public static final String  addDate = "addDate";
-
-
-    public static final String  account = "account";
 
 
     public static final String  lastDate = "lastDate";

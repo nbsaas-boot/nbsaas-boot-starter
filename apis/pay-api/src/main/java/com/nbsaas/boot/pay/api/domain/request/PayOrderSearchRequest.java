@@ -25,13 +25,13 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 赠送积分
             **/
             @Search(name = "point",operator = Operator.eq)
             private Long point;
 
             /**
-            * 
+            * 订单编号
             **/
             @Search(name = "sn",operator = Operator.like)
             private String sn;

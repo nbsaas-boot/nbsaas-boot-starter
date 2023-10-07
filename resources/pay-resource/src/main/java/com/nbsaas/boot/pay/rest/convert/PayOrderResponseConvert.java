@@ -10,24 +10,23 @@ import com.nbsaas.boot.rest.api.Converter;
 * 实体对象转化成响应对象
 */
 
-public class PayOrderResponseConvert  implements Converter
-<PayOrderResponse,PayOrder> {
+public class PayOrderResponseConvert  implements Converter<PayOrderResponse,PayOrder> {
 
-@Override
-public PayOrderResponse convert(PayOrder source) {
-PayOrderResponse  result = new  PayOrderResponse();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getOrderStatus()!=null){
-                result.setOrderStatusName(String.valueOf(source.getOrderStatus()));
-            }
-            if(source.getShippingStatus()!=null){
-                result.setShippingStatusName(String.valueOf(source.getShippingStatus()));
-            }
-            if(source.getPaymentStatus()!=null){
-                result.setPaymentStatusName(String.valueOf(source.getPaymentStatus()));
-            }
-return result;
-}
+    @Override
+    public PayOrderResponse convert(PayOrder source) {
+        PayOrderResponse  result = new  PayOrderResponse();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getOrderStatus()!=null){
+                        result.setOrderStatusName(String.valueOf(source.getOrderStatus()));
+                    }
+                    if(source.getShippingStatus()!=null){
+                        result.setShippingStatusName(String.valueOf(source.getShippingStatus()));
+                    }
+                    if(source.getPaymentStatus()!=null){
+                        result.setPaymentStatusName(String.valueOf(source.getPaymentStatus()));
+                    }
+        return result;
+    }
 
 }
 

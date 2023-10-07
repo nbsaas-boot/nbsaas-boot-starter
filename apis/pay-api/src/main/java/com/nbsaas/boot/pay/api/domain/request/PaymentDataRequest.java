@@ -21,7 +21,7 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 付款金额
         **/
             private BigDecimal amount;
 
@@ -31,12 +31,12 @@ private static final long serialVersionUID = 1L;
             private Method method;
 
         /**
-        * 
+        * 支付手续费
         **/
             private BigDecimal fee;
 
         /**
-        * 
+        * 业务处理器
         **/
             private String handle;
 
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 1L;
             private PayState payState;
 
         /**
-        * 
+        * 配置id
         **/
             //private String payConfigNameName;
 
@@ -56,42 +56,42 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 业务id
         **/
             private Long bussId;
 
         /**
-        * 
+        * 支付单号
         **/
             private String payNo;
 
         /**
-        * 
+        * 收款银行
         **/
             private String bank;
 
         /**
-        * 
+        * 配置id
         **/
             private Long payConfig;
 
         /**
-        * 
+        * 业务单号
         **/
             private String bussNo;
 
         /**
-        * 
+        * 到期时间
         **/
             private Date expire;
 
         /**
-        * 
+        * 支付方式
         **/
             private String paymentMethod;
 
         /**
-        * 
+        * 编号
         **/
             private String sn;
 
@@ -101,7 +101,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
+        * 付款日期
         **/
             private Date paymentDate;
 
@@ -111,7 +111,7 @@ private static final long serialVersionUID = 1L;
             private Long user;
 
         /**
-        * 
+        * 收款账号
         **/
             private String account;
 

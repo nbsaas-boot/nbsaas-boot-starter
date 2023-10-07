@@ -29,7 +29,7 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 系统key
         **/
             private String key;
 

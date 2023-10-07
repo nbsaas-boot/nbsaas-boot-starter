@@ -3,6 +3,7 @@ package com.nbsaas.boot.pay.data.entity;
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.pay.api.domain.enums.PayType;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -37,9 +38,10 @@ public class PayConfig extends AbstractEntity {
     private PayUser creator;
 
     @Comment("支付模式")
-    @FormField(title = "支付模式",grid = true, required = true)
-    @SearchItem(label = "支付模式",name = "payType")
+    @FormField(title = "支付模式",grid = true,type = InputType.dictionary)
+    @SearchItem(label = "支付模式",name = "payType",classType = PayType.class,operator = Operator.eq,show = false)
     private PayType payType;
+
 
     @FieldName
     @FieldConvert
@@ -83,7 +85,7 @@ public class PayConfig extends AbstractEntity {
     private String notifyUrl;
 
     @Comment("费率")
-    @FormField(title = "费率", grid = true)
+    @FormField(title = "费率", grid = true,width = "20000")
     private BigDecimal rate;
 
     @Comment("备注")

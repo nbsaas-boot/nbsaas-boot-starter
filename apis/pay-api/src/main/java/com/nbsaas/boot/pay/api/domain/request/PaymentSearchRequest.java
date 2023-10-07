@@ -25,43 +25,43 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 业务处理器
             **/
             @Search(name = "handle",operator = Operator.like)
             private String handle;
 
             /**
-            * 
+            * 业务id
             **/
             @Search(name = "bussId",operator = Operator.eq)
             private Long bussId;
 
             /**
-            * 
+            * 支付单号
             **/
             @Search(name = "payNo",operator = Operator.like)
             private String payNo;
 
             /**
-            * 
+            * 收款银行
             **/
             @Search(name = "bank",operator = Operator.like)
             private String bank;
 
             /**
-            * 
+            * 业务单号
             **/
             @Search(name = "bussNo",operator = Operator.like)
             private String bussNo;
 
             /**
-            * 
+            * 支付方式
             **/
             @Search(name = "paymentMethod",operator = Operator.like)
             private String paymentMethod;
 
             /**
-            * 
+            * 编号
             **/
             @Search(name = "sn",operator = Operator.like)
             private String sn;
@@ -73,7 +73,7 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 收款账号
             **/
             @Search(name = "account",operator = Operator.like)
             private String account;
