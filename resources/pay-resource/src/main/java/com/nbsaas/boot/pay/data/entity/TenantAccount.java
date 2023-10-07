@@ -5,6 +5,7 @@ import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.trade.data.entity.TradeAccount;
 import lombok.Data;
+import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
 
@@ -16,11 +17,12 @@ import javax.persistence.*;
 @Table(name = "bs_tenant_pay_account")
 public class TenantAccount extends AbstractEntity {
 
+
+  @Comment("系统key")
   @SearchItem(label = "系统key",name = "key")
   @FormField(title = "系统key", grid = true,required = true)
   @Column(name = "trade_key",length = 50)
   private String key;
-
 
   @FormField(title = "资金账号余额", grid = true)
   @SearchItem(label = "资金账号",name = "account",key = "account.id",show = false)
