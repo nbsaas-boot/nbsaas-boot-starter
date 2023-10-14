@@ -4,7 +4,7 @@ import org.apache.shiro.cache.AbstractCacheManager;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 
-public class CaffeineCacheManager extends AbstractCacheManager {
+public class ShiroCaffeineCacheManager extends AbstractCacheManager {
 
     @Override
     protected Cache createCache(String name) throws CacheException {
