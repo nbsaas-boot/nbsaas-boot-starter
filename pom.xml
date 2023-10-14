@@ -27,6 +27,7 @@
         <boot.version>1.0.8-2023</boot.version>
         <mybatis.version>3.0.2</mybatis.version>
         <binarywang.version>4.5.0</binarywang.version>
+        <caffeine.version>3.1.8</caffeine.version>
     </properties>
     <dependencyManagement>
         <dependencies>
