@@ -27,10 +27,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-            <version>${caffeine.version}</version>
-        </dependency>
+
     </dependencies>
 </project>
