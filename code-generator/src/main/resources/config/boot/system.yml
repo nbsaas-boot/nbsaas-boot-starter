@@ -14,5 +14,5 @@ entities:
   - RoleMenu
   - Dict
   - DictItem
-outputPath: E:\codes\nbsaas\nbsaas-boot-starter #项目根目录
+outputPath: E:\codes\nbsaas-starter\nbsaas-boot-starter #项目根目录
 basePackage: com.nbsaas.boot #基础包名

@@ -1,105 +1,105 @@
 package com.nbsaas.boot.area.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class AreaDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class AreaDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Long parent;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 
+        **/
+            private Long parent;
 
-    /**
-     * 经度
-     **/
-    private Double lng;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     * 地区全称
-     **/
-    private String fullName;
+        /**
+        * 经度
+        **/
+            private Double lng;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 地区全称
+        **/
+            private String fullName;
 
-    /**
-     * 国标编码
-     **/
-    private String govCode;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 国标编码
+        **/
+            private String govCode;
 
-    /**
-     * 地区类型
-     **/
-    private String areaType;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 地区类型
+        **/
+            private String areaType;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 状态
-     **/
-    private Integer state;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 状态
+        **/
+            private Integer state;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 纬度
-     **/
-    private Double lat;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 纬度
+        **/
+            private Double lat;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

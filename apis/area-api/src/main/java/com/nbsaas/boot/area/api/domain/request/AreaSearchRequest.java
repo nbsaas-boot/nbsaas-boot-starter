@@ -3,99 +3,99 @@ package com.nbsaas.boot.area.api.domain.request;
 import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.boot.rest.request.PageRequest;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.math.BigDecimal;
 
 /**
- * 搜索bean
- */
+* 搜索bean
+*/
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class AreaSearchRequest extends PageRequest implements Serializable {
+public class AreaSearchRequest   extends PageRequest implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 编码
-     **/
-    @Search(name = "code", operator = Operator.like)
-    private String code;
 
-    /**
-     * 地区全称
-     **/
-    @Search(name = "fullName", operator = Operator.like)
-    private String fullName;
+            /**
+            * 编码
+            **/
+            @Search(name = "code",operator = Operator.like)
+            private String code;
 
-    /**
-     * 国标编码
-     **/
-    @Search(name = "govCode", operator = Operator.like)
-    private String govCode;
+            /**
+            * 地区全称
+            **/
+            @Search(name = "fullName",operator = Operator.like)
+            private String fullName;
 
-    /**
-     * 深度
-     **/
-    @Search(name = "depth", operator = Operator.eq)
-    private Integer depth;
+            /**
+            * 国标编码
+            **/
+            @Search(name = "govCode",operator = Operator.like)
+            private String govCode;
 
-    /**
-     * 地区类型
-     **/
-    @Search(name = "areaType", operator = Operator.like)
-    private String areaType;
+            /**
+            * 深度
+            **/
+            @Search(name = "depth",operator = Operator.eq)
+            private Integer depth;
 
-    /**
-     * 名称
-     **/
-    @Search(name = "name", operator = Operator.like)
-    private String name;
+            /**
+            * 地区类型
+            **/
+            @Search(name = "areaType",operator = Operator.like)
+            private String areaType;
 
-    /**
-     * ids
-     **/
-    @Search(name = "ids", operator = Operator.like)
-    private String ids;
+            /**
+            * 名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
 
-    /**
-     * 排序号
-     **/
-    @Search(name = "sortNum", operator = Operator.eq)
-    private Integer sortNum;
+            /**
+            * ids
+            **/
+            @Search(name = "ids",operator = Operator.like)
+            private String ids;
 
-    /**
-     * 状态
-     **/
-    @Search(name = "state", operator = Operator.eq)
-    private Integer state;
+            /**
+            * 排序号
+            **/
+            @Search(name = "sortNum",operator = Operator.eq)
+            private Integer sortNum;
 
-    /**
-     * 主键id
-     **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+            /**
+            * 状态
+            **/
+            @Search(name = "state",operator = Operator.eq)
+            private Integer state;
 
-    /**
-     * 左节点
-     **/
-    @Search(name = "lft", operator = Operator.eq)
-    private Integer lft;
+            /**
+            * 主键id
+            **/
+            @Search(name = "id",operator = Operator.eq)
+            private Long id;
 
-    /**
-     * 右节点
-     **/
-    @Search(name = "rgt", operator = Operator.eq)
-    private Integer rgt;
+            /**
+            * 左节点
+            **/
+            @Search(name = "lft",operator = Operator.eq)
+            private Integer lft;
+
+            /**
+            * 右节点
+            **/
+            @Search(name = "rgt",operator = Operator.eq)
+            private Integer rgt;
+
 
 
 }
