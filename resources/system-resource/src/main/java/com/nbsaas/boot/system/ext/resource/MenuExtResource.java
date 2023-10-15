@@ -142,23 +142,23 @@ public class MenuExtResource implements MenuExtApi {
     @Override
     public ResponseObject<?> drag(MenuDragRequest request) {
         ResponseObject<?> result = new ResponseObject<>();
-        MenuResponse menu = menuApi.oneData(Filter.eq("id", request.getMenu()));
-        if (menu == null) {
+        Optional<Menu> menuOptional = menuRepository.findById(request.getMenu());
+        if (!menuOptional.isPresent()) {
             result.setCode(501);
             result.setMsg("拖动菜单无效");
             return result;
         }
-        MenuResponse target = menuApi.oneData(Filter.eq("id", request.getTarget()));
-        if (target == null) {
+        Optional<Menu> targetOptional = menuRepository.findById(request.getTarget());
+        if (!targetOptional.isPresent()) {
             result.setCode(501);
             result.setMsg("拖动菜单无效");
             return result;
         }
+        Menu menu=menuOptional.get();
+        Menu target=targetOptional.get();
+
         if ("inner".equals(request.getDropType())) {
-            MenuDataRequest form = new MenuDataRequest();
-            form.setId(request.getMenu());
-            form.setParent(request.getTarget());
-            return menuApi.update(form);
+            menu.setParent(target.getParent());
         } else {
             Integer sortNum1;
             Integer sortNum2 = target.getSortNum();
@@ -173,33 +173,24 @@ public class MenuExtResource implements MenuExtApi {
                 sortNum1 = sortNum2 + 1;
             }
             //判断移动是否是同一层级
-            MenuDataRequest form1 = new MenuDataRequest();
-            form1.setId(request.getMenu());
-            form1.setSortNum(sortNum1);
-            form1.setParent(target.getParent());
+            menu.setSortNum(sortNum1);
+            menu.setParent(target.getParent());
 
             StringBuffer ids=new StringBuffer();
             if (target.getParent()!=null){
-                MenuResponse parent = menuApi.oneData(Filter.eq("id",form1.getParent()));
-                if (parent!=null){
-                    if (parent.getIds()!=null){
-                        ids.append(parent.getIds());
-                        ids.append("-");
-                    }else{
-                        ids.append(parent.getId());
-                        ids.append("-");
-                    }
+                Menu parent =target.getParent();
+                if (parent.getIds() != null) {
+                    ids.append(parent.getIds());
+                    ids.append("-");
+                } else {
+                    ids.append(parent.getId());
+                    ids.append("-");
                 }
             }
-            ids.append(form1.getId());
-            form1.setIds(ids.toString());
+            menu.setIds(ids.toString());
 
-            menuApi.update(form1);
 
-            MenuDataRequest form2 = new MenuDataRequest();
-            form2.setId(request.getTarget());
-            form2.setSortNum(sortNum2);
-            menuApi.update(form2);
+            target.setSortNum(sortNum2);
         }
 
         return result;
