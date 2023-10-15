@@ -1,6 +1,6 @@
 # nbsaas-boot-starter
 
-[![maven](https://img.shields.io/maven-central/v/com.nbsaas.boot/boot-nbsaas.svg)](http://mvnrepository.com/artifact/com.nbsaas.boot/boot-nbsaas)
+[![maven](https://img.shields.io/maven-central/v/com.nbsaas.boot/nbsaas-boot-starter.svg)](http://mvnrepository.com/artifact/com.nbsaas.boot/nbsaas-boot-starter)
 [![QQ](https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square)](//shang.qq.com/wpa/qunwpa?idkey=d1a308945e4b2ff8aeb1711c2c7914342dae15e9ce7041e94756ab355430dc78)
 [![GitHub forks](https://img.shields.io/github/stars/nbsaas/boot-nbsaas.svg?style=social&logo=github&label=Stars)](https://github.com/nbsaas/boot-nbsaas)
 
