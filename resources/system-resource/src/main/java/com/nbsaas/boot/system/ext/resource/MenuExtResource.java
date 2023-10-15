@@ -3,10 +3,13 @@ package com.nbsaas.boot.system.ext.resource;
 import com.nbsaas.boot.rest.filter.Filter;
 import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
+import com.nbsaas.boot.system.api.apis.MenuApi;
 import com.nbsaas.boot.system.api.apis.RoleApi;
 import com.nbsaas.boot.system.api.apis.RoleMenuApi;
 import com.nbsaas.boot.system.api.domain.field.RoleMenuField;
+import com.nbsaas.boot.system.api.domain.request.MenuDataRequest;
 import com.nbsaas.boot.system.api.domain.request.RoleMenuDataRequest;
+import com.nbsaas.boot.system.api.domain.response.MenuResponse;
 import com.nbsaas.boot.system.api.domain.response.RoleResponse;
 import com.nbsaas.boot.system.api.domain.simple.MenuSimple;
 import com.nbsaas.boot.system.api.domain.simple.RoleMenuSimple;
@@ -16,6 +19,7 @@ import com.nbsaas.boot.system.data.mapper.MenuMapper;
 import com.nbsaas.boot.system.data.repository.MenuRepository;
 import com.nbsaas.boot.system.data.repository.RoleMenuRepository;
 import com.nbsaas.boot.system.ext.apis.MenuExtApi;
+import com.nbsaas.boot.system.ext.domain.request.MenuDragRequest;
 import com.nbsaas.boot.system.ext.domain.request.UpdateRoleMenuRequest;
 import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
 import com.nbsaas.boot.system.rest.convert.MenuSimpleConvert;
@@ -45,6 +49,9 @@ public class MenuExtResource implements MenuExtApi {
 
     @Resource
     private RoleApi roleApi;
+
+    @Resource
+    private MenuApi menuApi;
 
 
     @Transactional(readOnly = true)
@@ -126,6 +133,73 @@ public class MenuExtResource implements MenuExtApi {
             form.setRole(request.getRoleId());
             form.setMenu(menu);
             roleMenuApi.createData(form);
+        }
+
+        return result;
+    }
+
+    @Transactional
+    @Override
+    public ResponseObject<?> drag(MenuDragRequest request) {
+        ResponseObject<?> result = new ResponseObject<>();
+        MenuResponse menu = menuApi.oneData(Filter.eq("id", request.getMenu()));
+        if (menu == null) {
+            result.setCode(501);
+            result.setMsg("拖动菜单无效");
+            return result;
+        }
+        MenuResponse target = menuApi.oneData(Filter.eq("id", request.getTarget()));
+        if (target == null) {
+            result.setCode(501);
+            result.setMsg("拖动菜单无效");
+            return result;
+        }
+        if ("inner".equals(request.getDropType())) {
+            MenuDataRequest form = new MenuDataRequest();
+            form.setId(request.getMenu());
+            form.setParent(request.getTarget());
+            return menuApi.update(form);
+        } else {
+            Integer sortNum1;
+            Integer sortNum2 = target.getSortNum();
+            if (sortNum2 == null) {
+                sortNum2 = 0;
+            }
+
+            if ("before".equals(request.getDropType())) {
+                sortNum1 = sortNum2;
+                sortNum2 = sortNum1 + 1;
+            } else {
+                sortNum1 = sortNum2 + 1;
+            }
+            //判断移动是否是同一层级
+            MenuDataRequest form1 = new MenuDataRequest();
+            form1.setId(request.getMenu());
+            form1.setSortNum(sortNum1);
+            form1.setParent(target.getParent());
+
+            StringBuffer ids=new StringBuffer();
+            if (target.getParent()!=null){
+                MenuResponse parent = menuApi.oneData(Filter.eq("id",form1.getParent()));
+                if (parent!=null){
+                    if (parent.getIds()!=null){
+                        ids.append(parent.getIds());
+                        ids.append("-");
+                    }else{
+                        ids.append(parent.getId());
+                        ids.append("-");
+                    }
+                }
+            }
+            ids.append(form1.getId());
+            form1.setIds(ids.toString());
+
+            menuApi.update(form1);
+
+            MenuDataRequest form2 = new MenuDataRequest();
+            form2.setId(request.getTarget());
+            form2.setSortNum(sortNum2);
+            menuApi.update(form2);
         }
 
         return result;

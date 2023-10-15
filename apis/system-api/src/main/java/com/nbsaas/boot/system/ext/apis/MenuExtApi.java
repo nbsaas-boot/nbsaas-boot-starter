@@ -2,6 +2,7 @@ package com.nbsaas.boot.system.ext.apis;
 
 import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
+import com.nbsaas.boot.system.ext.domain.request.MenuDragRequest;
 import com.nbsaas.boot.system.ext.domain.request.UpdateRoleMenuRequest;
 import com.nbsaas.boot.system.ext.domain.simple.MenuExtSimple;
 
@@ -59,4 +60,14 @@ public interface MenuExtApi {
      * @return
      */
     ResponseObject<?> updateRoleMenus(UpdateRoleMenuRequest request);
+
+    /**
+     * 菜单拖动
+     *
+     * @param request
+     * @return
+     */
+    ResponseObject<?> drag(MenuDragRequest request);
+
+
 }
