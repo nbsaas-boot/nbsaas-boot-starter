@@ -1,110 +1,110 @@
 package com.nbsaas.boot.system.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class MenuDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class MenuDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private Long parent;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 
+        **/
+            private Long parent;
 
-    /**
-     * 菜单类型
-     **/
-    private Integer catalog;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     *
-     **/
-    private String icon;
+        /**
+        * 菜单类型
+        **/
+            private Integer catalog;
 
-    /**
-     *
-     **/
-    private String permission;
+        /**
+        * 
+        **/
+            private String icon;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 
+        **/
+            private String permission;
 
-    /**
-     *
-     **/
-    private String path;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     *
-     **/
-    private String router;
+        /**
+        * 
+        **/
+            private String path;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 
+        **/
+            private String router;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 是否租户使用
-     **/
-    private Integer menuType;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 是否租户使用
+        **/
+            private Integer menuType;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     *
-     **/
-    private Long nums;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 
+        **/
+            private Long nums;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

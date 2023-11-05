@@ -38,7 +38,7 @@ public class DictItem extends AbstractEntity {
 
     private StoreState storeState;
 
-    @SearchItem(name = "dict", key = "dict.id", label = "字典搜索", show = false, operator = Operator.eq)
+    @SearchItem(name = "dict", key = "dict.id", label = "字典搜索", show = false, operator = Operator.eq,classType = Long.class)
     @ManyToOne(fetch = FetchType.LAZY)
     @FieldConvert
     @FieldName(parent = "title")

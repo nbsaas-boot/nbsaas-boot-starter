@@ -31,6 +31,10 @@ public class ApplicationMenu extends CatalogEntity {
 
     private Long num;
 
+    @FieldConvert
+    @FieldName
+    @Comment("父菜单id")
+    @JoinColumn(name = "parent_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private ApplicationMenu parent;
 
@@ -47,6 +51,7 @@ public class ApplicationMenu extends CatalogEntity {
     private Long creator;
 
 
+    @JoinColumn(name = "app_id")
     @Comment("应用")
     @SearchItem(label = "应用", name = "app", key = "app.id", operator = Operator.eq)
     @FieldName

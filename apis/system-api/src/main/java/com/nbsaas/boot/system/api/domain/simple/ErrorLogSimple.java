@@ -1,66 +1,68 @@
 package com.nbsaas.boot.system.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
 
 /**
- * 列表对象
- */
+* 列表对象
+*/
 @Data
 public class ErrorLogSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private String app;
 
-    /**
-     *
-     **/
-    private String note;
 
-    /**
-     *
-     **/
-    private String param;
+            /**
+            * 
+            **/
+                private String app;
 
-    /**
-     *
-     **/
-    private String name;
+            /**
+            * 
+            **/
+                private String note;
 
-    /**
-     *
-     **/
-    private String serverName;
+            /**
+            * 
+            **/
+                private String param;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 
+            **/
+                private String name;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 
+            **/
+                private String serverName;
 
-    /**
-     *
-     **/
-    private String url;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
+
+            /**
+            * 
+            **/
+                private String url;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

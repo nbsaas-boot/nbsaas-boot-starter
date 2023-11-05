@@ -123,7 +123,7 @@ public class MenuExtResource implements MenuExtApi {
         RoleResponse role = roleApi.oneData(Filter.eq("id", request.getRoleId()));
         if (role == null) {
             result.setCode(501);
-            result.setMsg("无效校色id");
+            result.setMsg("无效角色id");
             return result;
         }
         roleMenuApi.deleteByFilter(Filter.eq(RoleMenuField.role, request.getRoleId()));

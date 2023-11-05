@@ -1,115 +1,130 @@
 package com.nbsaas.boot.system.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class ApplicationMenuDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class ApplicationMenuDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 应用
-     **/
-    private Long app;
 
-    /**
-     * 创建人id
-     **/
-    private Long creator;
+        /**
+        * 应用
+        **/
+            private Long app;
 
-    /**
-     * 编码
-     **/
-    private String code;
+        /**
+        * 父菜单id
+        **/
+            private Long parent;
 
-    /**
-     * 分类
-     **/
-    private Integer catalog;
+        /**
+        * 创建人id
+        **/
+            private Long creator;
 
-    /**
-     *
-     **/
-    private Long num;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     * 图标
-     **/
-    private String icon;
+        /**
+        * 分类
+        **/
+            private Integer catalog;
 
-    /**
-     * 权限
-     **/
-    private String permission;
+        /**
+        * 应用
+        **/
+            //private String appNameName;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+        /**
+        * 
+        **/
+            private Long num;
 
-    /**
-     * 路径
-     **/
-    private String path;
+        /**
+        * 图标
+        **/
+            private String icon;
 
-    /**
-     * 路由
-     **/
-    private String router;
+        /**
+        * 权限
+        **/
+            private String permission;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 名称
-     **/
-    private String name;
+        /**
+        * 路径
+        **/
+            private String path;
 
-    /**
-     * ids
-     **/
-    private String ids;
+        /**
+        * 父菜单id
+        **/
+            //private String parentNameName;
 
-    /**
-     * 菜单类型
-     **/
-    private Integer menuType;
+        /**
+        * 路由
+        **/
+            private String router;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+        /**
+        * 菜单类型
+        **/
+            private Integer menuType;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
+
+        /**
+        * 主键id
+        **/
+            private Long id;
+
+        /**
+        * 左节点
+        **/
+            private Integer lft;
+
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }
