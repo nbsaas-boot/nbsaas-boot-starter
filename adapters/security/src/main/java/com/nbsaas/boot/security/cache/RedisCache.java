@@ -15,7 +15,7 @@ public class RedisCache<K, V> implements Cache<K, V> {
     private static final String REDIS_SHIRO_CACHE = "nbsaas-cache:";
     private String cacheKey;
     private RedisTemplate<K, V> redisTemplate;
-    private long globExpire = 30;
+    private final long globExpire = 30;
 
     @SuppressWarnings("rawtypes")
     public RedisCache(String name, RedisTemplate client) {
