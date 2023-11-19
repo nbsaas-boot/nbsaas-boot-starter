@@ -1,24 +1,32 @@
 package com.nbsaas.boot.system.data.entity;
 
-import com.nbsaas.boot.code.annotation.FormField;
-import com.nbsaas.boot.code.annotation.InputType;
-import com.nbsaas.boot.code.annotation.NoSimple;
-import com.nbsaas.boot.code.annotation.SearchItem;
+import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.LongEntity;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * description: sys_application  实体类
  */
+
+@ComposeView
+@FormAnnotation(title = "应用")
 @Data
 @Entity
-@Table(name = "sys_app")
+@Table(name = "sys_app",indexes = {@Index(columnList = "name",name = "sys_app_name_index")})
 public class Application extends LongEntity {
+
+    @SearchItem(label = "应用标识", name = "appKey")
+    @FormField(title = "应用标识", grid = true, col = 22, width = "200",required = true)
+    @Comment("应用标识")
+    @Column(unique = true,length = 60)
+    private String appKey;
 
 
     /**
@@ -29,12 +37,7 @@ public class Application extends LongEntity {
     @Comment("应用名称")
     private String name;
 
-    /**
-     * app_key 应用key
-     */
-    @FormField(title = "应用key", grid = true, col = 22, width = "200")
-    @Comment("应用key")
-    private String appKey;
+
 
     /**
      * note 应用介绍

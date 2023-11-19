@@ -9,6 +9,7 @@ import com.nbsaas.boot.system.api.domain.request.ApplicationDataRequest;
 import com.nbsaas.boot.system.api.domain.request.ApplicationSearchRequest;
 import com.nbsaas.boot.system.api.domain.response.ApplicationResponse;
 import com.nbsaas.boot.system.api.domain.simple.ApplicationSimple;
+import com.nbsaas.boot.system.ext.apis.ApplicationExtApi;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.validation.annotation.Validated;
@@ -28,6 +29,9 @@ public class ApplicationController {
 
     @Resource
     private ApplicationApi applicationApi;
+
+    @Resource
+    private ApplicationExtApi applicationExtApi;
 
     @RequiresPermissions("application")
     @RequestMapping("/search")
@@ -50,16 +54,15 @@ public class ApplicationController {
     @RequiresPermissions("application")
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject
-            <ApplicationResponse> create(@Validated(AddOperator.class) ApplicationDataRequest request) {
-        return applicationApi.create(request);
+    public ResponseObject <ApplicationResponse> create(@Validated(AddOperator.class) ApplicationDataRequest request) {
+        return applicationExtApi.create(request);
     }
 
     @RequiresPermissions("application")
     @UpdateData
     @RequestMapping("/update")
     public ResponseObject<ApplicationResponse> update(@Validated(UpdateOperator.class) ApplicationDataRequest request) {
-        return applicationApi.update(request);
+        return applicationExtApi.update(request);
     }
 
     @RequiresPermissions("application")

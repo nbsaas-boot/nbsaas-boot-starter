@@ -1,9 +1,9 @@
 package com.nbsaas.boot.system.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
 
 /**
 * 列表对象
@@ -25,7 +25,7 @@ private static final long serialVersionUID = 1L;
                 private String name;
 
             /**
-            * 应用key
+            * 应用标识
             **/
                 private String appKey;
 

@@ -29,7 +29,7 @@ private static final long serialVersionUID = 1L;
             private String name;
 
         /**
-        * 应用key
+        * 应用标识
         **/
             private String appKey;
 
